@@ -1,0 +1,114 @@
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+//slideInLeft
+.slideInLeft{
+  -webkit-animation-name:slideInLeft;
+  animation-name:slideInLeft;
+}
+
+@-webkit-keyframes slideInLeft{
+  0%{
+    -webkit-transform:translate3d(-100%,0,0);
+    transform:translate3d(-100%,0,0);
+    visibility:visible;
+  }
+  to {
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+@keyframes slideInLeft{
+  0%{
+    -webkit-transform:translate3d(-100%,0,0);
+    transform:translate3d(-100%,0,0);
+    visibility:visible;
+  }
+  to{
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+
+
+
+//slideInRight
+.slideInRight{
+  -webkit-animation-name:slideInRight;
+  animation-name:slideInRight;
+}
+@-webkit-keyframes slideInRight{
+  0%{
+    -webkit-transform:translate3d(100%,0,0);
+    transform:translate3d(100%,0,0);
+    visibility:visible;
+  }
+  to{
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+@keyframes slideInRight{
+  0%{
+    -webkit-transform:translate3d(100%,0,0);
+    transform:translate3d(100%,0,0);
+    visibility:visible;
+  }
+  to{
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+
+
+//fadeIn
+.fadeIn{
+  -webkit-animation-name:fadeIn;
+  animation-name:fadeIn;
+}
+@-webkit-keyframes fadeIn{
+  0%{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+
+//slideInDown
+.slideInDown{
+  -webkit-animation-name:slideInDown;
+  animation-name:slideInDown;
+}
+@-webkit-keyframes slideInDown{
+  0%{
+    -webkit-transform:translate3d(0,-100%,0);
+    transform:translate3d(0,-100%,0);
+    visibility:visible;
+  }
+  to{
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+@keyframes slideInDown{
+  0%{
+    -webkit-transform:translate3d(0,-100%,0);
+    transform:translate3d(0,-100%,0);visibility:visible;
+  }
+  to{
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+  }
+}
+

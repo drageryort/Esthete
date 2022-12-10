@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-black-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-black-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-black-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-black-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-black-webfont.svg#zabal_demoblack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-bold-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-bold-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-bold-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-bold-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-bold-webfont.svg#zabal_demobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-extrabold-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-extrabold-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-extrabold-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-extrabold-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-extrabold-webfont.svg#zabal_demoextrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-extralight-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-extralight-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-extralight-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-extralight-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-extralight-webfont.svg#zabal_demoextralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-light-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-light-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-light-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-light-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-light-webfont.svg#zabal_demolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-medium-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../../font/Zabal/zabaldemo-medium-webfont.woff2') format('woff2'),
+         url('../../../font/Zabal/zabaldemo-medium-webfont.woff') format('woff'),
+         url('../../../font/Zabal/zabaldemo-medium-webfont.ttf') format('truetype'),
+         url('../../../font/Zabal/zabaldemo-medium-webfont.svg#zabal_demomedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-regular-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/Zabal/zabaldemo-regular-webfont.woff2') format('woff2'),
+    url('../../../font/Zabal/zabaldemo-regular-webfont.woff') format('woff'),
+    url('../../../font/Zabal/zabaldemo-regular-webfont.ttf') format('truetype'),
+    url('../../../font/Zabal/zabaldemo-regular-webfont.svg#zabal_demoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-semibold-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/Zabal/zabaldemo-semibold-webfont.woff2') format('woff2'),
+    url('../../../font/Zabal/zabaldemo-semibold-webfont.woff') format('woff'),
+    url('../../../font/Zabal/zabaldemo-semibold-webfont.ttf') format('truetype'),
+    url('../../../font/Zabal/zabaldemo-semibold-webfont.svg#zabal_demosemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-thin-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/Zabal/zabaldemo-thin-webfont.woff2') format('woff2'),
+    url('../../../font/Zabal/zabaldemo-thin-webfont.woff') format('woff'),
+    url('../../../font/Zabal/zabaldemo-thin-webfont.ttf') format('truetype'),
+    url('../../../font/Zabal/zabaldemo-thin-webfont.svg#zabal_demothin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zabal_demo';
+    src: url('../../../font/Zabal/zabaldemo-ultra-webfont.eot');
+    src: url('../../../font/Zabal/zabaldemo-ultra-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../font/Zabal/zabaldemo-ultra-webfont.woff2') format('woff2'),
+    url('../../../font/Zabal/zabaldemo-ultra-webfont.woff') format('woff'),
+    url('../../../font/Zabal/zabaldemo-ultra-webfont.ttf') format('truetype'),
+    url('../../../font/Zabal/zabaldemo-ultra-webfont.svg#zabal_demoultra') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}

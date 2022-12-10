@@ -1,0 +1,279 @@
+.animated {
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "zabal_demo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-black);
+}
+*:after, *:before {
+  position: relative;
+}
+
+body {
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+body.fixed {
+  overflow: hidden;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button, .btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul, menu {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-white) !important;
+}
+
+.input-hidden {
+  position: absolute;
+  opacity: 0;
+  z-index: -5;
+}
+
+a, span {
+  display: inline-block;
+  text-decoration: unset;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+:root {
+  --color-blue-dark: #0060AE;
+  --color-blue: #0E90FB;
+  --color-blue-light: #72A2C9;
+  --color-blue-discount: #0500F6;
+  --color-gray-light: #DFDFDF;
+  --color-gray-dark: #666;
+  --color-gray: #CCCCCC;
+  --color-gray-opacity: #959595;
+  --color-light-gray: #F8F8F8;
+  --color-gray-extralight: #f2f7fb;
+  --color-white: #FFFFFF;
+  --color-predark: #333333;
+  --color-black: #000000;
+  --color-card-background: #F5F5F5;
+  --color-rosy: #EC1944;
+  --color-rosy-hover: #D30D36;
+  --color-rosy-active: #B60327;
+  --color-rosy-disabled: #DFDFDF;
+  --color-rosy-error: #c4042b;
+  --color-sky: #0E90FB;
+  --color-sky-hover: #0479DA;
+  --color-sky-active: #03569B;
+  --color-sky-disabled: #DFDFDF;
+  --color-telegram: #0088CC;
+  --color-telegram-hover: #0279B5;
+  --color-telegram-active: #046697;
+  --menu-background: rgb(0, 0, 0, .3);
+  --color-color-label: #0060AE;
+  --color-color-label-hover: #014C89;
+  --color-color-label-active: #003E70;
+  --color-color-fb: #4563a0;
+  --color-color-google: #d04531;
+  --color-color-orange: #FD6D1B;
+}
+
+@media (min-width: 1000px) {
+  .tablet:not(.desktop), .mobile:not(.desktop) {
+    display: none !important;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+    padding-left: 37px !important;
+    padding-right: 37px !important;
+  }
+}
+@media (max-width: 1000px) and (min-width: 660px) {
+  .desktop:not(.tablet), .mobile:not(.tablet) {
+    display: none !important;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 728px;
+    width: 100%;
+  }
+}
+@media (max-width: 660px) {
+  .desktop:not(.mobile), .tablet:not(.mobile) {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .mobile-nav {
+    display: none;
+    padding: 23px 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    z-index: 999;
+    background: var(--color-white);
+  }
+}
+.blue {
+  color: var(--color-blue);
+}
+
+.hidden {
+  display: none;
+}
+
+.prevent {
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=global.css.map */
