@@ -9,19 +9,19 @@ html{
   font-family: "zabal_demo",sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-white);
   &:after, &:before{
     position: relative;
   }
 }
 body{
-  background: var(--color-white);
+  background: var(--color-black);
   overflow-x: hidden;
   &.fixed{
     overflow: hidden;
   }
 }
-picture{
+picture,.picture, video, .video{
   display: block;
 }
 img{

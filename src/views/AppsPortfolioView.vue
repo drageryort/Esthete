@@ -1,8 +1,14 @@
 <template>
-  <div class="">
-    <h1>This is an Apps portfolio page</h1>
-  </div>
+  <AppGallery/>
+  <AppSendRequest/>
 </template>
 
 
 <style lang="scss"></style>
+<script>
+import AppGallery from "@/components/common-blocks/AppGallery";
+import AppSendRequest from "@/components/common-blocks/AppSendRequest";
+export default {
+  components: {AppSendRequest, AppGallery}
+}
+</script>

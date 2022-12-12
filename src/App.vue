@@ -1,11 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/webpages-portfolio">webpages</router-link>
-    <router-link to="/apps-portfolio">apps</router-link>
-    <router-link to="/designs-portfolio">designs</router-link>
-  </nav>
+  <AppHeader/>
   <router-view/>
+  <appFooter/>
 </template>
+
+<script>
+  import AppFooter from "@/components/AppFooter";
+  import AppHeader from "@/components/AppHeader";
+  export default {
+    components: {AppHeader, AppFooter}
+  }
+</script>
 
 <style lang="scss">
   @import "./assets/styles/common/fonts/font.min.css";

@@ -117,21 +117,21 @@ html {
   font-family: "zabal_demo", sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-white);
 }
 *:after, *:before {
   position: relative;
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-black);
   overflow-x: hidden;
 }
 body.fixed {
   overflow: hidden;
 }
 
-picture {
+picture, .picture, video, .video {
   display: block;
 }
 
@@ -180,39 +180,12 @@ a, span {
 # Colors
 --------------------------------------------------------------*/
 :root {
-  --color-blue-dark: #0060AE;
-  --color-blue: #0E90FB;
-  --color-blue-light: #72A2C9;
-  --color-blue-discount: #0500F6;
-  --color-gray-light: #DFDFDF;
-  --color-gray-dark: #666;
-  --color-gray: #CCCCCC;
-  --color-gray-opacity: #959595;
-  --color-light-gray: #F8F8F8;
-  --color-gray-extralight: #f2f7fb;
-  --color-white: #FFFFFF;
-  --color-predark: #333333;
   --color-black: #000000;
-  --color-card-background: #F5F5F5;
-  --color-rosy: #EC1944;
-  --color-rosy-hover: #D30D36;
-  --color-rosy-active: #B60327;
-  --color-rosy-disabled: #DFDFDF;
-  --color-rosy-error: #c4042b;
-  --color-sky: #0E90FB;
-  --color-sky-hover: #0479DA;
-  --color-sky-active: #03569B;
-  --color-sky-disabled: #DFDFDF;
-  --color-telegram: #0088CC;
-  --color-telegram-hover: #0279B5;
-  --color-telegram-active: #046697;
-  --menu-background: rgb(0, 0, 0, .3);
-  --color-color-label: #0060AE;
-  --color-color-label-hover: #014C89;
-  --color-color-label-active: #003E70;
-  --color-color-fb: #4563a0;
-  --color-color-google: #d04531;
-  --color-color-orange: #FD6D1B;
+  --color-white: #FFFFFF;
+  --color-blue: #142DA9;
+  --color-light-blue: #2C4BE7;
+  --color-dark-blue: #092093;
+  --color-opacity-white: rgba(255, 255, 255, .5);
 }
 
 @media (min-width: 1000px) {
@@ -223,9 +196,7 @@ a, span {
   .container {
     margin: 0 auto;
     width: 100%;
-    max-width: 1440px;
-    padding-left: 37px !important;
-    padding-right: 37px !important;
+    max-width: 1110px;
   }
 }
 @media (max-width: 1000px) and (min-width: 660px) {
@@ -264,16 +235,49 @@ a, span {
     background: var(--color-white);
   }
 }
-.blue {
-  color: var(--color-blue);
-}
-
 .hidden {
   display: none;
 }
 
 .prevent {
   pointer-events: none;
+}
+
+.btn-blue {
+  padding: 20px 30px;
+  background: var(--color-blue);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  transition: background-color 0.5s, opacity 0.5s;
+}
+.btn-blue:hover {
+  background: var(--color-light-blue);
+}
+.btn-blue:active {
+  background: var(--color-dark-blue);
+}
+.btn-blue:disabled {
+  opacity: 0.3;
+}
+
+.btn-white {
+  padding: 20px 30px;
+  background: var(--color-white);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--color-blue);
+  transition: background-color 0.5s, opacity 0.5s;
+}
+.btn-white:disabled {
+  opacity: 0.3;
+}
+
+b, strong {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=global.css.map */
