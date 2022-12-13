@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="homeBanner-block">
+    <div class="banner-block">
       <div class="content">
         <h1 class="title">
           The <b>Web</b> & <b>App</b> Development
@@ -29,12 +29,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .homeBanner-block {
+  .banner-block {
     display: flex;
-    height: calc(100vh - 94px);
+    height: 100vh;
     align-items: center;
     .content {
-      margin: -94px 0 0;
       padding: 10px 0 0;
       width: 780px;
       .title{
@@ -65,7 +64,7 @@ export default {
       height: 500px;
       position: absolute;
       right: -40px;
-      top: calc(50% - 47px);
+      top: 50%;
       transform: translateY(-50%);
     }
 }

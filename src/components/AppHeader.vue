@@ -36,10 +36,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 27px 60px;
-    margin: 0 auto;
     max-width: 1440px;
     min-width: 1110px;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
     .left-col {
       display: flex;
       column-gap: 60px;

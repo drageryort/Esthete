@@ -28,6 +28,7 @@ export default {
         content: '';
         width: 1200px;
         height: 1200px;
+        overflow: hidden;
         background: rgb(198,180,16);
         background: -moz-linear-gradient(90deg, rgba(198,180,16,1) 0%, rgba(9,9,121,1) 25%, rgba(198,55,16,1) 50%, rgba(9,9,121,1) 75%, rgba(198,180,16,1) 100%);
         background: -webkit-linear-gradient(90deg, rgba(198,180,16,1) 0%, rgba(9,9,121,1) 25%, rgba(198,55,16,1) 50%, rgba(9,9,121,1) 75%, rgba(198,180,16,1) 100%);
@@ -38,7 +39,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 0;
+        z-index: -1;
         animation-name: rotation;
         animation-duration: 15s;
         animation-timing-function: linear;

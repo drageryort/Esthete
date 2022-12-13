@@ -14,7 +14,7 @@ import AppHomeBanner from "@/components/homepage-blocks/AppHomeBanner.vue";
 import AppGallery from "@/components/common-blocks/AppGallery.vue";
 import AppHomeLetsTalk from "@/components/homepage-blocks/AppHomeLetsTalk.vue";
 import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
-import AppDevConcepts from "@/components/homepage-blocks/AppDevConcepts.vue";
+import AppDevConcepts from "@/components/homepage-blocks/AppHomeDevConcepts.vue";
 import AppHomeReviews from "@/components/homepage-blocks/AppHomeReviews.vue";
 
 export default defineComponent({
