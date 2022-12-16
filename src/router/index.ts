@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import WebPortfolioView from '../views/WebPortfolioView.vue'
+import AppsPortfolioView from '../views/AppsPortfolioView.vue'
+import designPortfolioView from '../views/DesignPortfolioView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,23 +13,26 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/webpages-portfolio',
     name: 'webpages',
-    component: () => import('../views/WebPortfolioView.vue')
+    component: WebPortfolioView
   },
   {
     path: '/apps-portfolio',
     name: 'apps',
-    component: () => import('../views/AppsPortfolioView.vue')
+    component: AppsPortfolioView
   },
   {
     path: '/designs-portfolio',
     name: 'designs',
-    component: () => import('../views/DesignPortfolioView.vue')
+    component: designPortfolioView
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    setTimeout(() => window.scrollTo(0,0),500)
+  },
 })
 
 export default router

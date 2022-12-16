@@ -2,6 +2,8 @@
   <div class="container">
     <div class="letsTalk-block">
       <div class="content-wrapper">
+        <div class="border-animation"></div>
+        <div class="safari-fix"></div>
         <div class="content">
           <h2 class="title">Have a project in mind?</h2>
           <button class="btn btn-blue btn-letsTalk">Let’s Talk</button>
@@ -24,7 +26,7 @@ export default {
       padding: 4px;
       border-radius: 23px;
       overflow: hidden;
-      &:before{
+      .border-animation{
         content: '';
         width: 1200px;
         height: 1200px;
@@ -39,11 +41,20 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: -1;
         animation-name: rotation;
         animation-duration: 15s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
+      }
+      .safari-fix{
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        border-radius: 31px;
+        border: 10px solid var(--color-black);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
       .content{
         display: flex;
@@ -68,5 +79,27 @@ export default {
       }
     }
 
+  }
+  @media (max-width: 1000px){
+    .letsTalk-block{
+      padding: 20px 0 60px;
+      .content-wrapper{
+        .border-animation{
+          width: 800px;
+          height: 800px;
+        }
+        .safari-fix{}
+        .content{
+          row-gap: 28px;
+          padding: 46px;
+          .title{
+            font-size: 26px;
+            line-height: 32px;
+          }
+          .btn{}
+        }
+        @keyframes rotation {}
+      }
+    }
   }
 </style>

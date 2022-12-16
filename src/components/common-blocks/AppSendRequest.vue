@@ -53,4 +53,19 @@ export default {
       }
     }
   }
+  @media (max-width: 1000px){
+    .sendRequest-block{
+      padding: 20px 0 60px;
+      .content-wrapper{
+        padding: 60px;
+        column-gap: 75px;
+        .title{
+          max-width: 340px;
+          font-size: 24px;
+          line-height: 29px;
+        }
+        .btn-sendRequest{}
+      }
+    }
+  }
 </style>

@@ -1,11 +1,12 @@
 <template>
-  <AppHomeBanner/>
-  <AppGallery/>
-  <AppHomeLetsTalk/>
-  <AppHomeReviews/>
-  <AppDevConcepts/>
-  <AppSendRequest/>
-<!--    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>-->
+  <div class="homeView">
+    <AppHomeBanner/>
+    <AppGallery/>
+    <AppHomeLetsTalk/>
+    <AppHomeReviews/>
+    <AppDevConcepts/>
+    <AppSendRequest/>
+  </div>
 </template>
 
 <script lang="ts">

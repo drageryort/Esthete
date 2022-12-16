@@ -103,4 +103,33 @@ export default {
       }
     }
   }
+  @media (max-width: 1000px){
+    .devConcept-block{
+      padding: 20px 0 60px;
+      .title{
+        font-size: 26px;
+        line-height: 120%;
+      }
+      .difference-list{
+        column-gap: 40px;
+        margin: 80px 0 0;
+        .difference-el{
+          width: 325px;
+          .difference-el-video{
+            height: 180px;
+            .video{}
+            .video-title{
+              font-size: 36px;
+              line-height: 44px;
+            }
+          }
+          .difference-el-title{
+            font-size: 24px;
+            line-height: 29px;
+          }
+          .difference-el-text{}
+        }
+      }
+    }
+  }
 </style>

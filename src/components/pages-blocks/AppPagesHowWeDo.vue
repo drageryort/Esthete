@@ -26,13 +26,13 @@ export default {
 
 <style lang="scss" scoped>
   .howWeDo-block{
-  padding: 60px 0 80px;
-  .title{
-    font-weight: 300;
-    font-size: 30px;
-    line-height: 120%;
-  }
-  .list{
+    padding: 60px 0 80px;
+    .title{
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 120%;
+    }
+    .list{
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
@@ -66,5 +66,27 @@ export default {
       }
     }
   }
+  }
+  @media (max-width: 1000px){
+    .howWeDo-block{
+      padding: 20px 0 60px;
+      .title{
+        font-size: 30px;
+        line-height: 120%;
+      }
+      .list{
+        gap: 40px;
+        margin: 60px 0 0;
+        flex-direction: column;
+        .list-el{
+          width: 100%;
+          .list-el-index{}
+          .list-el-content{
+            .list-el-title{}
+            .list-el-text{}
+          }
+        }
+      }
+    }
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
   <div class="pagesBanner-block-wrapper">
+    <span class="first magic"></span>
+    <span class="second magic"></span>
+    <span class="third magic"></span>
     <div class="container">
       <div class="pagesBanner-block">
         <p class="pre-title" v-html="bannerData.preTitle"></p>
@@ -28,6 +31,37 @@ export default {
 
 <style lang="scss">
   .pagesBanner-block-wrapper{
+    .magic{
+      background: radial-gradient(50% 50% at 50% 50%, #160156 0%, rgba(22, 1, 86, 0) 100%);
+      position: absolute;
+      z-index: 0;
+      &.first{
+        width: 53.82vw;
+        height: 53.82vw;
+        top: 15px;
+        right: 31px;
+        opacity: 0.5;
+        animation: magic-blink-1 3s linear infinite;
+      }
+      &.second{
+        width: 31.6vw;
+        height: 31.6vw;
+        top: 82px;
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-50%);
+        animation: magic-blink-2 4s linear 2s infinite;
+      }
+      &.third {
+        width: 41.67vw;
+        height: 41.67vw;
+        top: 185px;
+        left: 0;
+        opacity: 0;
+        animation: magic-blink-3 5s linear infinite;
+      }
+
+    }
     .pagesBanner-block{
       padding: 285px 0 80px;
       .pre-title{
@@ -50,6 +84,7 @@ export default {
         }
       }
       .sub-title{
+        font-weight: 300;
         margin: 120px 0 0;
         font-size: 30px;
         line-height: 120%;
@@ -78,6 +113,69 @@ export default {
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
+          }
+        }
+      }
+    }
+    @keyframes magic-blink-1 {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+    @keyframes magic-blink-2 {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes magic-blink-3 {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+  @media (max-width: 1000px){
+    .pagesBanner-block-wrapper{
+      .pagesBanner-block{
+        padding: 203px 0 80px;
+        .pre-title{
+          font-size: 16px;
+        }
+        .title{
+          font-size: 40px;
+          line-height: 49px;
+          b,strong{}
+        }
+        .sub-title{
+          margin: 80px 0 0;
+        }
+        .sub-text{
+          margin: 80px 0 0;
+        }
+        .list{
+          row-gap: 30px;
+          flex-direction: column;
+          .list-el{
+            width: 100%;
+            .list-el-title{}
+            .list-el-text{}
           }
         }
       }

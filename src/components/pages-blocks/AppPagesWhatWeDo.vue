@@ -54,4 +54,25 @@ export default {
       }
     }
   }
+  @media (max-width: 1000px){
+    .whatWeDo-block{
+      padding: 20px 0 60px;
+      .title{
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 120%;
+      }
+      .list{
+        flex-direction: column;
+        gap: 30px;
+        margin: 40px 0 0;
+        .list-el{
+          min-height: 205px;
+          width: 100%;
+          .list-el-title{}
+          .list-el-text{}
+        }
+      }
+    }
+  }
 </style>

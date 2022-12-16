@@ -2,35 +2,38 @@
   <footer>
     <div class="container">
       <div class="footer">
-        <menu class="menu">
-          <li class="menu-el">
-            <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
-          </li>
-          <li class="menu-el">
-            <router-link to="/apps-portfolio" class="menu-link">Applications</router-link>
-          </li>
-          <li class="menu-el">
-            <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
-          </li>
-          <li class="menu-el">
-            <button class="btn menu-link contact-btn">Contact us</button>
-          </li>
-        </menu>
-        <ul class="contacts-menu">
-          <li class="contacts-el">
-            <a href="tel:+400323094432" class="contacts-link">+400323094432</a>
-          </li>
-          <li class="contacts-el">
-            <a href="mailto:company@mail.com" class="contacts-link">company@mail.com</a>
-          </li>
-          <li class="contacts-el">
-            <a href="tg://resolve?domain=melkonyan_23" class="contacts-link">Telegram</a>
-          </li>
-        </ul>
-        <p class="subtext">
-          © 2022 Company name. All Rights Reserved. Privacy Policy
+        <div class="lists-block">
+          <menu class="menu">
+            <li class="menu-el">
+              <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
+            </li>
+            <li class="menu-el">
+              <router-link to="/apps-portfolio" class="menu-link">Applications</router-link>
+            </li>
+            <li class="menu-el">
+              <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
+            </li>
+            <li class="menu-el">
+              <button class="btn menu-link contact-btn">Contact us</button>
+            </li>
+          </menu>
+          <ul class="contacts-menu">
+            <li class="contacts-el">
+              <a href="tel:+400323094432" class="contacts-link">+400323094432</a>
+            </li>
+            <li class="contacts-el">
+              <a href="mailto:company@mail.com" class="contacts-link">company@mail.com</a>
+            </li>
+            <li class="contacts-el">
+              <a href="tg://resolve?domain=melkonyan_23" class="contacts-link">Telegram</a>
+            </li>
+          </ul>
+        </div>
+        <p class="copyrights">
+          © 2022 Company name. All Rights Reserved.
+          <a href="#" class="link">Privacy Policy</a>
         </p>
-        <p class="subtext">
+        <p class="subtext c">
           If you are in California, we can meet with you offline.
         </p>
       </div>
@@ -52,41 +55,89 @@ export default {
     row-gap: 40px;
     column-gap: 40px;
     padding: 0 0 60px;
-    .menu{
+    .lists-block{
       display: flex;
-      align-items: center;
+      justify-content: space-between;
       column-gap: 40px;
-      width: max-content;
-      max-width: calc((100% - 40px) / 2);
-      .menu-el{
-        .menu-link{
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 24px;
+      width: 100%;
+      .menu{
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        max-width: calc((100% - 40px) / 2);
+        .menu-el{
+          .menu-link{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      .contacts-menu{
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        max-width: calc((100% - 40px) / 2);
+        .contacts-el{
+          .contacts-link{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
       }
     }
-    .contacts-menu{
-      display: flex;
-      align-items: center;
-      column-gap: 40px;
-      width: max-content;
-      max-width: calc((100% - 40px) / 2);
-      .contacts-el{
-        .contacts-link{
-          font-weight: 600;
-          font-size: 16px;
-          line-height: 24px;
-        }
-      }
-    }
-    .subtext{
-      width: max-content;
+    .subtext, .copyrights{
       max-width: calc((100% - 40px) / 2);
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
       color: var(--color-opacity-white);
+      .link{
+        text-decoration: underline;
+      }
+    }
+  }
+  @media (max-width: 1000px){
+    .footer{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 40px;
+      column-gap: 40px;
+      padding: 0 0 40px;
+      .lists-block{
+        width: max-content;
+        .menu{
+          width: 150px;
+          flex-direction: column;
+          align-items: flex-start;
+          column-gap: 30px;
+          row-gap: 16px;
+          max-width: unset;
+          .menu-el{
+            .menu-link{}
+          }
+        }
+        .contacts-menu{
+          width: 180px;
+          flex-direction: column;
+          align-items: flex-start;
+          column-gap: 30px;
+          row-gap: 16px;
+          max-width: unset;
+          .contacts-el{
+            .contacts-link{}
+          }
+        }
+      }
+      .subtext{
+        max-width: calc(100% - 360px - 90px);
+      }
+      .copyrights{
+        order: 1;
+        max-width: 100%;
+      }
     }
   }
 </style>

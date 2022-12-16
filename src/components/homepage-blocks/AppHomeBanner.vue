@@ -1,16 +1,6 @@
 <template>
   <div class="container">
     <div class="banner-block">
-      <div class="content">
-        <h1 class="title">
-          The <b>Web</b> & <b>App</b> Development
-          Studio
-        </h1>
-        <p class="text">
-          We strive to create a success story with you
-        </p>
-        <button class="btn btn-blue">Let’s Talk</button>
-      </div>
       <video
           class="video"
           src="@/assets/video/home-banner-video.mp4"
@@ -18,6 +8,16 @@
           muted
           loop
       />
+      <div class="content">
+        <h1 class="title">
+          The <b>Web</b> & <b>App</b> <br> Development
+          Studio
+        </h1>
+        <p class="text">
+          We strive to create a success story with you
+        </p>
+        <button class="btn btn-blue">Let’s Talk</button>
+      </div>
     </div>
   </div>
 </template>
@@ -66,6 +66,34 @@ export default {
       right: -40px;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 0;
     }
 }
+  @media (max-width: 1000px){
+    .banner-block {
+      height: auto;
+      align-items: center;
+      .content {
+        padding: 148px 0;
+        width: 460px;
+        .title{
+          font-size: 40px;
+          line-height: 49px;
+          b,strong{}
+        }
+        .text{
+          font-size: 20px;
+          line-height: 120%;
+        }
+        .btn{
+          margin: 60px 0 0;
+        }
+      }
+      .video {
+        width: 270px;
+        height: 270px;
+        right: 0;
+      }
+    }
+  }
 </style>

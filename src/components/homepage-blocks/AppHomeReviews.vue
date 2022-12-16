@@ -2,7 +2,7 @@
   <div class="container">
     <div class="reviews-block">
       <h2 class="title">
-        Transparent relationships yield the <br><b>Best Results</b>
+        Transparent relationships yield the <b>Best Results</b>
       </h2>
       <div class="reviews-slider">
         <swiper
@@ -10,10 +10,8 @@
             :slides-per-view="1"
             :space-between="50"
             :loop=true
-            :navigation="{
-              prevEl: prev,
-              nextEl: next,
-            }"
+            :pagination="{clickable: true, el:pagination}"
+            :navigation="{prevEl:prev,nextEl:next}"
             :creativeEffect="{
               prev: {
                 shadow: true,
@@ -28,60 +26,114 @@
         >
           <swiper-slide>
             <div class="slide">
-              <div class="content">
-                <p class="review-text">
+              <div class="desktop" v-if="isDesktop">
+                <div class="review-content">
+                  <p class="review-text">
+                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
+                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
+                    Malesuada quis morbi porttitor id aliquam fames viverra.
+                  </p>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <picture class="review-picture">
+                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
+                </picture>
+              </div>
+              <div class="tablet-mobile" v-else>
+                <div class="review-title">
+                  <picture class="review-picture">
+                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
+                  </picture>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <p class="review-content">
                   1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
                   neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
                   Malesuada quis morbi porttitor id aliquam fames viverra.
                 </p>
-                <p class="review-author">
-                  <b>John Doe</b>
-                  <span>Company Name - CEO</span>
-                </p>
               </div>
-              <picture class="picture">
-                <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
-              </picture>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="slide">
-              <div class="content">
-                <p class="review-text">
-                  2)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
+              <div class="desktop" v-if="isDesktop">
+                <div class="review-content">
+                  <p class="review-text">
+                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
+                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
+                    Malesuada quis morbi porttitor id aliquam fames viverra.
+                  </p>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <picture class="review-picture">
+                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
+                </picture>
+              </div>
+              <div class="tablet-mobile" v-else>
+                <div class="review-title">
+                  <picture class="review-picture">
+                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
+                  </picture>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <p class="review-content">
+                  1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
                   neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
                   Malesuada quis morbi porttitor id aliquam fames viverra.
                 </p>
-                <p class="review-author">
-                  <b>John Doe</b>
-                  <span>Company Name - CEO</span>
-                </p>
               </div>
-              <picture class="picture">
-                <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
-              </picture>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="slide">
-              <div class="content">
-                <p class="review-text">
-                  3)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
+              <div class="desktop" v-if="isDesktop">
+                <div class="review-content">
+                  <p class="review-text">
+                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
+                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
+                    Malesuada quis morbi porttitor id aliquam fames viverra.
+                  </p>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <picture class="review-picture">
+                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
+                </picture>
+              </div>
+              <div class="tablet-mobile" v-else>
+                <div class="review-title">
+                  <picture class="review-picture">
+                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
+                  </picture>
+                  <h3 class="review-author">
+                    <b>John Doe</b>
+                    <span>Company Name - CEO</span>
+                  </h3>
+                </div>
+                <p class="review-content">
+                  1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
                   neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
                   Malesuada quis morbi porttitor id aliquam fames viverra.
                 </p>
-                <p class="review-author">
-                  <b>John Doe</b>
-                  <span>Company Name - CEO</span>
-                </p>
               </div>
-              <picture class="picture">
-                <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
-              </picture>
             </div>
           </swiper-slide>
         </swiper>
-        <div class="review-slider-navigation">
+        <div class="review-slider-navigation" v-if="isDesktop">
           <button ref="prev" class="btn swiper-button prev">
             <img class="icon" src="@/assets/images/svg/arrow-white-icon.svg" alt="prev slide arrow">
           </button>
@@ -89,6 +141,7 @@
             <img class="icon" src="@/assets/images/svg/arrow-white-icon.svg" alt="next slide arrow">
           </button>
         </div>
+        <div ref="pagination" class="pagination" v-else></div>
       </div>
       <div class="rate-list">
         <div class="rate-el">
@@ -142,12 +195,11 @@
 // Import Swiper Vue.js components
   import { ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { EffectCreative, Navigation } from 'swiper';
+  import { EffectCreative, Navigation, Pagination } from 'swiper';
 
   // Import Swiper styles
   import 'swiper/css';
   import "swiper/css/effect-creative";
-  import 'swiper/css/navigation';
 
   export default {
     name: "AppHomeReviews",
@@ -155,22 +207,30 @@
       Swiper,
       SwiperSlide,
     },
+    data() {
+      return {
+        isDesktop: window.matchMedia('(min-width: 1110px)').matches
+      }
+    },
     setup() {
       const prev = ref(null);
       const next = ref(null);
+      const pagination = ref(null);
       return {
-        modules: [Navigation, EffectCreative ],
+        modules: [Navigation, Pagination, EffectCreative ],
         prev,
         next,
+        pagination
       };
     },
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .reviews-block{
     padding: 60px 0 80px;
     .title{
+      width: 448px;
       font-weight: 300;
       font-size: 30px;
       line-height: 120%;
@@ -178,35 +238,41 @@
     .reviews-slider{
       margin: 50px 0 0;
       .slide{
-        .picture{
-          width: 300px;
-          height: 348px;
-        }
-        .content{
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          padding: 40px;
-          width: 100%;
-          background: #0B0323;
-          border: 4px solid #142DA9;
-          border-radius: 20px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          .review-text{
-            width: 700px;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 28px;
+        .desktop{
+          .review-picture{
+            width: 300px;
+            height: 348px;
           }
-          .review-author{
+          .review-content{
             display: flex;
             flex-direction: column;
-            width: 700px;
-            margin: 50px 0 0;
-            font-size: 20px;
-            line-height: 120%;
+            align-items: flex-end;
+            padding: 40px;
+            width: 100%;
+            background: #0B0323;
+            border: 4px solid #142DA9;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            .review-text{
+              width: 700px;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 28px;
+            }
+            .review-author{
+              display: flex;
+              flex-direction: column;
+              width: 700px;
+              margin: 50px 0 0;
+              font-size: 20px;
+              line-height: 120%;
+              span{
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
           }
         }
       }
@@ -249,9 +315,9 @@
           display: flex;
           align-items: center;
           padding: 0 13px 0 0;
-          height: 100%;
           img{
             max-height: 35px;
+            max-width: 120px;
           }
         }
         .rate-description{
@@ -262,7 +328,8 @@
           height: 100%;
           border-left: 1px solid var(--color-white);
           .rate-text{
-
+            font-size: 14px;
+            line-height: 17px;
           }
           .rate-stars{
             display: flex;
@@ -270,6 +337,100 @@
             .rate-star{
               width: 24px;
               height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px){
+    .reviews-block{
+      padding: 20px 0 60px;
+      .title{
+        width: 330px;
+        font-size: 26px;
+        line-height: 120%;
+      }
+      .reviews-slider{
+        margin: 40px 0 0;
+        .slide{
+          .tablet-mobile{
+            padding: 25px;
+            background: #0B0323;
+            border: 4px solid #142DA9;
+            border-radius: 20px;
+            .review-title{
+              display: flex;
+              align-items: center;
+              column-gap: 10px;
+              .review-picture{
+                width: 48px;
+                height: 48px;
+              }
+              .review-author{
+                display: flex;
+                flex-direction: column;
+                font-size: 20px;
+                line-height: 120%;
+                span{
+                  font-size: 16px;
+                  line-height: 120%;
+                }
+              }
+            }
+            .review-content{
+              margin: 26px 0 0;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        }
+        .pagination{
+          display: flex;
+          margin: 16px auto 0;
+          justify-content: center;
+          column-gap: 6px;
+          .swiper-pagination-bullet{
+            width: 8px;
+            height: 8px;
+            background: var(--color-white);
+            opacity: 0.3;
+            border-radius: 50%;
+            cursor: pointer;
+            &.swiper-pagination-bullet-active{
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .rate-list{
+        column-gap: 30px;
+        margin: 40px 0 0;
+        .rate-el{
+          height: 36px;
+          .rate-logo{
+            display: flex;
+            align-items: center;
+            padding: 0 10px 0 0;
+            img{
+              max-height: 25px;
+              max-width: 85px;
+            }
+          }
+          .rate-description{
+            padding: 0 0 0 10px;
+            .rate-text{
+              font-size: 10px;
+              line-height: 12px;
+            }
+            .rate-stars{
+              display: flex;
+
+              .rate-star{
+                width: 24px;
+                height: 24px;
+              }
             }
           }
         }

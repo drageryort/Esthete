@@ -1,9 +1,11 @@
 <template>
-  <AppPagesBanner :bannerData="bannerData"/>
-  <AppGallery/>
-  <AppPagesWhatWeDo :whatWeDoData="whatWeDoData"/>
-  <AppPagesHowWeDo :howWeDoData="howWeDoData"/>
-  <AppSendRequest/>
+  <div>
+    <AppPagesBanner :bannerData="bannerData"/>
+    <AppGallery/>
+    <AppPagesWhatWeDo :whatWeDoData="whatWeDoData"/>
+    <AppPagesHowWeDo :howWeDoData="howWeDoData"/>
+    <AppSendRequest/>
+  </div>
 </template>
 
 <script>
@@ -13,6 +15,7 @@ import AppPagesBanner from "@/components/pages-blocks/AppPagesBanner";
 import AppPagesWhatWeDo from "@/components/pages-blocks/AppPagesWhatWeDo";
 import AppPagesHowWeDo from "@/components/pages-blocks/AppPagesHowWeDo";
 export default {
+  name: 'AppsPortfolioView',
   components: {AppPagesHowWeDo, AppPagesWhatWeDo, AppPagesBanner, AppSendRequest, AppGallery},
   data(){
     return {

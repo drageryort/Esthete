@@ -34,25 +34,7 @@
       </div>
       <button class="btn show-more-casese">
         <span class="text">View more cases</span>
-        <svg class="circled-blue-arrow"
-             xmlns="http://www.w3.org/2000/svg"
-             width="30"
-             height="30"
-             fill="none"
-        >
-          <path stroke="#142DA9"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 27.5c6.904 0 12.5-5.596 12.5-12.5S21.904 2.5 15 2.5 2.5 8.096 2.5 15 8.096 27.5 15 27.5Z"
-          />
-          <path stroke="#142DA9"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m15 20 5-5-5-5M10 15h10"
-          />
-        </svg>
+        <img class="circled-blue-arrow" src="@/assets/images/svg/arrow-right-circle-blue-icon.svg" alt="show more icon">
       </button>
     </div>
   </div>
@@ -138,5 +120,70 @@ export default {
       }
     }
     
+  }
+  @media (max-width: 1000px){
+    .gallery-block{
+      padding: 20px 0 60px;
+      .title{
+        width: 510px;
+        font-size: 26px;
+        line-height: 120%;
+      }
+      .gallery{
+        display: grid;
+        grid-template-columns: 326px 326px;
+        gap: 30px;
+        margin: 40px 0 0;
+        .gallery-el{
+          &:nth-child(1){
+            .picture{
+              height: 216px;
+            }
+          }
+          &:nth-child(2){
+            .picture{
+              height: 335px;
+            }
+          }
+          &:nth-child(3){
+            grid-area: 2 / 1 / 4 / 2;
+            .picture{
+              height: 379px;
+            }
+          }
+          &:nth-child(4){
+            grid-area: 3 / 2 / 4 / 3;
+            .picture{
+              height: 260px;
+            }
+          }
+          .picture{
+            border-radius: 20px;
+            .img{}
+          }
+          .gallery-el-type{
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .gallery-el-name{
+            font-size: 24px;
+            line-height: 29px;
+          }
+        }
+      }
+      .btn{
+        margin: 40px 0 0;
+        .text{
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+        }
+        .circled-blue-arrow{
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+    }
   }
 </style>

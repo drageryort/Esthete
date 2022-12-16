@@ -6,7 +6,7 @@
           <img src="@/assets/images/svg/logo-mock.svg" alt="logo">
         </picture>
       </router-link>
-      <menu class="desktop-menu">
+      <menu class="desktop-menu" v-if="isDesktop">
         <li class="menu-el">
           <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
         </li>
@@ -19,14 +19,22 @@
       </menu>
     </div>
     <div class="right-col">
-      <button class="btn contact-btn">Contact us</button>
+      <button class="btn contact-btn" v-if="isDesktop">Contact us</button>
+      <button class="btn burger-btn" v-else>
+        <img src="@/assets/images/svg/burger-icon.svg" alt="burger icon">
+      </button>
     </div>
   </header>
 </template>
 
 <script>
   export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+      return {
+        isDesktop: window.matchMedia('(min-width: 1110px)').matches
+      }
+    },
   }
 </script>
 
@@ -37,7 +45,6 @@
     align-items: center;
     padding: 27px 60px;
     max-width: 1440px;
-    min-width: 1110px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -85,5 +92,26 @@
       font-feature-settings: 'liga' off;
     }
   }
+  }
+  @media (max-width: 1000px){
+    .header {
+      padding: 27px 30px;
+      width: 768px;
+      .left-col {
+        .logo {
+          .picture {
+            width: 72px;
+            height: 18px;
+            img {}
+          }
+        }
+      }
+      .right-col {
+        .burger-btn{
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
   }
 </style>
