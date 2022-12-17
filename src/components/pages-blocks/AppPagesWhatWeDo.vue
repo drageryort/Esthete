@@ -75,4 +75,27 @@ export default {
       }
     }
   }
+  @media (max-width: 660px){
+    .whatWeDo-block{
+      padding: 20px 0 40px;
+      .title{
+        font-size: 20px;
+      }
+      .list{
+        .list-el{
+          min-height: unset;
+          padding: 26px;
+          .list-el-title{
+            font-size: 20px;
+            line-height: 120%;
+          }
+          .list-el-text{
+            margin: 10px 0 0;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
 </style>

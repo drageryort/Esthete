@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="devConcept-block">
-      <h2 class="title">MVP vs. POC: What is <br> the <b>Difference?</b></h2>
+      <h2 class="title">MVP vs. POC: What is the <b>Difference?</b></h2>
       <div class="difference-list">
         <div class="difference-el">
           <div class="difference-el-video">
@@ -56,6 +56,7 @@ export default {
   .devConcept-block{
     padding: 80px 0 60px;
     .title{
+      width: 320px;
       font-weight: 300;
       font-size: 30px;
       line-height: 120%;
@@ -107,6 +108,7 @@ export default {
     .devConcept-block{
       padding: 20px 0 60px;
       .title{
+        width: 100%;
         font-size: 26px;
         line-height: 120%;
       }
@@ -126,6 +128,37 @@ export default {
           .difference-el-title{
             font-size: 24px;
             line-height: 29px;
+          }
+          .difference-el-text{}
+        }
+      }
+    }
+  }
+  @media (max-width: 660px){
+    .devConcept-block{
+      padding: 20px 0 40px;
+      .title{
+        margin: 0 auto;
+        max-width: 300px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+      }
+      .difference-list{
+        flex-direction: column;
+        row-gap: 40px;
+        margin: 40px 0 0;
+        .difference-el{
+          width: 100%;
+          .difference-el-video{
+            height: 170px;
+            .video{}
+            .video-title{}
+          }
+          .difference-el-title{
+            font-size: 20px;
+            line-height: 120%;
           }
           .difference-el-text{}
         }

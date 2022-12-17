@@ -20,7 +20,7 @@
     </div>
     <div class="right-col">
       <button class="btn contact-btn" v-if="isDesktop">Contact us</button>
-      <button class="btn burger-btn" v-else>
+      <button class="btn burger-btn" v-else @click="$emit('mobileMenu', true)">
         <img src="@/assets/images/svg/burger-icon.svg" alt="burger icon">
       </button>
     </div>
@@ -111,6 +111,22 @@
           width: 26px;
           height: 26px;
         }
+      }
+    }
+  }
+  @media (max-width: 660px){
+    .header {
+      width: 100%;
+      padding: 12px;
+      .left-col {
+        .logo {
+          .picture {
+            img {}
+          }
+        }
+      }
+      .right-col {
+        .burger-btn{}
       }
     }
   }

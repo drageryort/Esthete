@@ -1,8 +1,19 @@
 <template>
-  <AppHeader/>
-<!--  <AppMobileMenu/>-->
-  <router-view v-slot="{ Component }">
-    <transition name="scale" mode="out-in">
+  <AppHeader
+      @mobileMenu="mobileMenu"
+      :mobileMenuActive="mobileMenuActive"
+  />
+  <AppMobileMenu
+      @mobileMenu="mobileMenu"
+      :mobileMenuActive="mobileMenuActive"
+  />
+  <router-view
+      v-slot="{ Component }"
+  >
+    <transition
+        name="scale"
+        mode="out-in"
+    >
       <component :is="Component" />
     </transition>
   </router-view>
@@ -15,7 +26,17 @@
   import AppHeader from "@/components/AppHeader";
   export default {
     components: {AppHeader, AppMobileMenu, AppFooter},
-
+    data() {
+      return {
+        mobileMenuActive: false
+      }
+    },
+    methods: {
+      mobileMenu(trigger) {
+        this.mobileMenuActive = trigger
+        trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
+      }
+    }
   }
 </script>
 

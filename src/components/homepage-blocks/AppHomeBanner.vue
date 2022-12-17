@@ -96,4 +96,45 @@ export default {
       }
     }
   }
+  @media (max-width: 660px){
+    .banner-block {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+        .title{
+          margin: 0 auto;
+          max-width: 300px;
+          font-size: 30px;
+          line-height: 36px;
+          text-align: center;
+          b,strong{}
+        }
+        .text{
+          margin: 18px auto 0;
+          max-width: 300px;
+          font-size: 16px;
+          line-height: 120%;
+          text-align: center;
+        }
+        .btn{
+          margin: 40px auto 0;
+        }
+      }
+      .video {
+        position: static;
+        width: 165px;
+        height: 165px;
+        right: unset;
+        left: unset;
+        top: unset;
+        transform: unset;
+      }
+    }
+  }
 </style>

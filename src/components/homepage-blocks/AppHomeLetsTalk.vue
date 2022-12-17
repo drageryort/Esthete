@@ -98,7 +98,27 @@ export default {
           }
           .btn{}
         }
-        @keyframes rotation {}
+      }
+    }
+  }
+  @media (max-width: 660px){
+    .letsTalk-block{
+      padding: 20px 0 40px;
+      .content-wrapper{
+        .border-animation{
+          width: calc(100vw + 20px);
+          height: calc(100vw + 20px);
+        }
+        .safari-fix{}
+        .content{
+          row-gap: 24px;
+          padding: 46px 10px;
+          .title{
+            font-size: 20px;
+            line-height: 24px;
+          }
+          .btn{}
+        }
       }
     }
   }

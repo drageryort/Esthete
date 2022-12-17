@@ -181,4 +181,37 @@ export default {
       }
     }
   }
+  @media (max-width: 660px){
+    .pagesBanner-block-wrapper{
+      .pagesBanner-block{
+        padding: 110px 0 60px;
+        .pre-title{}
+        .title{
+          font-size: 30px;
+          line-height: 36px;
+          b,strong{}
+        }
+        .sub-title{
+          font-size: 20px;
+          line-height: 120%;
+        }
+        .sub-text{
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .list{
+          margin: 40px 0 0;
+          .list-el{
+            width: 100%;
+            .list-el-title{
+              font-size: 20px;
+              line-height: 120%;
+            }
+            .list-el-text{}
+          }
+        }
+      }
+    }
+  }
 </style>

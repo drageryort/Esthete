@@ -140,4 +140,42 @@ export default {
       }
     }
   }
+  @media (max-width: 660px){
+    .footer{
+      flex-direction: column;
+      padding: 20px 0 40px;
+      .lists-block{
+        width: 100%;
+        flex-direction: column;
+        row-gap: 40px;
+        .menu{
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
+          .menu-el{
+            .menu-link{}
+          }
+        }
+        .contacts-menu{
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10px;
+          .contacts-el{
+            .contacts-link{}
+          }
+        }
+      }
+      .subtext{
+        text-align: center;
+        max-width: 100%;
+      }
+      .copyrights{
+        order: 1;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+  }
 </style>

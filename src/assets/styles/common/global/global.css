@@ -198,22 +198,8 @@ a, span {
 @media (max-width: 660px) {
   .container {
     max-width: 100%;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-
-  .mobile-nav {
-    display: none;
-    padding: 23px 0;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    z-index: 999;
-    background: var(--color-white);
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .hidden {

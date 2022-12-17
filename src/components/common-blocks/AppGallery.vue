@@ -146,13 +146,11 @@ export default {
             }
           }
           &:nth-child(3){
-            grid-area: 2 / 1 / 4 / 2;
             .picture{
               height: 379px;
             }
           }
           &:nth-child(4){
-            grid-area: 3 / 2 / 4 / 3;
             .picture{
               height: 260px;
             }
@@ -182,6 +180,47 @@ export default {
           width: 26px;
           height: 26px;
         }
+      }
+
+    }
+  }
+  @media (max-width: 660px){
+    .gallery-block{
+      padding: 20px 0 40px;
+      .title{
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+      }
+      .gallery{
+        display: flex;
+        flex-direction: column;
+        .gallery-el{
+          &:nth-child(n){
+            .picture{
+              height: auto;
+              border-radius: 20px;
+            }
+          }
+          .gallery-el-type{
+            margin: 14px 0 0;
+            text-align: center;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .gallery-el-name{
+            margin: 6px 0 0;
+            text-align: center;
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+      }
+      .btn{
+        margin: 40px auto 0;
+        .text{}
+        .circled-blue-arrow{}
       }
 
     }

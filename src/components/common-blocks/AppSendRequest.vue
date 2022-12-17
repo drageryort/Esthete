@@ -68,4 +68,21 @@ export default {
       }
     }
   }
+  @media (max-width: 660px){
+    .sendRequest-block{
+      padding: 20px 0 40px;
+      .content-wrapper{
+        flex-direction: column;
+        padding: 40px 20px 45px;
+        row-gap: 30px;
+        .title{
+          max-width: 100%;
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+        }
+        .btn-sendRequest{}
+      }
+    }
+  }
 </style>
