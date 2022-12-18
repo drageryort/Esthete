@@ -5,14 +5,26 @@
     </button>
     <div class="top-block">
       <menu class="desktop-menu">
-        <li class="menu-el" @click="$emit('mobileMenu', false)">
-          <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
+        <li class="menu-el">
+          <router-link
+              to="/webpages-portfolio"
+              class="menu-link"
+              @click="$emit('mobileMenu', false)"
+          >Websites</router-link>
         </li>
-        <li class="menu-el" @click="$emit('mobileMenu', false)">
-          <router-link to="/apps-portfolio" class="menu-link">Applications</router-link>
+        <li class="menu-el">
+          <router-link
+              to="/apps-portfolio"
+              class="menu-link"
+              @click="$emit('mobileMenu', false)"
+          >Applications</router-link>
         </li>
-        <li class="menu-el" @click="$emit('mobileMenu', false)">
-          <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
+        <li class="menu-el">
+          <router-link
+              to="/designs-portfolio"
+              class="menu-link"
+              @click="$emit('mobileMenu', false)"
+          >Design</router-link>
         </li>
       </menu>
       <button class="btn contact-btn" @click="$emit('mobileMenu', false)">Contact us</button>
@@ -70,13 +82,13 @@ export default {
             left: 0;
             opacity: 1;
             &:nth-child(1){
-              transition: 0.4s 0.3s;
+              transition: 0.3s 0.3s;
             }
             &:nth-child(2){
-              transition: 0.4s 0.7s;
+              transition: 0.3s 0.6s;
             }
             &:nth-child(3){
-              transition: 0.4s 1.1s;
+              transition: 0.3s 0.9s;
             }
             .menu-link{}
           }
@@ -84,13 +96,13 @@ export default {
         .btn{
           left: 0;
           opacity: 1;
-          transition: 0.4s 1.5s;
+          transition: 0.3s 1.2s;
         }
       }
       .contacts-menu{
         top: 0;
         opacity: 0.5;
-        transition: 0.4s 1.9s;
+        transition: 0.3s 1.5s;
         .contacts-el{
           .contacts-link{}
         }

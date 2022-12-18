@@ -119,7 +119,9 @@ export default {
           width: 325px;
           .difference-el-video{
             height: 180px;
-            .video{}
+            .video{
+              z-index: -1;
+            }
             .video-title{
               font-size: 36px;
               line-height: 44px;
