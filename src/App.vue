@@ -20,11 +20,12 @@
   <appFooter/>
 </template>
 
-<script>
-  import AppFooter from "@/components/AppFooter";
-  import AppMobileMenu from "@/components/AppMobileMenu";
-  import AppHeader from "@/components/AppHeader";
-  export default {
+<script lang="ts">
+  import {defineComponent} from "vue";
+  import AppFooter from "@/components/AppFooter.vue";
+  import AppMobileMenu from "@/components/AppMobileMenu.vue";
+  import AppHeader from "@/components/AppHeader.vue";
+  export default defineComponent({
     components: {AppHeader, AppMobileMenu, AppFooter},
     data() {
       return {
@@ -32,12 +33,12 @@
       }
     },
     methods: {
-      mobileMenu(trigger) {
+      mobileMenu(trigger:boolean) {
         this.mobileMenuActive = trigger
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

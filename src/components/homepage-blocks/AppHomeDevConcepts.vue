@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "AppHomeDevConcepts"
 }
@@ -73,10 +73,12 @@ export default {
           justify-content: center;
           align-items: center;
           height: 290px;
+          border-radius: 20px;
           background: linear-gradient(106.76deg, rgba(34, 9, 112, 0.43) 1.15%, rgba(34, 9, 112, 0) 50.57%, rgba(34, 9, 112, 0.29) 100%);
           .video{
             height: 100%;
             width: auto;
+            z-index: -1;
           }
           .video-title{
             font-weight: 700;
@@ -119,9 +121,7 @@ export default {
           width: 325px;
           .difference-el-video{
             height: 180px;
-            .video{
-              z-index: -1;
-            }
+            .video{}
             .video-title{
               font-size: 36px;
               line-height: 44px;

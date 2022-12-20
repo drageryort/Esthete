@@ -30,9 +30,9 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     setTimeout(() => window.scrollTo(0,0),500)
-  },
+  }
 })
 
 export default router

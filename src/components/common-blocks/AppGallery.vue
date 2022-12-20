@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "AppGallery"
 }
@@ -61,25 +61,25 @@ export default {
       gap: 60px;
       margin: 80px 0 0;
       .gallery-el{
-        &:nth-child(1){
+        &:nth-child(n){
           grid-area: 1 / 1 / 2 / 2;
           .picture{
             height: 347px;
           }
         }
-        &:nth-child(2){
+        &:nth-child(2n){
           grid-area: 1 / 2 / 3 / 3;
           .picture{
             height: 538px;
           }
         }
-        &:nth-child(3){
+        &:nth-child(3n){
           grid-area: 2 / 1 / 4 / 2;
           .picture{
             height: 610px;
           }
         }
-        &:nth-child(4){
+        &:nth-child(4n){
           grid-area: 3 / 2 / 4 / 3;
           .picture{
             height: 419px;

@@ -191,7 +191,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // Import Swiper Vue.js components
   import { ref } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
