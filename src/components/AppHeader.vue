@@ -28,14 +28,16 @@
 </template>
 
 <script lang="ts">
-  export default {
+  import {defineComponent} from "vue";
+
+  export default defineComponent({
     name: "AppHeader",
     data() {
       return {
         isDesktop: window.matchMedia('(min-width: 1110px)').matches
       }
     },
-  }
+  })
 </script>
 
 <style lang="scss" scoped>

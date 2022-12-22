@@ -10,11 +10,11 @@
 
 <script lang="ts">
   import {defineComponent} from "vue";
-  import AppGallery from "@/components/common-blocks/AppGallery.vue";
+  import AppGallery from "@/components/common-blocks/gallery/AppGallery.vue";
   import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
-  import AppPagesBanner from "@/components/pages-blocks/AppPagesBanner.vue";
-  import AppPagesWhatWeDo from "@/components/pages-blocks/AppPagesWhatWeDo.vue";
-  import AppPagesHowWeDo from "@/components/pages-blocks/AppPagesHowWeDo.vue";
+  import AppPagesBanner from "@/components/servicespage-blocks/AppServicesPageBanner.vue";
+  import AppPagesWhatWeDo from "@/components/servicespage-blocks/AppServicesPageWhatWeDo.vue";
+  import AppPagesHowWeDo from "@/components/servicespage-blocks/AppServicesPageHowWeDo.vue";
 
   export default defineComponent( {
     name: 'WebPortfolioView',

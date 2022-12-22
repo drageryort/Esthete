@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="sendRequest-block">
+  <div class="container" :class="variant">
+    <div class="sendRequest-block" :class="variant">
       <div class="content-wrapper">
         <h2 class="title">
           Allow us to <b>help</b> you <b>build</b> your next venture
@@ -12,14 +12,27 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "AppSendRequest"
-}
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  name: "AppSendRequest",
+  props:['variant']
+})
 </script>
 
 <style lang="scss" scoped>
   .sendRequest-block{
     padding: 60px 0 80px;
+    &.modal{
+      padding: 0;
+      .content-wrapper{
+        border-radius: 0;
+        overflow: hidden;
+        .title{
+          max-width: 520px;
+        }
+      }
+    }
     .content-wrapper{
       display: flex;
       padding: 86px 100px;
@@ -30,6 +43,7 @@ export default {
       background-position: 0 0;
       background-size: 400% 400%;
       border-radius: 20px;
+      overflow: hidden;
       animation: gradient-background 15s ease infinite;
       .title{
         max-width: 620px;
@@ -56,6 +70,14 @@ export default {
   @media (max-width: 1000px){
     .sendRequest-block{
       padding: 20px 0 60px;
+      &.modal{
+        .content-wrapper{
+          column-gap: 60px;
+          .title{
+            max-width: 350px;
+          }
+        }
+      }
       .content-wrapper{
         padding: 60px;
         column-gap: 75px;
@@ -71,6 +93,11 @@ export default {
   @media (max-width: 660px){
     .sendRequest-block{
       padding: 20px 0 40px;
+      &.modal{
+        .content-wrapper{
+          .title{}
+        }
+      }
       .content-wrapper{
         flex-direction: column;
         padding: 40px 20px 45px;

@@ -14,9 +14,11 @@
 </template>
 
 <script lang="ts">
-export default {
+import {defineComponent} from "vue";
+
+export default defineComponent({
   name: "AppHomeLetsTalk"
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -50,6 +52,7 @@ export default {
         width: calc(100% + 20px);
         height: calc(100% + 20px);
         border-radius: 31px;
+        overflow: hidden;
         border: 10px solid var(--color-black);
         position: absolute;
         top: 50%;
@@ -65,6 +68,7 @@ export default {
         padding: 60px;
         background: var(--color-black);
         border-radius: 20px;
+        overflow: hidden;
         .title{
           font-weight: 500;
           font-size: 40px;

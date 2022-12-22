@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import AppHomeBanner from "@/components/homepage-blocks/AppHomeBanner.vue";
-import AppGallery from "@/components/common-blocks/AppGallery.vue";
+import AppGallery from "@/components/common-blocks/gallery/AppGallery.vue";
 import AppHomeLetsTalk from "@/components/homepage-blocks/AppHomeLetsTalk.vue";
 import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
 import AppDevConcepts from "@/components/homepage-blocks/AppHomeDevConcepts.vue";

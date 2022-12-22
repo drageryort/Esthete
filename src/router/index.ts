@@ -2,7 +2,8 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import WebPortfolioView from '../views/WebPortfolioView.vue'
 import AppsPortfolioView from '../views/AppsPortfolioView.vue'
-import designPortfolioView from '../views/DesignPortfolioView.vue'
+import DesignPortfolioView from '../views/DesignPortfolioView.vue'
+import PortfolioView from "@/views/PortfolioView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,8 +24,14 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/designs-portfolio',
     name: 'designs',
-    component: designPortfolioView
+    component: DesignPortfolioView
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: PortfolioView
   }
+
 ]
 
 const router = createRouter({

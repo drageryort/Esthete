@@ -193,7 +193,7 @@
 
 <script lang="ts">
 // Import Swiper Vue.js components
-  import { ref } from 'vue';
+import {defineComponent, ref} from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { EffectCreative, Navigation, Pagination } from 'swiper';
 
@@ -201,7 +201,7 @@
   import 'swiper/css';
   import "swiper/css/effect-creative";
 
-  export default {
+  export default defineComponent({
     name: "AppHomeReviews",
     components: {
       Swiper,
@@ -223,7 +223,7 @@
         pagination
       };
     },
-  }
+  })
 </script>
 
 <style lang="scss">
@@ -252,6 +252,7 @@
             background: #0B0323;
             border: 4px solid #142DA9;
             border-radius: 20px;
+            overflow: hidden;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -291,6 +292,7 @@
           height: 46px;
           border: 2px solid var(--color-white);
           border-radius: 50%;
+          overflow: hidden;
           &.next{
             transform: rotate(180deg);
           }

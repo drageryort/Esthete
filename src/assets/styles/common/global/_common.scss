@@ -2,6 +2,10 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1110px;
+  &.modal{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 @media (max-width: 1000px){
   .container{
@@ -42,6 +46,7 @@
 
 //Buttons
 .btn-blue{
+  display: block;
   padding: 20px 30px;
   background: var(--color-blue);
   border-radius: 20px;
@@ -68,6 +73,7 @@
   }
 }
 .btn-white{
+  display: block;
   padding: 20px 30px;
   background: var(--color-white);
   border-radius: 20px;

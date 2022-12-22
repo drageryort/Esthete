@@ -47,9 +47,11 @@
 </template>
 
 <script lang="ts">
-export default {
+import {defineComponent} from "vue";
+
+export default defineComponent({
   name: "AppHomeDevConcepts"
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -74,6 +76,7 @@ export default {
           align-items: center;
           height: 290px;
           border-radius: 20px;
+          overflow: hidden;
           background: linear-gradient(106.76deg, rgba(34, 9, 112, 0.43) 1.15%, rgba(34, 9, 112, 0) 50.57%, rgba(34, 9, 112, 0.29) 100%);
           .video{
             height: 100%;
