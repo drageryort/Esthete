@@ -17,7 +17,7 @@
         <p class="text" v-html="modalData.productDescription"></p>
         <div class="media" v-for="media in modalData.productMedia" :key="media.imageDesktop || media.videoDesktop">
           <div class="video" v-if="media.videoDesktop">
-            <video class="video" :poster="media.poster">
+            <video class="video-el" :poster="media.poster" @click="startStop">
               <source :src="media.videoMobile" media="(max-width:660px)">
               <source :src="media.videoTablet" media="(max-width:1000px)">
               <source :src="media.videoDesktop">
@@ -44,6 +44,7 @@ export default defineComponent({
   name: "AppGalleryModal",
   components: {AppSendRequest},
   props: ['modalData'],
+  methods: {}
 })
 </script>
 

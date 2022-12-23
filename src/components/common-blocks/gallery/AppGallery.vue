@@ -41,7 +41,7 @@ export default defineComponent({
           productDescription: "Product 1 <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ducimus <br/><br/>eligendi, fugiat nihil omnis quae quasi reiciendis sed suscipit voluptatum?",
           productMedia:[
             {
-              imageDesktop:"/images/png/gallery/gallery-mock-el-1.png",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
               imageTablet:"",
               imageMobile:"",
               videoDesktop:"",

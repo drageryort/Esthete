@@ -26,25 +26,25 @@ export default defineComponent({
         width: 525px !important;
       }
     }
-    &:nth-child(n+4){
+    &:nth-child(4n-3){
       grid-area: 1 / 1 / 2 / 2;
       .picture{
         height: 347px;
       }
     }
-    &:nth-child(2n+4){
+    &:nth-child(4n-2){
       grid-area: 1 / 2 / 3 / 3;
       .picture{
         height: 538px;
       }
     }
-    &:nth-child(3n+4){
+    &:nth-child(4n-1){
       grid-area: 2 / 1 / 4 / 2;
       .picture{
         height: 610px;
       }
     }
-    &:nth-child(4n+4){
+    &:nth-child(4n){
       grid-area: 3 / 2 / 4 / 3;
       .picture{
         height: 419px;
@@ -77,22 +77,22 @@ export default defineComponent({
           width: 326px !important;
         }
       }
-      &:nth-child(1){
+      &:nth-child(4n-3){
         .picture{
           height: 216px;
         }
       }
-      &:nth-child(2){
+      &:nth-child(4n-2){
         .picture{
           height: 335px;
         }
       }
-      &:nth-child(3){
+      &:nth-child(4n-1){
         .picture{
           height: 379px;
         }
       }
-      &:nth-child(4){
+      &:nth-child(4n){
         .picture{
           height: 260px;
         }
