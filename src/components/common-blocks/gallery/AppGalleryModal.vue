@@ -16,18 +16,8 @@
         <h3 class="text-title">About project</h3>
         <p class="text" v-html="modalData.productDescription"></p>
         <div class="media" v-for="media in modalData.productMedia" :key="media.imageDesktop || media.videoDesktop">
-          <div class="video" v-if="media.videoDesktop">
-            <video class="video-el" :poster="media.poster" @click="startStop">
-              <source :src="media.videoMobile" media="(max-width:660px)">
-              <source :src="media.videoTablet" media="(max-width:1000px)">
-              <source :src="media.videoDesktop">
-            </video>
-          </div>
-          <picture class="image" v-else>
-            <source :srcset="media.imageMobile" media="(max-width:660px)">
-            <source :srcset="media.imageTablet" media="(max-width:1000px)">
-            <img :src="media.imageDesktop" alt="banner">
-          </picture>
+          <AppGalleryModalVideo  v-if="media.videoDesktop" :media="media"/>
+          <AppGalleryModalPicture v-else :media="media"/>
         </div>
       </div>
       <AppSendRequest
@@ -40,11 +30,12 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
+import AppGalleryModalVideo from "@/components/common-blocks/gallery/AppGalleryModalVideo.vue";
+import AppGalleryModalPicture from "@/components/common-blocks/gallery/AppGalleryModalPicture.vue";
 export default defineComponent({
   name: "AppGalleryModal",
-  components: {AppSendRequest},
+  components: {AppGalleryModalPicture, AppGalleryModalVideo, AppSendRequest},
   props: ['modalData'],
-  methods: {}
 })
 </script>
 
@@ -80,7 +71,6 @@ export default defineComponent({
       overflow-y: auto;
       .gallery-modal-content{
         padding: 40px 67px 60px;
-
         .close-modal{
           position: fixed;
           top: 40px;
@@ -132,14 +122,6 @@ export default defineComponent({
           margin: 30px 0 0;
           border-radius: 20px;
           overflow: hidden;
-          .image{
-            width: 100%;
-            height: auto;
-          }
-          .video{
-            width: 100%;
-            height: auto;
-          }
         }
       }
     }
