@@ -44,6 +44,12 @@
   pointer-events: none;
 }
 
+//Scroll
+/* width */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 //Buttons
 .btn-blue{
   display: block;

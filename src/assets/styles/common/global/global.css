@@ -232,6 +232,11 @@ a, span {
   pointer-events: none;
 }
 
+/* width */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .btn-blue {
   display: block;
   padding: 20px 30px;
