@@ -69,7 +69,7 @@ export default defineComponent({
       line-height: 36px;
     }
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .gallery-el{
       &.portfolio-page{
         .picture{

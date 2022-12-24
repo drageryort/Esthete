@@ -100,7 +100,7 @@ export default defineComponent({
       }
     }
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .footer{
       display: flex;
       justify-content: space-between;

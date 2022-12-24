@@ -10,19 +10,21 @@
                       @click="galleryModal(true, index)"
         />
       </div>
-      <button class="btn btn-blue">Show more projects</button>
+      <button class="btn btn-blue" v-if="galleryData.length > shownData">Show more projects</button>
     </div>
   </div>
-  <AppGalleryModal
-      v-if="galleryModalActive"
-      @galleryModal="galleryModal"
-      :modalData="galleryData[currentIndex]"
-  />
+  <transition name="slide">
+    <AppGalleryModal
+        v-if="galleryModalActive"
+        @galleryModal="galleryModal"
+        :modalData="galleryData[currentIndex]"
+    />
+  </transition>
 </template>
 
 <script lang="ts">
 import AppGalleryEl from "@/components/common-blocks/gallery/AppGalleryEl.vue";
-import AppGalleryModal from "@/components/common-blocks/gallery/AppGalleryModal.vue";
+import AppGalleryModal from "@/components/common-blocks/galleryModal/AppGalleryModal.vue";
 import {defineComponent} from "vue";
 
 export default defineComponent({
@@ -32,39 +34,38 @@ export default defineComponent({
     return {
       galleryModalActive: false,
       currentIndex: 0,
-      galleryData: [
+      shownData: 4,
+      galleryData:[
         {
           previewImage: "/images/png/gallery/gallery-mock1.png",
           productType: "Application",
           productName: "NFT Market",
+          productBanner:"/images/png/gallery/gallery-mock1.png",
           productDescription: "Product 1 <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ducimus <br/><br/>eligendi, fugiat nihil omnis quae quasi reiciendis sed suscipit voluptatum?",
-          productMedia: [
+          productMedia:[
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-1.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             },
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-3.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-3.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             },
             {
-              imageDesktop: "",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "/video/mock.mp4",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "/images/png/gallery/gallery-mock-el-4.png",
+              imageDesktop:"",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"/video/mock.mp4",
+              videoTablet:"",
+              videoMobile:"",
             }
 
           ]
@@ -73,34 +74,32 @@ export default defineComponent({
           previewImage: "/images/png/gallery/gallery-mock2.png",
           productType: "Website",
           productName: "Sneakers shop",
+          productBanner:"/images/png/gallery/gallery-mock-el-4.png",
           productDescription: "Product 2<br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, nobis.",
-          productMedia: [
+          productMedia:[
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-2.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             },
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-5.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-5.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             },
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-4.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-4.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             }
           ]
         },
@@ -108,44 +107,41 @@ export default defineComponent({
           previewImage: "/images/png/gallery/gallery-mock3.png",
           productType: "Application",
           productName: "My flights",
+          productBanner:"/images/png/gallery/gallery-mock1.png",
           productDescription: "Product 3<br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iste ratione similique! Amet ducimus mollitia porro similique ut.<br/><br/> Asperiores autem beatae blanditiis cumque eligendi eum facilis iure laudantium perferendis perspiciatis, quae quam quibusdam quo tempore ullam? Deleniti facilis numquam voluptate.",
-          productMedia: [
+          productMedia:[
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-3.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-3.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             },
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-2.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             }
           ]
         },
         {
-
-
           previewImage: "/images/png/gallery/gallery-mock4.png",
           productType: "Design",
           productName: "Dr.Diesel",
+          productBanner:"/images/png/gallery/gallery-mock-el-4.png",
           productDescription: "Product 4<br/><br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/> Id incidunt provident repellendus sapiente.<br/><br/> Ab accusantium cupiditate laboriosam molestias odio, perspiciatis quidem ratione!",
-          productMedia: [
+          productMedia:[
             {
-              imageDesktop: "/images/png/gallery/gallery-mock-el-5.png",
-              imageTablet: "",
-              imageMobile: "",
-              videoDesktop: "",
-              videoTablet: "",
-              videoMobile: "",
-              poster: "",
+              imageDesktop:"/images/png/gallery/gallery-mock-el-5.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
             }
           ]
         }
@@ -182,7 +178,7 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1025px) {
   .gallery-block {
     padding: 140px 0 60px;
     .title {

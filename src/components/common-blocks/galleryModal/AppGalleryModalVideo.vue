@@ -6,7 +6,7 @@
         controls
     >
       <source :src="media.videoMobile" media="(max-width:660px)">
-      <source :src="media.videoTablet" media="(max-width:1000px)">
+      <source :src="media.videoTablet" media="(max-width:1025px)">
       <source :src="media.videoDesktop">
     </video>
     <video class="video-el-poster"
@@ -15,7 +15,7 @@
            autoplay
     >
       <source :src="media.videoMobile" media="(max-width:660px)">
-      <source :src="media.videoTablet" media="(max-width:1000px)">
+      <source :src="media.videoTablet" media="(max-width:1025px)">
       <source :src="media.videoDesktop">
     </video>
     <button class="btn play-button" @click="start" ref="playButton">
@@ -75,6 +75,6 @@
       }
     }
   }
-  @media (max-width: 1000px){}
+  @media (max-width: 1025px){}
   @media (max-width: 660px){}
 </style>

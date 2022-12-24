@@ -1,7 +1,7 @@
 <template>
   <picture class="image">
     <source :srcset="media.imageMobile" media="(max-width:660px)">
-    <source :srcset="media.imageTablet" media="(max-width:1000px)">
+    <source :srcset="media.imageTablet" media="(max-width:1025px)">
     <img :src="media.imageDesktop" alt="banner">
   </picture>
 </template>
@@ -20,7 +20,7 @@
     width: 100%;
     height: auto;
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .image{}
   }
   @media (max-width: 660px){

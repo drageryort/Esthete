@@ -15,16 +15,18 @@
       </router-link>
     </div>
   </div>
-  <AppGalleryModal
-    v-if="galleryModalActive"
-    @galleryModal="galleryModal"
-    :modalData="galleryData[currentIndex]"
-  />
+  <transition name="slide">
+    <AppGalleryModal
+      v-if="galleryModalActive"
+      @galleryModal="galleryModal"
+      :modalData="galleryData[currentIndex]"
+    />
+  </transition>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import AppGalleryModal from "@/components/common-blocks/gallery/AppGalleryModal.vue";
+import AppGalleryModal from "@/components/common-blocks/galleryModal/AppGalleryModal.vue";
 import AppGalleryEl from "@/components/common-blocks/gallery/AppGalleryEl.vue";
 export default defineComponent({
   name: "AppGallery",
@@ -38,6 +40,7 @@ export default defineComponent({
           previewImage: "/images/png/gallery/gallery-mock1.png",
           productType: "Application",
           productName: "NFT Market",
+          productBanner:"/images/png/gallery/gallery-mock1.png",
           productDescription: "Product 1 <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ducimus <br/><br/>eligendi, fugiat nihil omnis quae quasi reiciendis sed suscipit voluptatum?",
           productMedia:[
             {
@@ -47,7 +50,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             },
             {
               imageDesktop:"/images/png/gallery/gallery-mock-el-3.png",
@@ -56,7 +58,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             },
             {
               imageDesktop:"",
@@ -65,7 +66,6 @@ export default defineComponent({
               videoDesktop:"/video/mock.mp4",
               videoTablet:"",
               videoMobile:"",
-              poster:"/images/png/gallery/gallery-mock-el-4.png",
             }
 
           ]
@@ -74,17 +74,17 @@ export default defineComponent({
           previewImage: "/images/png/gallery/gallery-mock2.png",
           productType: "Website",
           productName: "Sneakers shop",
+          productBanner:"/images/png/gallery/gallery-mock-el-4.png",
           productDescription: "Product 2<br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, nobis.",
           productMedia:[
             {
-                imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
-                imageTablet:"",
-                imageMobile:"",
-                videoDesktop:"",
-                videoTablet:"",
-                videoMobile:"",
-                poster:"",
-              },
+              imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
+              imageTablet:"",
+              imageMobile:"",
+              videoDesktop:"",
+              videoTablet:"",
+              videoMobile:"",
+            },
             {
               imageDesktop:"/images/png/gallery/gallery-mock-el-5.png",
               imageTablet:"",
@@ -92,7 +92,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             },
             {
               imageDesktop:"/images/png/gallery/gallery-mock-el-4.png",
@@ -101,7 +100,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             }
           ]
         },
@@ -109,6 +107,7 @@ export default defineComponent({
           previewImage: "/images/png/gallery/gallery-mock3.png",
           productType: "Application",
           productName: "My flights",
+          productBanner:"/images/png/gallery/gallery-mock1.png",
           productDescription: "Product 3<br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem iste ratione similique! Amet ducimus mollitia porro similique ut.<br/><br/> Asperiores autem beatae blanditiis cumque eligendi eum facilis iure laudantium perferendis perspiciatis, quae quam quibusdam quo tempore ullam? Deleniti facilis numquam voluptate.",
           productMedia:[
             {
@@ -118,7 +117,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             },
             {
               imageDesktop:"/images/png/gallery/gallery-mock-el-2.png",
@@ -127,16 +125,14 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             }
           ]
         },
         {
-
-
           previewImage: "/images/png/gallery/gallery-mock4.png",
           productType: "Design",
           productName: "Dr.Diesel",
+          productBanner:"/images/png/gallery/gallery-mock-el-4.png",
           productDescription: "Product 4<br/><br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/><br/> Id incidunt provident repellendus sapiente.<br/><br/> Ab accusantium cupiditate laboriosam molestias odio, perspiciatis quidem ratione!",
           productMedia:[
             {
@@ -146,7 +142,6 @@ export default defineComponent({
               videoDesktop:"",
               videoTablet:"",
               videoMobile:"",
-              poster:"",
             }
           ]
         }
@@ -195,7 +190,7 @@ export default defineComponent({
     }
     
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .gallery-block{
       padding: 20px 0 60px;
       .title{

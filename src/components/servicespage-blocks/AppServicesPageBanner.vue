@@ -153,7 +153,7 @@ export default defineComponent({
       }
     }
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .pagesBanner-block-wrapper{
       .pagesBanner-block{
         padding: 203px 0 80px;

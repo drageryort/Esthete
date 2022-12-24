@@ -109,7 +109,7 @@ export default defineComponent({
       }
     }
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .devConcept-block{
       padding: 20px 0 60px;
       .title{

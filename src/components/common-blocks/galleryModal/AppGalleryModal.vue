@@ -11,7 +11,7 @@
         <h2 class="pre-title">{{modalData.productType}}</h2>
         <h1 class="title">{{modalData.productName}}</h1>
         <picture class="main-banner">
-          <img src="../../../../public/images/png/gallery/mock-gallery-el-banner.png" alt="banner">
+          <img :src="modalData.productBanner" alt="banner">
         </picture>
         <h3 class="text-title">About project</h3>
         <p class="text" v-html="modalData.productDescription"></p>
@@ -30,8 +30,8 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
-import AppGalleryModalVideo from "@/components/common-blocks/gallery/AppGalleryModalVideo.vue";
-import AppGalleryModalPicture from "@/components/common-blocks/gallery/AppGalleryModalPicture.vue";
+import AppGalleryModalVideo from "@/components/common-blocks/galleryModal/AppGalleryModalVideo.vue";
+import AppGalleryModalPicture from "@/components/common-blocks/galleryModal/AppGalleryModalPicture.vue";
 export default defineComponent({
   name: "AppGalleryModal",
   components: {AppGalleryModalPicture, AppGalleryModalVideo, AppSendRequest},
@@ -49,6 +49,35 @@ export default defineComponent({
     right: 0;
     left: 0;
     z-index: 5;
+
+    //Transition
+    &.slide-enter-active {
+      transition: all .4s linear;
+      .gallery-modal-wrapper{
+        transition: opacity .4s linear;
+      }
+      .gallery-modal-block{
+        transition: right .4s linear;
+      }
+    }
+    &.slide-leave-active {
+      transition: all .4s linear;
+      .gallery-modal-wrapper{
+        transition: opacity .4s linear;
+      }
+      .gallery-modal-block{
+        transition: right .4s linear;
+      }
+    }
+    &.slide-enter-from, &.slide-leave-to {
+      .gallery-modal-wrapper{
+        opacity: 0;
+      }
+      .gallery-modal-block{
+        right: -100%;
+      }
+    }
+
     *{
       color: var(--color-black);
     }
@@ -63,7 +92,7 @@ export default defineComponent({
       height: 100%;
       width: 1024px;
       background: var(--color-white);
-      position: fixed;
+      position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
@@ -72,7 +101,7 @@ export default defineComponent({
       .gallery-modal-content{
         padding: 40px 67px 60px;
         .close-modal{
-          position: fixed;
+          position: absolute;
           top: 40px;
           right: 40px;
           z-index: 5;
@@ -126,7 +155,7 @@ export default defineComponent({
       }
     }
   }
-  @media (max-width: 1000px){
+  @media (max-width: 1025px){
     .gallery-modal{
       .gallery-modal-wrapper{}
       .gallery-modal-block{
@@ -158,7 +187,7 @@ export default defineComponent({
       }
       .gallery-modal-block{
         width: 100%;
-        left: 0;
+        right: 0;
         .gallery-modal-content{
           padding: 24px 25px 40px;
           @media (max-width: 400px){
