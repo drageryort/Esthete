@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div class="reviews-block">
-      <h2 class="title">
-        Transparent relationships yield the <b>Best Results</b>
-      </h2>
+      <h2 class="title" v-html="pageData['reviewTitle']"></h2>
       <div class="reviews-slider">
         <swiper
             :modules="modules"
@@ -24,111 +22,31 @@
             }"
             effect="creative"
         >
-          <swiper-slide>
+          <swiper-slide v-for="slide in pageData['reviewSlides']" :key="slide['reviewSlidesAuthor']">
             <div class="slide">
               <div class="desktop" v-if="isDesktop">
                 <div class="review-content">
-                  <p class="review-text">
-                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                    Malesuada quis morbi porttitor id aliquam fames viverra.
-                  </p>
+                  <p class="review-text" v-html="slide['reviewSlidesDescription']"></p>
                   <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
+                    <b>{{slide['reviewSlidesAuthor']}}</b>
+                    <span>{{slide['reviewSlidesPosition']}}</span>
                   </h3>
                 </div>
                 <picture class="review-picture">
-                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
+                  <img :src="slide['reviewSlidesPhotoDesktop']" alt="reviewer photo">
                 </picture>
               </div>
               <div class="tablet-mobile" v-else>
                 <div class="review-title">
                   <picture class="review-picture">
-                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
+                    <img :src="slide['reviewSlidesPhotoMobile']" alt="reviewer photo">
                   </picture>
                   <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
+                    <b>{{slide['reviewSlidesAuthor']}}</b>
+                    <span>{{slide['reviewSlidesPosition']}}</span>
                   </h3>
                 </div>
-                <p class="review-content">
-                  1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                  neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                  Malesuada quis morbi porttitor id aliquam fames viverra.
-                </p>
-              </div>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="slide">
-              <div class="desktop" v-if="isDesktop">
-                <div class="review-content">
-                  <p class="review-text">
-                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                    Malesuada quis morbi porttitor id aliquam fames viverra.
-                  </p>
-                  <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
-                  </h3>
-                </div>
-                <picture class="review-picture">
-                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
-                </picture>
-              </div>
-              <div class="tablet-mobile" v-else>
-                <div class="review-title">
-                  <picture class="review-picture">
-                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
-                  </picture>
-                  <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
-                  </h3>
-                </div>
-                <p class="review-content">
-                  1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                  neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                  Malesuada quis morbi porttitor id aliquam fames viverra.
-                </p>
-              </div>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="slide">
-              <div class="desktop" v-if="isDesktop">
-                <div class="review-content">
-                  <p class="review-text">
-                    1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                    neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                    Malesuada quis morbi porttitor id aliquam fames viverra.
-                  </p>
-                  <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
-                  </h3>
-                </div>
-                <picture class="review-picture">
-                  <img src="@/assets/images/png/reviewer-mock.png" alt="reviewer photo">
-                </picture>
-              </div>
-              <div class="tablet-mobile" v-else>
-                <div class="review-title">
-                  <picture class="review-picture">
-                    <img src="@/assets/images/png/reviewer-mobile-mock.png" alt="">
-                  </picture>
-                  <h3 class="review-author">
-                    <b>John Doe</b>
-                    <span>Company Name - CEO</span>
-                  </h3>
-                </div>
-                <p class="review-content">
-                  1)Lorem ipsum dolor sit amet consectetur. Gravida lectus viverra pharetra metus posuere. Ornare neque
-                  neque in egestas nisl venenatis. Nunc augue convallis enim nulla sapien neque accumsan pharetra non.
-                  Malesuada quis morbi porttitor id aliquam fames viverra.
-                </p>
+                <p class="review-text" v-html="slide['reviewSlidesDescription']"></p>
               </div>
             </div>
           </swiper-slide>
@@ -144,45 +62,18 @@
         <div ref="pagination" class="pagination" v-else></div>
       </div>
       <div class="rate-list">
-        <div class="rate-el">
+        <div class="rate-el" v-for="rateEl in pageData['reviewRates']" :key="rateEl['reviewRatesLogo']">
           <picture class="rate-logo">
-            <img class="image" src="@/assets/images/svg/google-logo.svg" alt="rate logo">
+            <img class="image" :src="rateEl['reviewRatesLogo']" alt="rate logo">
           </picture>
           <div class="rate-description">
-            <span class="rate-text">Our rate 5 of 5</span>
+            <span class="rate-text">Our rate {{rateEl['reviewRatesRate']}} of 5</span>
             <div class="rate-stars">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-            </div>
-          </div>
-        </div>
-        <div class="rate-el">
-          <picture class="rate-logo">
-            <img src="@/assets/images/svg/clutch-logo.svg" alt="rate logo">
-          </picture>
-          <div class="rate-description">
-            <span class="rate-text">Our rate 4 of 5</span>
-            <div class="rate-stars">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-            </div>
-          </div>
-        </div>
-        <div class="rate-el">
-          <picture class="rate-logo">
-            <img src="@/assets/images/svg/upwork-logo.svg" alt="rate logo">
-          </picture>
-          <div class="rate-description">
-            <span class="rate-text">Our rate 3 of 5</span>
-            <div class="rate-stars">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
-              <img class="rate-star" src="@/assets/images/svg/star-icon.svg" alt="star in rate">
+              <img class="rate-star"
+                   v-for="el in Number(rateEl['reviewRatesRate'])"
+                   :key="el + rateEl['reviewRatesLogo']"
+                   src="@/assets/images/svg/star-icon.svg" alt="star in rate"
+              >
             </div>
           </div>
         </div>
@@ -192,17 +83,17 @@
 </template>
 
 <script lang="ts">
-// Import Swiper Vue.js components
-import {defineComponent, ref} from 'vue';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { EffectCreative, Navigation, Pagination } from 'swiper';
-
+  // Import Swiper Vue.js components
+  import {defineComponent, ref} from 'vue';
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import { EffectCreative, Navigation, Pagination } from 'swiper';
   // Import Swiper styles
   import 'swiper/css';
   import "swiper/css/effect-creative";
 
   export default defineComponent({
     name: "AppHomeReviews",
+    props: ['pageData'],
     components: {
       Swiper,
       SwiperSlide,

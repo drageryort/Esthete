@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="howWeDo-block">
-      <h2 class="title" v-html="howWeDoData.title"></h2>
+      <h2 class="title" v-html="pageData['howWeDoTitle']"></h2>
       <div class="list">
-        <div class="list-el" v-for="(listEl, listElIndex) in howWeDoData.list" :key="listEl.title">
+        <div class="list-el" v-for="(listEl, listElIndex) in pageData['howWeDoTitlePoints']" :key="listEl['howWeDoTitlePointsTitle']">
           <span class="list-el-index">{{listElIndex + 1}}</span>
           <div class="list-el-content">
-            <h3 class="list-el-title" v-html="listEl.listElTitle"></h3>
-            <p class="list-el-text" v-html="listEl.listElText"></p>
+            <h3 class="list-el-title">{{listEl['howWeDoTitlePointsTitle']}}</h3>
+            <p class="list-el-text" v-html="listEl['howWeDoTitlePointsText']"></p>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@ import {defineComponent} from "vue";
 export default defineComponent({
   name: "AppServicesPageHowWeDo",
   props: {
-    howWeDoData: Object
+    pageData: Object
   }
 })
 </script>

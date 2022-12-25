@@ -1,45 +1,22 @@
 <template>
   <div class="container">
     <div class="devConcept-block">
-      <h2 class="title">MVP vs. POC: What is the <b>Difference?</b></h2>
+      <h2 class="title" v-html="pageData['devConceptTitle']"></h2>
       <div class="difference-list">
-        <div class="difference-el">
+        <div class="difference-el"
+             v-for="el in pageData['devConceptEls']"
+             :key="el['devConceptElsVideoText']">
           <div class="difference-el-video">
-            <video src="@/assets/video/difference-mvp-video.mp4"
+            <video :src="el['devConceptElsVideo']"
                    class="video"
                    loop
                    muted
                    autoplay
             />
-            <h3 class="video-title">MVP</h3>
+            <h3 class="video-title">{{el['devConceptElsVideoText']}}</h3>
           </div>
-          <h4 class="difference-el-title">Minimum Viable Product</h4>
-          <p class="difference-el-text">
-            Lorem ipsum dolor sit amet consectetur. Tempor quam eleifend integer nibh turpis. Vitae orci nunc mauris
-            cras et sit nunc scelerisque. Arcu ac in nunc pretium pretium et. Condimentum viverra mattis adipiscing
-            vitae. Egestas ultrices elit ut venenatis convallis leo.<br/><br/>
-            Vitae orci nunc mauris cras et sit nunc scelerisque. Arcu ac in nunc pretium pretium et. Condimentum
-            viverra mattis adipiscing vitae. Egestas ultrices elit ut venenatis convallis leo.
-          </p>
-        </div>
-        <div class="difference-el">
-          <div class="difference-el-video">
-            <video src="@/assets/video/difference-poc-video.mp4"
-                   class="video"
-                   loop
-                   muted
-                   autoplay
-            />
-            <h3 class="video-title">POC</h3>
-          </div>
-          <h4 class="difference-el-title">Proof of Concept</h4>
-          <p class="difference-el-text">
-            Lorem ipsum dolor sit amet consectetur. Tempor quam eleifend integer nibh turpis. Vitae orci nunc mauris
-            cras et sit nunc scelerisque. Arcu ac in nunc pretium pretium et. Condimentum viverra mattis adipiscing
-            vitae. Egestas ultrices elit ut venenatis convallis leo.<br/><br/>
-            Vitae orci nunc mauris cras et sit nunc scelerisque. Arcu ac in nunc pretium pretium et. Condimentum
-            viverra mattis adipiscing vitae. Egestas ultrices elit ut venenatis convallis leo.
-          </p>
+          <h4 class="difference-el-title">{{el['devConceptElsTitle']}}</h4>
+          <p class="difference-el-text" v-html="el['devConceptElsText']"></p>
         </div>
       </div>
     </div>
@@ -47,11 +24,12 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+  import {defineComponent} from "vue";
 
-export default defineComponent({
-  name: "AppHomeDevConcepts"
-})
+  export default defineComponent({
+    name: "AppHomeDevConcepts",
+    props: ['pageData']
+  })
 </script>
 
 <style lang="scss" scoped>

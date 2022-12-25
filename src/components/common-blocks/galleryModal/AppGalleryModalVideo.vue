@@ -5,18 +5,18 @@
         ref="videoMain"
         controls
     >
-      <source :src="media.videoMobile" media="(max-width:660px)">
-      <source :src="media.videoTablet" media="(max-width:1025px)">
-      <source :src="media.videoDesktop">
+      <source :src="media['galleryListProductModalGalleryMobileVideo']" media="(max-width:660px)">
+      <source :src="media['galleryListProductModalGalleryTabletVideo']" media="(max-width:1025px)">
+      <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <video class="video-el-poster"
            ref="videoPoster"
            muted
            autoplay
     >
-      <source :src="media.videoMobile" media="(max-width:660px)">
-      <source :src="media.videoTablet" media="(max-width:1025px)">
-      <source :src="media.videoDesktop">
+      <source :src="media['galleryListProductModalGalleryMobileVideo']" media="(max-width:660px)">
+      <source :src="media['galleryListProductModalGalleryTabletVideo']" media="(max-width:1025px)">
+      <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <button class="btn play-button" @click="start" ref="playButton">
       <img class="image" src="@/assets/images/svg/play-button-icon.svg" alt="play-icon">

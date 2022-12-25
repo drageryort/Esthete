@@ -1,9 +1,11 @@
 <template>
   <AppHeader
+      :commonData="commonData"
       @mobileMenu="mobileMenu"
       :mobileMenuActive="mobileMenuActive"
   />
   <AppMobileMenu
+      :commonData="commonData"
       @mobileMenu="mobileMenu"
       :mobileMenuActive="mobileMenuActive"
   />
@@ -17,7 +19,9 @@
       <component :is="Component" />
     </transition>
   </router-view>
-  <appFooter/>
+  <appFooter
+      :commonData="commonData"
+  />
 </template>
 
 <script lang="ts">
@@ -29,6 +33,7 @@
     components: {AppHeader, AppMobileMenu, AppFooter},
     data() {
       return {
+        commonData: {},
         mobileMenuActive: false
       }
     },
@@ -37,6 +42,9 @@
         this.mobileMenuActive = trigger
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       }
+    },
+    async beforeCreate() {
+      this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
     }
   })
 </script>

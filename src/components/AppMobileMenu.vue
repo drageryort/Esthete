@@ -27,20 +27,20 @@
           >Design</router-link>
         </li>
       </menu>
-      <button class="btn contact-btn" @click="$emit('mobileMenu', false)">Contact us</button>
+      <a target="_blank" :href="commonData['commonContactUs']" class="btn contact-btn" @click="$emit('mobileMenu', false)">Contact us</a>
     </div>
     <ul class="contacts-menu">
       <li class="contacts-el">
-        <a href="mailto:company@mail.com" class="contacts-link" >company@mail.com</a>
+        <a target="_blank" :href="`mailto:${commonData['commonEmail']}`" class="contacts-link" >{{commonData['commonEmail']}}</a>
       </li>
       <li class="contacts-el">
-        <a href="tel:+400323094432" class="contacts-link">+400323094432</a>
+        <a target="_blank" :href="`tel:${commonData['commonPhone']}`" class="contacts-link">{{commonData['commonPhone']}}</a>
       </li>
       <li class="contacts-el">
-        <a href="tg://resolve?domain=melkonyan_23" class="contacts-link">Telegram</a>
+        <a target="_blank" :href="commonData['commonTelegram']" class="contacts-link">Telegram</a>
       </li>
       <li class="contacts-el">
-        <a href="#" class="contacts-link">Privacy policy</a>
+        <a target="_blank" :href="commonData['commonPrivatePolicy']" class="contacts-link">Privacy policy</a>
       </li>
     </ul>
   </div>
@@ -51,7 +51,7 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppMobileMenu",
-  props:['mobileMenuActive'],
+  props:['mobileMenuActive', 'commonData'],
   data() {
     return {
       isDesktop: window.matchMedia('(min-width: 1110px)').matches

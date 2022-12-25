@@ -53,6 +53,7 @@
 //Buttons
 .btn-blue{
   display: block;
+  width: max-content;
   padding: 20px 30px;
   background: var(--color-blue);
   border-radius: 20px;
@@ -80,6 +81,7 @@
 }
 .btn-white{
   display: block;
+  width: max-content;
   padding: 20px 30px;
   background: var(--color-white);
   border-radius: 20px;

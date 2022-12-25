@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3de2ee06-b2ad-4158-843f-180cd8d57b4b" name="esthete">
+        <fileTransfer rootFolder="/var/www/esthete.studio" accessType="SFTP" host="146.190.121.42" port="22" sshConfigId="fc30fd60-7a03-4a57-9d24-20dcebec4322" sshConfig="root@146.190.121.42:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="mine" deleteMissingItems="true" createEmptyFolders="true">
+  <component name="PublishConfigData" serverName="mine" deleteMissingItems="true" createEmptyFolders="true">
     <serverData>
+      <paths name="esthete">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/dist/" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="mine">
         <serverdata>
           <mappings>
@@ -10,6 +17,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

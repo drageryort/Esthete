@@ -1,11 +1,11 @@
 <template>
   <div class="homeView">
-    <AppHomeBanner/>
-    <AppGallery/>
-    <AppHomeLetsTalk/>
-    <AppHomeReviews/>
-    <AppDevConcepts/>
-    <AppSendRequest/>
+    <AppHomeBanner :pageData="pageData"/>
+    <AppGallery :pageData="pageData"/>
+    <AppHomeLetsTalk :pageData="pageData"/>
+    <AppHomeReviews :pageData="pageData"/>
+    <AppDevConcepts :pageData="pageData"/>
+    <AppSendRequest :pageData="pageData"/>
   </div>
 </template>
 
@@ -20,6 +20,11 @@ import AppHomeReviews from "@/components/homepage-blocks/AppHomeReviews.vue";
 
 export default defineComponent({
   name: 'HomeView',
+  data(){
+    return{
+      pageData: {}
+    }
+  },
   components: {
     AppHomeReviews,
     AppDevConcepts,
@@ -28,6 +33,9 @@ export default defineComponent({
     AppGallery,
     AppHomeBanner,
   },
+  async beforeCreate() {
+    this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf']
+  }
 });
 </script>
 

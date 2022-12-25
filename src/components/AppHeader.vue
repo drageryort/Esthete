@@ -19,7 +19,7 @@
       </menu>
     </div>
     <div class="right-col">
-      <button class="btn contact-btn" v-if="isDesktop">Contact us</button>
+      <a target="_blank" :href="commonData['commonContactUs']" class="btn contact-btn" v-if="isDesktop">Contact us</a>
       <button class="btn burger-btn" v-else @click="$emit('mobileMenu', true)">
         <img src="@/assets/images/svg/burger-icon.svg" alt="burger icon">
       </button>
@@ -32,6 +32,7 @@
 
   export default defineComponent({
     name: "AppHeader",
+    props: ['commonData'],
     data() {
       return {
         isDesktop: window.matchMedia('(min-width: 1110px)').matches

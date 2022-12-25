@@ -5,14 +5,14 @@
     <span class="third magic"></span>
     <div class="container">
       <div class="pagesBanner-block">
-        <p class="pre-title" v-html="bannerData.preTitle"></p>
-        <h1 class="title" v-html="bannerData.title"></h1>
-        <h2 class="sub-title" v-if="!!bannerData.subTitle" v-html="bannerData.subTitle"></h2>
-        <p class="sub-text" v-if="!!bannerData.subText" v-html="bannerData.subText"></p>
-        <div class="list" v-if="bannerData.list.length">
-          <div class="list-el" v-for="listEl in bannerData.list" :key="listEl.listElTitle">
-            <h3 class="list-el-title" v-html="listEl.listElTitle"></h3>
-            <p class="list-el-text" v-html="listEl.listElText"></p>
+        <p class="pre-title">{{pageData['topBannerPreTitle']}}</p>
+        <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
+        <h2 class="sub-title" v-if="!!pageData['topBannerSubTitle']" v-html="pageData['topBannerSubTitle']"></h2>
+        <p class="sub-text" v-if="!!pageData['topBannerText']" v-html="pageData['topBannerText']"></p>
+        <div class="list" v-if="pageData['topBannerPoints'].length">
+          <div class="list-el" v-for="listEl in pageData['topBannerPoints']" :key="listEl.listElTitle">
+            <h3 class="list-el-title">{{listEl['topBannerPointsTitle']}}</h3>
+            <p class="list-el-text" v-html="listEl['topBannerPointsText']"></p>
           </div>
         </div>
       </div>
@@ -21,14 +21,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+  import {defineComponent} from "vue";
 
-export default defineComponent({
-  name: "AppServicesPageBanner",
-  props: {
-    bannerData: Object,
-  },
-})
+  export default defineComponent({
+    name: "AppServicesPageBanner",
+    props: {
+      pageData: Object
+    },
+  })
 </script>
 
 <style lang="scss">

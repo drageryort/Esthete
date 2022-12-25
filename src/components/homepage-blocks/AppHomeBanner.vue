@@ -7,14 +7,9 @@
           <img src="@/assets/images/png/mock-video.png" alt="mock">
         </picture>
         <div class="content">
-          <h1 class="title">
-            The <b>Web</b> & <b>App</b> <br> Development
-            Studio
-          </h1>
-          <p class="text">
-            We strive to create a success story with you
-          </p>
-          <button class="btn btn-blue">Let’s Talk</button>
+          <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
+          <p class="text">{{pageData['topBannerSubTitle']}}</p>
+          <a target="_blank" :href="pageData['topBannerLink']" class="btn btn-blue">{{pageData['topBannerButton']}}</a>
         </div>
       </div>
     </div>
@@ -25,7 +20,8 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: "AppHomeBanner"
+  name: "AppHomeBanner",
+  props: ['pageData']
 })
 </script>
 

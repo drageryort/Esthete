@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="whatWeDo-block">
-      <h2 class="title" v-html="whatWeDoData.title"></h2>
+      <h2 class="title" v-html="pageData['whatWeDoTitle']"></h2>
       <div class="list">
-        <div class="list-el" v-for="listEl in whatWeDoData.list" :key="listEl.title">
-          <h3 class="list-el-title" v-html="listEl.listElTitle"></h3>
-          <p class="list-el-text" v-html="listEl.listElText"></p>
+        <div class="list-el" v-for="listEl in pageData['whatWeDoPoints']" :key="listEl['whatWeDoPointsTitle']">
+          <h3 class="list-el-title">{{listEl['whatWeDoPointsTitle']}}</h3>
+          <p class="list-el-text" v-html="listEl['whatWeDoPointsText']"></p>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@ import {defineComponent} from "vue";
 export default defineComponent({
   name: "AppServicesPageWhatWeDo",
   props: {
-    whatWeDoData: Object
+    pageData: Object
   }
 })
 </script>

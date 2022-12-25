@@ -1,8 +1,8 @@
 <template>
   <picture class="image">
-    <source :srcset="media.imageMobile" media="(max-width:660px)">
-    <source :srcset="media.imageTablet" media="(max-width:1025px)">
-    <img :src="media.imageDesktop" alt="banner">
+    <source :srcset="media['galleryListProductModalGalleryMobileImage']" media="(max-width:660px)">
+    <source :srcset="media['galleryListProductModalGalleryTabletImage']" media="(max-width:1025px)">
+    <img :src="media['galleryListProductModalGalleryDesktopImage']" alt="banner">
   </picture>
 </template>
 

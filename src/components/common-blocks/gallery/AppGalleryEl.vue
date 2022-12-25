@@ -1,10 +1,10 @@
 <template>
   <div class="gallery-el" :class="page">
     <picture class="picture">
-      <img :src="elementData.previewImage" alt="gallery element photo" class="img">
+      <img :src="elementData['galleryListProductPreview']" alt="gallery element photo" class="img">
     </picture>
-    <p class="gallery-el-type">{{elementData.productType}}</p>
-    <h3 class="gallery-el-name">{{elementData.productName}}</h3>
+    <p class="gallery-el-type">{{elementData['galleryListProductType']}}</p>
+    <h3 class="gallery-el-name">{{elementData['galleryListProductName']}}</h3>
   </div>
 </template>
 

@@ -8,24 +8,26 @@
           <img src="@/assets/images/svg/close-icon.svg" alt="close icon">
         </span>
         </button>
-        <h2 class="pre-title">{{modalData.productType}}</h2>
-        <h1 class="title">{{modalData.productName}}</h1>
+        <h2 class="pre-title">{{modalData['galleryListProductType']}}</h2>
+        <h1 class="title">{{modalData['galleryListProductName']}}</h1>
         <picture class="main-banner">
-          <img :src="modalData.productBanner" alt="banner">
+          <img :src="modalData['galleryListProductBanner']" alt="banner">
         </picture>
         <h3 class="text-title">About project</h3>
-        <p class="text" v-html="modalData.productDescription"></p>
-        <div class="media" v-for="media in modalData.productMedia" :key="media.imageDesktop || media.videoDesktop">
-          <AppGalleryModalVideo  v-if="media.videoDesktop" :media="media"/>
+        <p class="text" v-html="modalData['galleryListProductDescription']"></p>
+        <div class="media" v-for="media in modalData['galleryListProductModalGallery']" :key="media.imageDesktop || media.videoDesktop">
+          <AppGalleryModalVideo  v-if="media['galleryListProductModalGalleryDesktopVideo']" :media="media"/>
           <AppGalleryModalPicture v-else :media="media"/>
         </div>
       </div>
       <AppSendRequest
           :variant="'modal'"
+          :pageData="pageData"
       />
     </div>
   </div>
 </template>
+
 
 <script lang="ts">
 import {defineComponent} from "vue";
@@ -34,8 +36,8 @@ import AppGalleryModalVideo from "@/components/common-blocks/galleryModal/AppGal
 import AppGalleryModalPicture from "@/components/common-blocks/galleryModal/AppGalleryModalPicture.vue";
 export default defineComponent({
   name: "AppGalleryModal",
-  components: {AppGalleryModalPicture, AppGalleryModalVideo, AppSendRequest},
-  props: ['modalData'],
+  components: { AppSendRequest, AppGalleryModalVideo, AppGalleryModalPicture},
+  props: ['modalData','pageData'],
 })
 </script>
 

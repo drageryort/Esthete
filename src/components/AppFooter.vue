@@ -14,28 +14,26 @@
               <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
             </li>
             <li class="menu-el">
-              <button class="btn menu-link contact-btn">Contact us</button>
+              <a target="_blank" :href="commonData['commonContactUs']" class="btn menu-link contact-btn">Contact us</a>
             </li>
           </menu>
           <ul class="contacts-menu">
             <li class="contacts-el">
-              <a href="tel:+400323094432" class="contacts-link">+400323094432</a>
+              <a target="_blank" :href="`tel:${commonData['commonPhone']}`" class="contacts-link">{{commonData['commonPhone']}}</a>
             </li>
             <li class="contacts-el">
-              <a href="mailto:company@mail.com" class="contacts-link">company@mail.com</a>
+              <a target="_blank" :href="`mailto:${commonData['commonEmail']}`" class="contacts-link">{{commonData['commonEmail']}}</a>
             </li>
             <li class="contacts-el">
-              <a href="tg://resolve?domain=melkonyan_23" class="contacts-link">Telegram</a>
+              <a target="_blank" :href="commonData['commonTelegram']" class="contacts-link">Telegram</a>
             </li>
           </ul>
         </div>
         <p class="copyrights">
-          © 2022 Company name. All Rights Reserved.
-          <a href="#" class="link">Privacy Policy</a>
+          © {{new Date().getFullYear()}} {{commonData['commonCopyrights']}}
+          <a target="_blank" :href="commonData['commonPrivatePolicy']" class="link">Privacy Policy</a>
         </p>
-        <p class="subtext c">
-          If you are in California, we can meet with you offline.
-        </p>
+        <p class="subtext c">{{commonData['commonText']}}</p>
       </div>
     </div>
   </footer>
@@ -45,7 +43,8 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: "AppFooter"
+  name: "AppFooter",
+  props: ['commonData']
 })
 </script>
 

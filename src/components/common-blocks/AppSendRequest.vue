@@ -2,10 +2,8 @@
   <div class="container" :class="variant">
     <div class="sendRequest-block" :class="variant">
       <div class="content-wrapper">
-        <h2 class="title">
-          Allow us to <b>help</b> you <b>build</b> your next venture
-        </h2>
-        <button class="btn btn-white btn-sendRequest">Send request</button>
+        <h2 class="title" v-html="pageData['blueBannerTitle']"></h2>
+        <a target="_blank" :href="pageData['blueBannerButtonLink']" class="btn btn-white btn-sendRequest">{{pageData['blueBannerButtonText']}}</a>
       </div>
     </div>
   </div>
@@ -16,7 +14,7 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppSendRequest",
-  props:['variant']
+  props:['variant','pageData'],
 })
 </script>
 
@@ -39,7 +37,7 @@ export default defineComponent({
       align-items: center;
       justify-content: center;
       column-gap: 100px;
-      background-image: linear-gradient(97.57deg, #1732C1 27.39%, #5C72EA 70.5%);
+      background-image: linear-gradient(97.57deg, #1732C1 27.39%, #D52E5E 70.5%);
       background-position: 0 0;
       background-size: 400% 400%;
       border-radius: 20px;
