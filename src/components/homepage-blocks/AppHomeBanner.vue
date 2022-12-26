@@ -2,10 +2,13 @@
   <div class="banner-block-wrapper">
     <div class="container">
       <div class="banner-block">
-        <picture class="video">
-          <source srcset="@/assets/images/png/mock-video-mobile.png" media="(max-width:660px)">
-          <img src="@/assets/images/png/mock-video.png" alt="mock">
-        </picture>
+        <video class="video"
+               autoplay
+               muted
+        >
+          <source v-if="isDesktop" src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
+          <source v-else src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
+        </video>
         <div class="content">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{pageData['topBannerSubTitle']}}</p>
@@ -21,7 +24,12 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppHomeBanner",
-  props: ['pageData']
+  props: ['pageData'],
+  data(){
+    return{
+      isDesktop: window.matchMedia('(min-width: 1110px)').matches
+    }
+  }
 })
 </script>
 

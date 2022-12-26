@@ -5,8 +5,6 @@
         ref="videoMain"
         controls
     >
-      <source :src="media['galleryListProductModalGalleryMobileVideo']" media="(max-width:660px)">
-      <source :src="media['galleryListProductModalGalleryTabletVideo']" media="(max-width:1025px)">
       <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <video class="video-el-poster"
@@ -14,8 +12,6 @@
            muted
            autoplay
     >
-      <source :src="media['galleryListProductModalGalleryMobileVideo']" media="(max-width:660px)">
-      <source :src="media['galleryListProductModalGalleryTabletVideo']" media="(max-width:1025px)">
       <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <button class="btn play-button" @click="start" ref="playButton">
