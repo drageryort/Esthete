@@ -12,6 +12,7 @@
                    loop
                    muted
                    autoplay
+                   playsinline
             />
             <h3 class="video-title">{{el['devConceptElsVideoText']}}</h3>
           </div>

@@ -5,6 +5,7 @@
         <video class="video"
                autoplay
                muted
+               playsinline
         >
           <source v-if="isDesktop" src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
           <source v-else src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">

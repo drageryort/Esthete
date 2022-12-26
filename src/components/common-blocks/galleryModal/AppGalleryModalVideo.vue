@@ -1,9 +1,9 @@
 <template>
   <div class="video">
-    <video
-        class="video-el-main"
-        ref="videoMain"
-        controls
+    <video class="video-el-main"
+           ref="videoMain"
+           controls
+           playsinline
     >
       <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
@@ -11,6 +11,7 @@
            ref="videoPoster"
            muted
            autoplay
+           playsinline
     >
       <source :src="media['galleryListProductModalGalleryDesktopVideo']">
     </video>
