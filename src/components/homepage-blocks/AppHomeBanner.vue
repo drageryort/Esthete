@@ -7,8 +7,9 @@
                muted
                playsinline
         >
-          <source v-if="isDesktop" src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
-          <source v-else src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
+          <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
+          <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
+
         </video>
         <div class="content">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
@@ -28,7 +29,7 @@ export default defineComponent({
   props: ['pageData'],
   data(){
     return{
-      isDesktop: window.matchMedia('(min-width: 1110px)').matches
+      isMobile: window.matchMedia('(max-width: 660px)').matches
     }
   }
 })

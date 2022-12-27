@@ -13,7 +13,7 @@
         <picture class="main-banner">
           <img :src="modalData['galleryListProductBanner']" alt="banner">
         </picture>
-        <h3 class="text-title">About project</h3>
+        <h3 class="text-title">{{modalData['galleryListProductDescriptionTitle']}}</h3>
         <p class="text" v-html="modalData['galleryListProductDescription']"></p>
         <div class="media" v-for="media in modalData['galleryListProductModalGallery']" :key="media.imageDesktop || media.videoDesktop">
           <AppGalleryModalVideo  v-if="media['galleryListProductModalGalleryDesktopVideo']" :media="media"/>

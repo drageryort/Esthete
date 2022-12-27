@@ -46,7 +46,7 @@
                     <span>{{slide['reviewSlidesPosition']}}</span>
                   </h3>
                 </div>
-                <p class="review-text" v-html="slide['reviewSlidesDescription']"></p>
+                <p class="review-content" v-html="slide['reviewSlidesDescription']"></p>
               </div>
             </div>
           </swiper-slide>
