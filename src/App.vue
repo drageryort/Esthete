@@ -49,12 +49,16 @@
     },
     mounted() {
       setTimeout(()=> {
-        this.firstLook && this.$route.name === "home" ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto";
+        if(this.firstLook && this.$route.name === "home" && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
+          document.body.style.overflowY = "hidden";
+        } else {
+          document.body.style.overflowY = "auto";
+        }
       },0)
       setTimeout(() => {
         this.firstLook = false;
         document.body.style.overflowY = "auto"
-      }, 9000)
+      }, 9500)
     }
   })
 </script>

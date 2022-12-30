@@ -61,7 +61,7 @@
     &.animation{
       opacity: 0;
       animation-name: header;
-      animation-duration: 9s;
+      animation-duration: 9500ms;
 
       @keyframes header {
         0% {
@@ -121,6 +121,10 @@
     .header {
       padding: 27px 30px;
       width: 768px;
+      &.animation{
+        opacity: 1;
+        animation-name: none;
+      }
       .left-col {
         .logo {
           .picture {
@@ -143,15 +147,16 @@
       width: 100%;
       padding: 12px;
       &.animation{
+        opacity: 0;
+        animation-name: header;
+        animation-duration: 9500ms;
+
         @keyframes header {
           0% {
             opacity: 0;
           }
-          20% {
+          80% {
             opacity: 0;
-          }
-          40% {
-            opacity: 1;
           }
           100% {
             opacity: 1;
