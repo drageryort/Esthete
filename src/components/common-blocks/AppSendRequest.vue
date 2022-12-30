@@ -2,8 +2,8 @@
   <div class="container" :class="variant">
     <div class="sendRequest-block" :class="variant">
       <div class="content-wrapper">
-        <h2 class="title" v-html="pageData['blueBannerTitle']"></h2>
-        <a target="_blank" :href="pageData['blueBannerButtonLink']" class="btn btn-white btn-sendRequest">{{pageData['blueBannerButtonText']}}</a>
+        <h2 class="title wow animate__fadeInUp" v-html="pageData['blueBannerTitle']"></h2>
+        <a target="_blank" :href="pageData['blueBannerButtonLink']" class="btn btn-white btn-sendRequest wow animate__fadeInUp">{{pageData['blueBannerButtonText']}}</a>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="devConcept-block">
-      <h2 class="title" v-html="pageData['devConceptTitle']"></h2>
+      <h2 class="title wow animate__fadeInUp" v-html="pageData['devConceptTitle']"></h2>
       <div class="difference-list">
         <div class="difference-el"
              v-for="el in pageData['devConceptEls']"
              :key="el['devConceptElsVideoText']">
-          <div class="difference-el-video">
+          <div class="difference-el-video wow animate__fadeInUp">
             <video :src="el['devConceptElsVideo']"
                    class="video"
                    loop
@@ -16,8 +16,8 @@
             />
             <h3 class="video-title">{{el['devConceptElsVideoText']}}</h3>
           </div>
-          <h4 class="difference-el-title">{{el['devConceptElsTitle']}}</h4>
-          <p class="difference-el-text" v-html="el['devConceptElsText']"></p>
+          <h4 class="difference-el-title wow animate__fadeInUp">{{el['devConceptElsTitle']}}</h4>
+          <p class="difference-el-text wow animate__fadeInUp" v-html="el['devConceptElsText']"></p>
         </div>
       </div>
     </div>

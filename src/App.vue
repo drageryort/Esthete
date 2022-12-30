@@ -29,6 +29,10 @@
   import AppFooter from "@/components/AppFooter.vue";
   import AppMobileMenu from "@/components/AppMobileMenu.vue";
   import AppHeader from "@/components/AppHeader.vue";
+  // eslint-disable-next-line
+  //@ts-ignore
+  import WOW from "wow.js"
+
   export default defineComponent({
     components: {AppHeader, AppMobileMenu, AppFooter},
     data() {
@@ -48,6 +52,7 @@
       this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
     },
     mounted() {
+      new WOW().init();
       setTimeout(()=> {
         if(this.firstLook && this.$route.name === "home" && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
           document.body.style.overflowY = "hidden";

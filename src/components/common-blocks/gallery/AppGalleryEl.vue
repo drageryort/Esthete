@@ -1,10 +1,10 @@
 <template>
   <div class="gallery-el" :class="page">
-    <picture class="picture">
+    <picture class="picture wow animate__fadeInUp">
       <img :src="elementData['galleryListProductPreview']" alt="gallery element photo" class="img">
     </picture>
-    <p class="gallery-el-type">{{elementData['galleryListProductType']}}</p>
-    <h3 class="gallery-el-name">{{elementData['galleryListProductName']}}</h3>
+    <p class="gallery-el-type wow animate__fadeInUp">{{elementData['galleryListProductType']}}</p>
+    <h3 class="gallery-el-name wow animate__fadeInUp">{{elementData['galleryListProductName']}}</h3>
   </div>
 </template>
 

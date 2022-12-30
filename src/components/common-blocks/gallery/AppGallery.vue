@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="gallery-block">
-      <h2 class="title" v-html="pageData['galleryTitle']"></h2>
+      <h2 class="title wow animate__fadeInUp" v-html="pageData['galleryTitle']"></h2>
       <div class="gallery">
         <AppGalleryEl v-for="(el, index) in pageData['galleryList']"
                       :key="el['galleryListProductName']"
@@ -9,7 +9,7 @@
                       @click="galleryModal(true, index)"
         />
       </div>
-      <router-link to="/portfolio" class="btn show-more-casese">
+      <router-link to="/portfolio" class="btn show-more-cases wow animate__fadeInUp">
         <span class="text">{{ pageData['galleryButtonText'] }}</span>
         <img class="circled-blue-arrow" src="@/assets/images/svg/arrow-right-circle-blue-icon.svg" alt="show more icon">
       </router-link>
