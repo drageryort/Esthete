@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{animation:firstLook && this.$route['name'] === 'home'}">
     <div class="left-col">
       <router-link to="/" class="logo">
         <picture class="picture">
@@ -32,7 +32,10 @@
 
   export default defineComponent({
     name: "AppHeader",
-    props: ['commonData'],
+    props: {
+      commonData: Object,
+      firstLook: Boolean
+    },
     data() {
       return {
         isDesktop: window.matchMedia('(min-width: 1110px)').matches
@@ -54,6 +57,24 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
+    opacity: 1;
+    &.animation{
+      opacity: 0;
+      animation-name: header;
+      animation-duration: 9s;
+
+      @keyframes header {
+        0% {
+          opacity: 0;
+        }
+        80% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
     .left-col {
       display: flex;
       column-gap: 60px;
@@ -121,6 +142,22 @@
     .header {
       width: 100%;
       padding: 12px;
+      &.animation{
+        @keyframes header {
+          0% {
+            opacity: 0;
+          }
+          20% {
+            opacity: 0;
+          }
+          40% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
       .left-col {
         .logo {
           .picture {

@@ -1,6 +1,6 @@
 <template>
   <div class="homeView">
-    <AppHomeBanner :pageData="pageData"/>
+    <AppHomeBanner :pageData="pageData" :firstLook="firstLook"/>
     <AppGallery :pageData="pageData"/>
     <AppHomeLetsTalk :pageData="pageData"/>
     <AppHomeReviews :pageData="pageData"/>
@@ -20,6 +20,9 @@ import AppHomeReviews from "@/components/homepage-blocks/AppHomeReviews.vue";
 
 export default defineComponent({
   name: 'HomeView',
+  props:{
+    firstLook: Boolean
+  },
   data(){
     return{
       pageData: {}

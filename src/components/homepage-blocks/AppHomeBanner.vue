@@ -11,7 +11,7 @@
           <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
 
         </video>
-        <div class="content">
+        <div class="content" :class="{animation:firstLook}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{pageData['topBannerSubTitle']}}</p>
           <a target="_blank" :href="pageData['topBannerLink']" class="btn btn-blue">{{pageData['topBannerButton']}}</a>
@@ -26,7 +26,10 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppHomeBanner",
-  props: ['pageData'],
+  props: {
+    pageData: Object,
+    firstLook: Boolean
+  },
   data(){
     return{
       isMobile: window.matchMedia('(max-width: 660px)').matches
@@ -66,6 +69,64 @@ export default defineComponent({
         }
         .btn{
           margin: 60px 0 0;
+        }
+        &.animation{
+          .title{
+            opacity: 0;
+            animation-name: title;
+            animation-duration: 9s;
+
+            @keyframes title {
+              0% {
+                opacity: 0;
+              }
+              60% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+          .text{
+            opacity: 0;
+            animation-name: text;
+            animation-duration: 9s;
+            @keyframes text {
+              0% {
+                opacity: 0;
+              }
+              70% {
+                opacity: 0;
+              }
+              90% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+          .btn{
+            opacity: 0;
+            animation-name: button;
+            animation-duration: 9s;
+
+            @keyframes button {
+              0% {
+                opacity: 0;
+              }
+              80% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
         }
       }
       .video {
@@ -151,7 +212,56 @@ export default defineComponent({
             margin: 40px auto 0;
           }
         }
-
+        &.animation{
+          .title{
+            @keyframes title {
+              0% {
+                opacity: 0;
+              }
+              10% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+          .text{
+            @keyframes text {
+              0% {
+                opacity: 0;
+              }
+              10% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+          .btn{
+            @keyframes button {
+              0% {
+                opacity: 0;
+              }
+              20% {
+                opacity: 0;
+              }
+              40% {
+                opacity: 1;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+          }
+        }
         .video {
           min-width: 100vw;
           height: 50vh;

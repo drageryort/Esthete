@@ -9,7 +9,7 @@
         <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
         <h2 class="sub-title" v-if="!!pageData['topBannerSubTitle']" v-html="pageData['topBannerSubTitle']"></h2>
         <p class="sub-text" v-if="!!pageData['topBannerText']" v-html="pageData['topBannerText']"></p>
-        <div class="list" v-if="pageData['topBannerPoints'].length">
+        <div class="list" v-if="!!pageData['topBannerPoints']">
           <div class="list-el" v-for="listEl in pageData['topBannerPoints']" :key="listEl.listElTitle">
             <h3 class="list-el-title">{{listEl['topBannerPointsTitle']}}</h3>
             <p class="list-el-text" v-html="listEl['topBannerPointsText']"></p>

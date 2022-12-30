@@ -1,8 +1,8 @@
 <template>
   <AppHeader
+      :firstLook="firstLook"
       :commonData="commonData"
       @mobileMenu="mobileMenu"
-      :mobileMenuActive="mobileMenuActive"
   />
   <AppMobileMenu
       :commonData="commonData"
@@ -16,7 +16,7 @@
         name="scale"
         mode="out-in"
     >
-      <component :is="Component" />
+      <component :is="Component" :firstLook="firstLook" />
     </transition>
   </router-view>
   <appFooter
@@ -34,7 +34,8 @@
     data() {
       return {
         commonData: {},
-        mobileMenuActive: false
+        mobileMenuActive: false,
+        firstLook: true,
       }
     },
     methods: {
@@ -45,6 +46,15 @@
     },
     async beforeCreate() {
       this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
+    },
+    mounted() {
+      setTimeout(()=> {
+        this.firstLook && this.$route.name === "home" ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto";
+      },0)
+      setTimeout(() => {
+        this.firstLook = false;
+        document.body.style.overflowY = "auto"
+      }, 9000)
     }
   })
 </script>
