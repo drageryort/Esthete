@@ -2,7 +2,7 @@
   <footer>
     <div class="container">
       <div class="footer">
-        <div class="lists-block">
+        <div class="lists-block wow animate__fadeInUp">
           <menu class="menu">
             <li class="menu-el">
               <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
@@ -29,7 +29,7 @@
             </li>
           </ul>
         </div>
-        <p class="copyrights">
+        <p class="copyrights wow animate__fadeInUp">
           © {{new Date().getFullYear()}} {{commonData['commonCopyrights']}}
           <a target="_blank" :href="commonData['commonPrivatePolicy']" class="link">Privacy Policy</a>
         </p>

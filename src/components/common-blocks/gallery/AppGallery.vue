@@ -9,10 +9,12 @@
                       @click="galleryModal(true, index)"
         />
       </div>
-      <router-link to="/portfolio" class="btn show-more-cases wow animate__fadeInUp">
-        <span class="text">{{ pageData['galleryButtonText'] }}</span>
-        <img class="circled-blue-arrow" src="@/assets/images/svg/arrow-right-circle-blue-icon.svg" alt="show more icon">
-      </router-link>
+      <div class="wow animate__fadeInUp">
+        <router-link to="/portfolio" class="btn show-more-cases">
+          <span class="text">{{ pageData['galleryButtonText'] }}</span>
+          <img class="circled-blue-arrow" src="@/assets/images/svg/arrow-right-circle-blue-icon.svg" alt="show more icon">
+        </router-link>
+      </div>
     </div>
   </div>
   <transition name="slide">

@@ -44,7 +44,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .banner-block-wrapper {
   overflow: hidden;
   .banner-block {

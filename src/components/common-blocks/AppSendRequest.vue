@@ -1,18 +1,17 @@
 <template>
   <div class="container" :class="variant">
-    <div class="sendRequest-block" :class="variant">
+    <div class="sendRequest-block"
+         :class="{
+            'modal':variant,
+            'wow animate__fadeInUp': !variant,
+          }"
+    >
       <div class="content-wrapper">
         <h2 class="title"
-            :class="{
-              'wow animate__fadeInUp': !variant,
-            }"
             v-html="pageData['blueBannerTitle']"></h2>
         <a target="_blank"
            :href="pageData['blueBannerButtonLink']"
            class="btn btn-white btn-sendRequest"
-           :class="{
-              'wow animate__fadeInUp': !variant,
-            }"
         >{{pageData['blueBannerButtonText']}}</a>
       </div>
     </div>
