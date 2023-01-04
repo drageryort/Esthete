@@ -21,6 +21,7 @@ body{
 }
 picture,.picture, video, .video{
   display: block;
+  isolation: isolate;//for safari
 }
 img{
   display: block;
