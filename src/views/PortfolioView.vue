@@ -19,7 +19,8 @@
       }
     },
     async beforeCreate() {
-      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/249')).json())['acf']
+      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/249')).json())['acf'];
+      this.$emit("readyData");
     }
   })
 </script>

@@ -91,6 +91,9 @@ export default defineComponent({
       opacity: .6;
     }
     .gallery-modal-block{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 100%;
       width: 1024px;
       background: var(--color-white);

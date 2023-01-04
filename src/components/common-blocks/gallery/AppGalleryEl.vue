@@ -53,7 +53,14 @@ export default defineComponent({
     .picture{
       border-radius: 20px;
       overflow: hidden;
-      .img{}
+      .img{
+        transition: transform .5s;
+      }
+      &:hover{
+        .img{
+          transform: scale(1.25);
+        }
+      }
     }
     .gallery-el-type{
       margin: 20px 0 0;

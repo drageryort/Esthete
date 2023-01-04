@@ -3,21 +3,22 @@
     <div class="gallery-block">
       <h2 class="title" v-html="pageData['galleryTitle']"></h2>
       <div class="gallery">
-        <AppGalleryEl v-for="(el, index) in pageData['galleryList']"
+        <AppGalleryEl v-for="(el, index) in iteratedList"
                       :key="el['galleryListProductName']"
                       :page="'portfolio-page'"
                       :elementData="el"
                       @click="galleryModal(true, index)"
         />
       </div>
-      <button class="btn btn-blue" v-if="pageData['galleryList'].length > shownData">{{pageData['galleryButtonText']}}</button>
+      <button class="btn btn-blue" v-if="pageData['galleryList'].length > shownLimit" @click="this.shownLimit+=10">{{pageData['galleryButtonText']}}</button>
+      <h3 v-else class="text-info">And much <b>more</b> ...</h3>
     </div>
   </div>
   <transition name="slide">
     <AppGalleryModal
         v-if="galleryModalActive"
         @galleryModal="galleryModal"
-        :modalData="pageData['galleryList'][currentIndex]"
+        :modalData="iteratedList[currentIndex]"
         :pageData="pageData"
     />
   </transition>
@@ -38,7 +39,12 @@ export default defineComponent({
     return {
       galleryModalActive: false,
       currentIndex: 0,
-      shownData: 4,
+      shownLimit: 10,
+    }
+  },
+  computed: {
+    iteratedList(){
+      return this.pageData?.['galleryList'] ? this.pageData['galleryList'].slice(0,this.shownLimit) : this.pageData?.['galleryList']
     }
   },
   methods: {
@@ -47,6 +53,9 @@ export default defineComponent({
       this.currentIndex = cardIndex;
       trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
     }
+  },
+  mounted() {
+    console.log(this.pageData)
   }
 })
 </script>
@@ -69,6 +78,13 @@ export default defineComponent({
   .btn {
     margin: 60px auto 0;
   }
+  .text-info{
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 120%;
+    margin: 60px 0 0;
+  }
 }
 
 @media (max-width: 1025px) {
@@ -77,13 +93,16 @@ export default defineComponent({
     .title {
       width: 510px;
       font-size: 26px;
-      line-height: 120%;
     }
     .gallery {
       gap: 30px;
       margin: 40px 0 0;
     }
     .btn {
+    }
+    .text-info{
+      margin: 40px 0 0;
+      font-size: 26px;
     }
   }
 }
@@ -94,7 +113,6 @@ export default defineComponent({
     .title {
       max-width: 100%;
       font-size: 20px;
-      line-height: 120%;
       text-align: center;
     }
     .gallery {
@@ -107,6 +125,10 @@ export default defineComponent({
       }
       .circled-blue-arrow {
       }
+    }
+    .text-info{
+      margin: 30px 0 0;
+      font-size: 20px;
     }
   }
 }

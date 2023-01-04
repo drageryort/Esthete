@@ -33,7 +33,7 @@
           © {{new Date().getFullYear()}} {{commonData['commonCopyrights']}}
           <a target="_blank" :href="commonData['commonPrivatePolicy']" class="link">Privacy Policy</a>
         </p>
-        <p class="subtext c">{{commonData['commonText']}}</p>
+        <p class="subtext wow animate__fadeInUp">{{commonData['commonText']}}</p>
       </div>
     </div>
   </footer>

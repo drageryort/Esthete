@@ -6,15 +6,17 @@
         <div class="difference-el"
              v-for="el in pageData['devConceptEls']"
              :key="el['devConceptElsVideoText']">
-          <div class="difference-el-video wow animate__fadeInUp">
-            <video :src="el['devConceptElsVideo']"
-                   class="video"
-                   loop
-                   muted
-                   autoplay
-                   playsinline
-            />
-            <h3 class="video-title">{{el['devConceptElsVideoText']}}</h3>
+          <div class="difference-el-video-wrapper wow animate__fadeInUp">
+            <div class="difference-el-video">
+              <video :src="el['devConceptElsVideo']"
+                     class="video"
+                     loop
+                     muted
+                     autoplay
+                     playsinline
+              />
+              <h3 class="video-title">{{el['devConceptElsVideoText']}}</h3>
+            </div>
           </div>
           <h4 class="difference-el-title wow animate__fadeInUp">{{el['devConceptElsTitle']}}</h4>
           <p class="difference-el-text wow animate__fadeInUp" v-html="el['devConceptElsText']"></p>

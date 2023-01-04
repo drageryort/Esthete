@@ -9,9 +9,8 @@
       @mobileMenu="mobileMenu"
       :mobileMenuActive="mobileMenuActive"
   />
-  <router-view
-      v-slot="{ Component }"
-  >
+
+  <router-view v-slot="{ Component }"  @readyData="animation">
     <transition
         name="scale"
         mode="out-in"
@@ -29,6 +28,7 @@
   import AppFooter from "@/components/AppFooter.vue";
   import AppMobileMenu from "@/components/AppMobileMenu.vue";
   import AppHeader from "@/components/AppHeader.vue";
+
   // eslint-disable-next-line
   //@ts-ignore
   import WOW from "wow.js"
@@ -46,13 +46,15 @@
       mobileMenu(trigger:boolean) {
         this.mobileMenuActive = trigger
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
+      },
+      animation() {
+        new WOW().init();
       }
     },
     async beforeCreate() {
       this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
     },
     mounted() {
-      new WOW().init();
       setTimeout(()=> {
         if(this.firstLook && this.$route.name === "home" && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
           document.body.style.overflowY = "hidden";
@@ -64,7 +66,7 @@
         this.firstLook = false;
         document.body.style.overflowY = "auto"
       }, 9500)
-    }
+    },
   })
 </script>
 

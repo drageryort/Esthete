@@ -16,6 +16,7 @@
   import AppPagesWhatWeDo from "@/components/servicespage-blocks/AppServicesPageWhatWeDo.vue";
   import AppPagesHowWeDo from "@/components/servicespage-blocks/AppServicesPageHowWeDo.vue";
 
+
   export default defineComponent( {
     name: 'WebPortfolioView',
     components: { AppPagesBanner, AppPagesWhatWeDo, AppPagesHowWeDo, AppSendRequest, AppGallery},
@@ -25,8 +26,9 @@
       }
     },
     async beforeCreate() {
-      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/119')).json())['acf']
-    }
+      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/119')).json())['acf'];
+      this.$emit("readyData");
+    },
   })
 </script>
 

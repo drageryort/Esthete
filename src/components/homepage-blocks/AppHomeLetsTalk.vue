@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="letsTalk-block">
-      <div class="content-wrapper">
+      <div class="content-wrapper wow animate__fadeInUp">
         <div class="border-animation"></div>
         <div class="safari-fix"></div>
         <div class="content">
-          <h2 class="title wow animate__fadeInUp">{{pageData['coloredBorderTitle']}}</h2>
-          <a target="_blank" :href="pageData['coloredBorderButtonLink']" class="btn btn-blue btn-letsTalk wow animate__fadeInUp">{{pageData['coloredBorderButtonText']}}</a>
+          <h2 class="title">{{pageData['coloredBorderTitle']}}</h2>
+          <a target="_blank" :href="pageData['coloredBorderButtonLink']" class="btn btn-blue btn-letsTalk">{{pageData['coloredBorderButtonText']}}</a>
         </div>
       </div>
     </div>
