@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="howWeDo-block">
-      <h2 class="title wow animate__fadeInUp" v-html="pageData['howWeDoTitle']"></h2>
+      <h2 class="title wow-total animate__fadeInUp" v-html="pageData['howWeDoTitle']"></h2>
       <div class="list">
-        <div class="list-el wow animate__fadeInUp" v-for="(listEl, listElIndex) in pageData['howWeDoTitlePoints']" :key="listEl['howWeDoTitlePointsTitle']">
+        <div class="list-el wow-total animate__fadeInUp" v-for="(listEl, listElIndex) in pageData['howWeDoTitlePoints']" :key="listEl['howWeDoTitlePointsTitle']">
           <span class="list-el-index">{{listElIndex + 1}}</span>
           <div class="list-el-content">
             <h3 class="list-el-title">{{listEl['howWeDoTitlePointsTitle']}}</h3>

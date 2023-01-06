@@ -7,16 +7,15 @@
           <img src="@/assets/images/jpg/mock-video.jpg" alt="banner">
         </picture>
         <video class="video"
-               v-if="firstLook"
+               v-if="play"
                autoplay
                muted
                playsinline
         >
           <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
           <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
-
         </video>
-        <div class="content" :class="{animation:firstLook}">
+        <div class="content" :class="{animation:play}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{ pageData['topBannerSubTitle'] }}</p>
           <a target="_blank" :href="pageData['topBannerLink']"
@@ -34,7 +33,7 @@ export default defineComponent({
   name: "AppHomeBanner",
   props: {
     pageData: Object,
-    firstLook: Boolean
+    play: Boolean
   },
   data() {
     return {

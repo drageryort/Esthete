@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery-el wow animate__fadeInUp" :class="page">
+  <div class="gallery-el wow-total animate__fadeInUp" :class="page">
     <picture class="picture ">
       <img :src="elementData['galleryListProductPreview']" alt="gallery element photo" class="img">
     </picture>

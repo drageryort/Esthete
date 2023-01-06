@@ -1,6 +1,6 @@
 <template>
   <AppHeader
-      :firstLook="firstLook"
+      :playPreview="playPreview"
       :commonData="commonData"
       @mobileMenu="mobileMenu"
   />
@@ -15,7 +15,13 @@
         name="scale"
         mode="out-in"
     >
-      <component :is="Component" :firstLook="firstLook" />
+      <component
+          :is="Component"
+          :waitPreview="waitPreview"
+          :playPreview="playPreview"
+          @updatePreviewState="updateWaitPreview"
+
+      />
     </transition>
   </router-view>
   <appFooter
@@ -39,7 +45,8 @@
       return {
         commonData: {},
         mobileMenuActive: false,
-        firstLook: true,
+        waitPreview: true,
+        playPreview: false
       }
     },
     methods: {
@@ -48,25 +55,19 @@
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       },
       animation() {
-        new WOW().init();
+        new WOW({
+          boxClass: 'wow-total',
+          animateClass:'animated-total',
+        }).init();
+      },
+      updateWaitPreview(previewState:boolean){
+        this.waitPreview = previewState;
+        this.playPreview = previewState;
       }
     },
     async beforeCreate() {
       this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
-    },
-    mounted() {
-      setTimeout(()=> {
-        if(this.firstLook && this.$route.name === "home" && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
-          document.body.style.overflowY = "hidden";
-        } else {
-          document.body.style.overflowY = "auto";
-        }
-      },0)
-      setTimeout(() => {
-        this.firstLook = false;
-        document.body.style.overflowY = "auto"
-      }, 9500)
-    },
+    }
   })
 </script>
 

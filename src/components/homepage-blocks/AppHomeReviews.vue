@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="reviews-block">
-      <h2 class="title wow animate__fadeInUp" v-html="pageData['reviewTitle']"></h2>
-      <div class="reviews-slider wow animate__fadeInUp">
+      <h2 class="title wow-total animate__fadeInUp" v-html="pageData['reviewTitle']"></h2>
+      <div class="reviews-slider wow-total animate__fadeInUp">
         <swiper
             :modules="modules"
             :slides-per-view="1"
@@ -61,7 +61,7 @@
         </div>
         <div ref="pagination" class="pagination" v-else></div>
       </div>
-      <div class="rate-list wow animate__fadeInUp">
+      <div class="rate-list wow-total animate__fadeInUp">
         <div class="rate-el" v-for="rateEl in pageData['reviewRates']" :key="rateEl['reviewRatesLogo']">
           <picture class="rate-logo">
             <img class="image" :src="rateEl['reviewRatesLogo']" alt="rate logo">

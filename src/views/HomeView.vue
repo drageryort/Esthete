@@ -1,6 +1,6 @@
 <template>
   <div class="homeView">
-    <AppHomeBanner :pageData="pageData" :firstLook="firstLook"/>
+    <AppHomeBanner :pageData="pageData" :play="waitPreview"/>
     <AppGallery :pageData="pageData"/>
     <AppHomeLetsTalk :pageData="pageData"/>
     <AppHomeReviews :pageData="pageData"/>
@@ -21,11 +21,12 @@
   export default defineComponent({
     name: 'HomeView',
     props:{
-      firstLook: Boolean
+      waitPreview: Boolean,
     },
     data(){
       return{
-        pageData: {}
+        pageData: {},
+        previewState: true,
       }
     },
     components: {
@@ -39,7 +40,19 @@
     async beforeCreate() {
       this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf'];
       this.$emit("readyData");
-    }
+    },
+    mounted() {
+      if(this.waitPreview && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
+        document.body.style.overflowY = "hidden";
+        this.previewState = true;
+        this.$emit('updatePreviewState', this.previewState)
+        setTimeout(() => {
+          document.body.style.overflowY = "auto"
+          this.previewState = false;
+          this.$emit('updatePreviewState', this.previewState)
+        }, 9500)
+      }
+    },
   });
 </script>
 

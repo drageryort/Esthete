@@ -1,4 +1,4 @@
-.animated {
+.animated-total, .animated-modal {
   animation-duration: 2000ms;
   animation-delay: 0ms;
 }

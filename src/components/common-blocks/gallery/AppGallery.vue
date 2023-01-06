@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="gallery-block">
-      <h2 class="title wow animate__fadeInUp" v-html="pageData['galleryTitle']"></h2>
+      <h2 class="title wow-total animate__fadeInUp" v-html="pageData['galleryTitle']"></h2>
       <div class="gallery">
         <AppGalleryEl v-for="(el, index) in pageData['galleryList']"
                       :key="el['galleryListProductName']"

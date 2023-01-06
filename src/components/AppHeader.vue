@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{animation:firstLook && this.$route['name'] === 'home'}">
+  <header class="header" :class="{animation:playPreview}">
     <div class="left-col">
       <router-link to="/" class="logo">
         <picture class="picture">
@@ -34,7 +34,7 @@
     name: "AppHeader",
     props: {
       commonData: Object,
-      firstLook: Boolean
+      playPreview: Boolean
     },
     data() {
       return {

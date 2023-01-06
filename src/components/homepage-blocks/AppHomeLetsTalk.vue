@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="letsTalk-block">
-      <div class="content-wrapper wow animate__fadeInUp">
+      <div class="content-wrapper wow-total-total animate__fadeInUp">
         <div class="border-animation"></div>
         <div class="safari-fix"></div>
         <div class="content">

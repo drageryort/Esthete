@@ -1,7 +1,7 @@
 <template>
   <div class="gallery-modal">
     <div class="gallery-modal-wrapper" @click="$emit('galleryModal', false, 0)"></div>
-    <div class="gallery-modal-block">
+    <div class="gallery-modal-block" id="modalBlock">
       <div class="gallery-modal-content">
         <button class="btn close-modal" @click="$emit('galleryModal', false, 0)">
         <span class="circle">
@@ -15,7 +15,7 @@
         </picture>
         <h3 class="text-title">{{modalData['galleryListProductDescriptionTitle']}}</h3>
         <p class="text" v-html="modalData['galleryListProductDescription']"></p>
-        <div class="media" v-for="media in modalData['galleryListProductModalGallery']" :key="media.imageDesktop || media.videoDesktop">
+        <div class="media wow-modal animate__fadeInUp" v-for="media in modalData['galleryListProductModalGallery']" :key="media.imageDesktop || media.videoDesktop">
           <AppGalleryModalVideo  v-if="media['galleryListProductModalGalleryDesktopVideo']" :media="media"/>
           <AppGalleryModalPicture v-else :media="media"/>
         </div>
@@ -34,10 +34,22 @@ import {defineComponent} from "vue";
 import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
 import AppGalleryModalVideo from "@/components/common-blocks/galleryModal/AppGalleryModalVideo.vue";
 import AppGalleryModalPicture from "@/components/common-blocks/galleryModal/AppGalleryModalPicture.vue";
+// eslint-disable-next-line
+//@ts-ignore
+import WOW from "wow.js"
+
 export default defineComponent({
   name: "AppGalleryModal",
   components: { AppSendRequest, AppGalleryModalVideo, AppGalleryModalPicture},
   props: ['modalData','pageData'],
+  mounted() {
+    new WOW({
+      boxClass: 'wow-modal',
+      offset: '100',
+      animateClass:'animated-modal',
+      scrollContainer: '#modalBlock'
+    }).init()
+  }
 })
 </script>
 
