@@ -9,7 +9,7 @@
                       @click="galleryModal(true, index)"
         />
       </div>
-      <div class="wow animate__fadeInUp">
+      <div class="show-more-cases-wrapper wow animate__fadeInUp">
         <router-link to="/portfolio" class="btn show-more-cases">
           <span class="text">{{ pageData['galleryButtonText'] }}</span>
           <img class="circled-blue-arrow" src="@/assets/images/svg/arrow-right-circle-blue-icon.svg" alt="show more icon">
@@ -127,6 +127,7 @@ export default defineComponent({
       }
       .btn{
         margin: 40px auto 0;
+        justify-content: center;
         .text{}
         .circled-blue-arrow{}
       }
