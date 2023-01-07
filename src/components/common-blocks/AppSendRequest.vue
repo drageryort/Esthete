@@ -3,7 +3,7 @@
     <div class="sendRequest-block"
          :class="{
             'modal':variant,
-            'wow animate__fadeInUp': !variant,
+            'wow-total animate__fadeInUp': !variant,
           }"
     >
       <div class="content-wrapper">
