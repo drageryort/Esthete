@@ -67,7 +67,7 @@
             <img class="image" :src="rateEl['reviewRatesLogo']" alt="rate logo">
           </picture>
           <div class="rate-description">
-            <span class="rate-text">Our rate {{rateEl['reviewRatesRate']}} of 5</span>
+            <span class="rate-text">Our rate is {{rateEl['reviewRatesRate']}} of 5</span>
             <div class="rate-stars">
               <img class="rate-star"
                    v-for="el in Number(rateEl['reviewRatesRate'])"
