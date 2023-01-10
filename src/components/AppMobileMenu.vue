@@ -7,21 +7,21 @@
       <menu class="desktop-menu">
         <li class="menu-el">
           <router-link
-              to="/webpages-portfolio"
+              to="/web"
               class="menu-link"
               @click="$emit('mobileMenu', false)"
           >Websites</router-link>
         </li>
         <li class="menu-el">
           <router-link
-              to="/apps-portfolio"
+              to="/applications"
               class="menu-link"
               @click="$emit('mobileMenu', false)"
           >Applications</router-link>
         </li>
         <li class="menu-el">
           <router-link
-              to="/designs-portfolio"
+              to="/design"
               class="menu-link"
               @click="$emit('mobileMenu', false)"
           >Design</router-link>

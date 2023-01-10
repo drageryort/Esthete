@@ -13,17 +13,17 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/webpages-portfolio',
+    path: '/web',
     name: 'webpages',
     component: WebPortfolioView
   },
   {
-    path: '/apps-portfolio',
+    path: '/applications',
     name: 'apps',
     component: AppsPortfolioView
   },
   {
-    path: '/designs-portfolio',
+    path: '/design',
     name: 'designs',
     component: DesignPortfolioView
   },

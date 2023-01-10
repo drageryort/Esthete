@@ -53,6 +53,10 @@
         }, 9500)
       }
     },
+    unmounted() {
+      this.previewState = false;
+      this.$emit('updatePreviewState', this.previewState)
+    }
   });
 </script>
 

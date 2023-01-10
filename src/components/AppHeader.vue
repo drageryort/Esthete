@@ -3,18 +3,18 @@
     <div class="left-col">
       <router-link to="/" class="logo">
         <picture class="picture">
-          <img src="@/assets/images/svg/logo-mock.svg" alt="logo">
+          <img src="@/assets/images/svg/logo_white.svg" alt="logo">
         </picture>
       </router-link>
       <menu class="desktop-menu" v-if="isDesktop">
         <li class="menu-el">
-          <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
+          <router-link to="/web" class="menu-link">Websites</router-link>
         </li>
         <li class="menu-el">
-          <router-link to="/apps-portfolio" class="menu-link">Applications</router-link>
+          <router-link to="/applications" class="menu-link">Applications</router-link>
         </li>
         <li class="menu-el">
-          <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
+          <router-link to="/design" class="menu-link">Design</router-link>
         </li>
       </menu>
     </div>
@@ -58,20 +58,27 @@
     transform: translateX(-50%);
     z-index: 5;
     opacity: 1;
+    pointer-events: auto;
     &.animation{
       opacity: 0;
+      pointer-events: none;
       animation-name: header;
       animation-duration: 9500ms;
-
       @keyframes header {
         0% {
           opacity: 0;
+          pointer-events: none;
         }
         80% {
           opacity: 0;
+          pointer-events: none;
+        }
+        90% {
+          pointer-events: auto;
         }
         100% {
           opacity: 1;
+          pointer-events: auto;
         }
       }
     }
@@ -82,8 +89,8 @@
 
       .logo {
         .picture {
-          width: 96px;
-          height: 40px;
+          width: 150px;
+          height: 36px;
 
           img {
             object-fit: contain;
@@ -128,8 +135,8 @@
       .left-col {
         .logo {
           .picture {
-            width: 72px;
-            height: 18px;
+            width: 126px;
+            height: 30px;
             img {}
           }
         }
@@ -166,6 +173,8 @@
       .left-col {
         .logo {
           .picture {
+            width: 100px;
+            height: 24px;
             img {}
           }
         }

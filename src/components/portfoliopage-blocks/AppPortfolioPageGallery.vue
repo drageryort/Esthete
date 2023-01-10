@@ -60,7 +60,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .gallery-block {
   padding: 180px 0 80px;
   .title {

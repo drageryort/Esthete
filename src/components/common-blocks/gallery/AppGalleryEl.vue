@@ -21,6 +21,7 @@ export default defineComponent({
   .gallery-el{
     cursor: pointer;
     &.portfolio-page{
+      width: calc((100% - 60px) / 2);
       .picture{
         height: 400px !important;
         width: 525px !important;
@@ -79,6 +80,7 @@ export default defineComponent({
   @media (max-width: 1025px){
     .gallery-el{
       &.portfolio-page{
+        width: calc((100% - 30px) / 2);
         .picture{
           height: 260px !important;
           width: 326px !important;
@@ -119,6 +121,9 @@ export default defineComponent({
   }
   @media (max-width: 660px){
     .gallery-el{
+      &.portfolio-page{
+        width: 100%;
+      }
       &:nth-child(n){
         .picture{
           height: 230px !important;

@@ -5,13 +5,13 @@
         <div class="lists-block wow-total animate__fadeInUp">
           <menu class="menu">
             <li class="menu-el">
-              <router-link to="/webpages-portfolio" class="menu-link">Websites</router-link>
+              <router-link to="/web" class="menu-link">Websites</router-link>
             </li>
             <li class="menu-el">
-              <router-link to="/apps-portfolio" class="menu-link">Applications</router-link>
+              <router-link to="/applications" class="menu-link">Applications</router-link>
             </li>
             <li class="menu-el">
-              <router-link to="/designs-portfolio" class="menu-link">Design</router-link>
+              <router-link to="/design" class="menu-link">Design</router-link>
             </li>
             <li class="menu-el">
               <a target="_blank" :href="commonData['commonContactUs']" class="btn menu-link contact-btn">Contact us</a>
