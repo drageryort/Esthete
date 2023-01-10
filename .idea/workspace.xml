@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f70792fa-905b-49cf-9c84-b2f08fe684b6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="assets" pattern="file[Esthete-Web]:src/assets/styles/*||file[Esthete-Web]:src/assets/styles/common/*||file[Esthete-Web]:src/assets/styles/common/global/*" />
+  </component>
+  <component name="ProjectId" id="2JB2Wm2SuG7Q9AXNvQsNr16zGY9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dist" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="D:\Freelance\Michael\Esthete-Web\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\video" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\images\png\gallery" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\src\assets\video" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\src\assets\images\png" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\images\png\gallery" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\images\png" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\gallery" />
+      <recent name="D:\Freelance\Michael\Esthete-Web\src\components\common-blocks\gallery" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f70792fa-905b-49cf-9c84-b2f08fe684b6" name="Changes" comment="" />
+      <created>1671537190100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671537190100</updated>
+      <workItem from="1671537195185" duration="34209000" />
+      <workItem from="1671801127207" duration="1200000" />
+      <workItem from="1671806749336" duration="156000" />
+      <workItem from="1671806945334" duration="147000" />
+      <workItem from="1672239081449" duration="615000" />
+      <workItem from="1672244450534" duration="34000" />
+    </task>
+    <task id="LOCAL-00001" summary="project modal + portfolio">
+      <created>1671741659512</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671741659512</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project modal + portfolio v1">
+      <created>1671741730052</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671741730052</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project modal + portfolio" />
+    <MESSAGE value="project modal + portfolio v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="project modal + portfolio v1" />
+  </component>
+</project>
