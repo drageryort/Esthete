@@ -11,7 +11,7 @@
         />
       </div>
       <button class="btn btn-blue" v-if="pageData['galleryList'].length > shownLimit" @click="this.shownLimit+=10">{{pageData['galleryButtonText']}}</button>
-      <h3 v-else class="text-info">And much <b>more</b> ...</h3>
+      <h3 v-else class="text-info">And much <b>more</b>...</h3>
     </div>
   </div>
   <transition name="slide">
