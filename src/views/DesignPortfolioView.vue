@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <AppLoader
+      v-if="loader"
+  />
+  <div class="designView" v-else>
     <AppPagesBanner :pageData="pageData"/>
     <AppGallery :pageData="pageData"/>
     <AppPagesWhatWeDo :pageData="pageData"/>
@@ -10,6 +13,7 @@
 
 <script lang="ts">
   import {defineComponent} from "vue";
+  import AppLoader from "@/components/AppLoader.vue";
   import AppGallery from "@/components/common-blocks/gallery/AppGallery.vue";
   import AppSendRequest from "@/components/common-blocks/AppSendRequest.vue";
   import AppPagesBanner from "@/components/servicespage-blocks/AppServicesPageBanner.vue";
@@ -18,15 +22,17 @@
 
   export default defineComponent({
     name: 'DesignPortfolioView',
-    components: {AppPagesHowWeDo, AppPagesWhatWeDo, AppPagesBanner, AppSendRequest, AppGallery},
+    components: {AppLoader, AppPagesHowWeDo, AppPagesWhatWeDo, AppPagesBanner, AppSendRequest, AppGallery},
     data(){
       return {
-        pageData: {}
+        pageData: {},
+        loader: true,
       }
     },
-    async beforeCreate() {
+    async mounted() {
       this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/123')).json())['acf'];
       this.$emit("readyData");
+      this.loader = false;
     }
   })
 </script>

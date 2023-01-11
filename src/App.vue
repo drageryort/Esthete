@@ -18,7 +18,6 @@
       <component
           :is="Component"
           :waitPreview="waitPreview"
-          :playPreview="playPreview"
           @updatePreviewState="updateWaitPreview"
 
       />

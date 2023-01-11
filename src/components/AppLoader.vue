@@ -1,42 +1,17 @@
 <template>
-  <footer>
-    <div class="container">
-      <div class="footer">
-        <div class="lists-block wow-total animate__fadeInUp">
-          <menu class="menu">
-            <li class="menu-el">
-              <router-link to="/web" class="menu-link">Websites</router-link>
-            </li>
-            <li class="menu-el">
-              <router-link to="/applications" class="menu-link">Applications</router-link>
-            </li>
-            <li class="menu-el">
-              <router-link to="/design" class="menu-link">Design</router-link>
-            </li>
-            <li class="menu-el">
-              <a target="_blank" :href="commonData['commonContactUs']" class="btn menu-link contact-btn">Contact us</a>
-            </li>
-          </menu>
-          <ul class="contacts-menu">
-            <li class="contacts-el">
-              <a target="_blank" :href="`tel:${commonData['commonPhone']}`" class="contacts-link">{{commonData['commonPhone']}}</a>
-            </li>
-            <li class="contacts-el">
-              <a target="_blank" :href="`mailto:${commonData['commonEmail']}`" class="contacts-link">{{commonData['commonEmail']}}</a>
-            </li>
-            <li class="contacts-el">
-              <a target="_blank" :href="commonData['commonTelegram']" class="contacts-link">Telegram</a>
-            </li>
-          </ul>
-        </div>
-        <p class="copyrights wow-total animate__fadeInUp">
-          © {{new Date().getFullYear()}} {{commonData['commonCopyrights']}}
-          <a target="_blank" :href="commonData['commonPrivatePolicy']" class="link">Privacy Policy</a>
-        </p>
-        <p class="subtext wow-total animate__fadeInUp">{{commonData['commonText']}}</p>
-      </div>
+  <div class="loader-wrapper">
+    <div class="loader" style="--t: 2s">
+      <div class="particle" style="--dt: -1.58s"></div>
+      <div class="particle"></div>
+      <div class="particle" style="--dt: -1.14s"></div>
+      <div class="particle"></div>
+      <div class="particle" style="--dt: -0.99s"></div>
+      <div class="particle"></div>
+      <div class="particle" style="--dt: -1.45s"></div>
+      <div class="particle"></div>
+      <div class="particle" style="--dt: -1.11s"></div>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script lang="ts">
@@ -49,134 +24,76 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  .footer{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 40px;
-    column-gap: 40px;
-    padding: 0 0 60px;
-    .lists-block{
-      display: flex;
-      justify-content: space-between;
-      column-gap: 40px;
-      width: 100%;
-      .menu{
-        display: flex;
-        align-items: center;
-        column-gap: 40px;
-        max-width: calc((100% - 40px) / 2);
-        .menu-el{
-          .menu-link{
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-          }
-        }
-      }
-      .contacts-menu{
-        display: flex;
-        align-items: center;
-        column-gap: 40px;
-        max-width: calc((100% - 40px) / 2);
-        .contacts-el{
-          .contacts-link{
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-          }
-        }
-      }
+  $r: 1.5em;
+
+  .loader-wrapper {
+    display: grid;
+    place-content: center;
+    margin: 0;
+    min-height: calc(100vh - 148px);
+    height: calc(100vh - 148px);
+    background: #000;
+
+    &:before {
+      grid-column: 1;
+      grid-row: 1;
+      transform: scale(.8);
+      background: linear-gradient(90deg, #fde6bd, #a1c5ab, #f4dd51, #d11e48, #632f53);
+      content: ''
     }
-    .subtext, .copyrights{
-      max-width: calc((100% - 40px) / 2);
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      color: var(--color-opacity-white);
-      .link{
-        text-decoration: underline;
+    .loader {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      padding: 6em;
+      background: inherit;
+      filter: blur(9px) contrast(18);
+      mix-blend-mode: multiply;
+      .particle {
+        width: 0;
+        padding: $r;
+        border-radius: 50%;
+        background: #fff;
+
+        &:first-child, &:last-child { padding: .5*$r }
+
+        &:nth-child(odd) {
+          animation: pulse var(--t) ease-in-out var(--dt) infinite
+        }
+
+        &:nth-child(2n) {
+          transform: rotate(0deg) translate(2*$r);
+          animation: spin var(--t) linear infinite
+        }
+
+        &:nth-child(4n) {
+          animation-direction: reverse;
+          animation-duration: calc(1.2*var(--t))
+        }
       }
     }
   }
+  @keyframes pulse {
+    50% { transform: scale(1.8) }
+    70% { transform: scale(.6) }
+  }
+  @keyframes spin {
+    to { transform: rotate(1turn) translate(2*$r) }
+  }
+
   @media (max-width: 1025px){
-    .footer{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      row-gap: 40px;
-      column-gap: 40px;
-      padding: 0 0 40px;
-      .lists-block{
-        width: max-content;
-        .menu{
-          width: 150px;
-          flex-direction: column;
-          align-items: flex-start;
-          column-gap: 30px;
-          row-gap: 16px;
-          max-width: unset;
-          .menu-el{
-            .menu-link{}
-          }
-        }
-        .contacts-menu{
-          width: 180px;
-          flex-direction: column;
-          align-items: flex-start;
-          column-gap: 30px;
-          row-gap: 16px;
-          max-width: unset;
-          .contacts-el{
-            .contacts-link{}
-          }
-        }
-      }
-      .subtext{
-        max-width: calc(100% - 360px - 90px);
-      }
-      .copyrights{
-        order: 1;
-        max-width: 100%;
-      }
+    .loader-wrapper{
+      min-height: calc(100vh - 248px);
+      height: calc(100vh - 248px);
+      font-size: 14px;
     }
   }
   @media (max-width: 660px){
-    .footer{
-      flex-direction: column;
-      padding: 20px 0 40px;
-      .lists-block{
-        width: 100%;
-        flex-direction: column;
-        row-gap: 40px;
-        .menu{
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-          row-gap: 10px;
-          .menu-el{
-            .menu-link{}
-          }
-        }
-        .contacts-menu{
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-          row-gap: 10px;
-          .contacts-el{
-            .contacts-link{}
-          }
-        }
-      }
-      .subtext{
-        text-align: center;
-        max-width: 100%;
-      }
-      .copyrights{
-        order: 1;
-        max-width: 100%;
-        text-align: center;
-      }
+    .loader-wrapper{
+      min-height: calc(100vh - 90px - 148px);
+      height: calc(100vh - 90px - 148px);
+      font-size: 12px;
     }
   }
 </style>

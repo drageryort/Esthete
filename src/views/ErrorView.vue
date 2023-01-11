@@ -1,6 +1,6 @@
 <template>
   <div class="errorView">
-    <div class="el-video">
+    <div class="el-video wow-total animate__fadeInUp">
       <b class="text">4</b>
       <video src="@/assets/video/MVP.mp4"
              class="video"
@@ -11,8 +11,8 @@
       />
       <b class="text">4</b>
     </div>
-    <h2 class="sub-text">Ooops page not found</h2>
-    <router-link to="/" class="btn btn-blue">Go to main page</router-link>
+    <h2 class="sub-text wow-total animate__fadeInUp">Ooops page not found</h2>
+    <router-link to="/" class="btn btn-blue wow-total animate__fadeInUp">Go to main page</router-link>
   </div>
 </template>
 
