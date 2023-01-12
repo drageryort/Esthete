@@ -1,16 +1,20 @@
 <template>
-  <div class="homeView">
-    <AppHomeBanner :pageData="pageData" :play="waitPreview"/>
-    <AppGallery :pageData="pageData"/>
-    <AppHomeLetsTalk :pageData="pageData"/>
-    <AppHomeReviews :pageData="pageData"/>
-    <AppDevConcepts :pageData="pageData"/>
-    <AppSendRequest :pageData="pageData"/>
-  </div>
+  <Transition>
+    <AppLoader v-if="loader"/>
+    <div class="homeView" v-else>
+      <AppHomeBanner :pageData="pageData" :preview="preview" @previewActionHomeBanner="previewAction"/>
+      <AppGallery :pageData="pageData"/>
+      <AppHomeLetsTalk :pageData="pageData"/>
+      <AppHomeReviews :pageData="pageData"/>
+      <AppDevConcepts :pageData="pageData"/>
+      <AppSendRequest :pageData="pageData"/>
+    </div>
+  </Transition>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
+  import AppLoader from "@/components/AppLoader.vue";
   import AppHomeBanner from "@/components/homepage-blocks/AppHomeBanner.vue";
   import AppGallery from "@/components/common-blocks/gallery/AppGallery.vue";
   import AppHomeLetsTalk from "@/components/homepage-blocks/AppHomeLetsTalk.vue";
@@ -20,8 +24,14 @@
 
   export default defineComponent({
     name: 'HomeView',
-    props:{
-      waitPreview: Boolean,
+    props: {
+      preview: Boolean,
+      loader: Boolean,
+    },
+    emits:{
+      loaderAction:(trigger: boolean) => trigger,
+      readyData:(trigger: boolean) => trigger,
+      previewAction:(trigger: boolean) => trigger
     },
     data(){
       return{
@@ -29,33 +39,19 @@
         previewState: true,
       }
     },
-    components: {
-      AppHomeReviews,
-      AppDevConcepts,
-      AppSendRequest,
-      AppHomeLetsTalk,
-      AppGallery,
-      AppHomeBanner,
-    },
-    async beforeCreate() {
-      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf'];
-      this.$emit("readyData");
-    },
-    mounted() {
-      if(this.waitPreview && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
-        document.body.style.overflowY = "hidden";
-        this.previewState = true;
-        this.$emit('updatePreviewState', this.previewState)
-        setTimeout(() => {
-          document.body.style.overflowY = "auto"
-          this.previewState = false;
-          this.$emit('updatePreviewState', this.previewState)
-        }, 9500)
+    components: {AppLoader, AppHomeReviews, AppDevConcepts, AppSendRequest, AppHomeLetsTalk, AppGallery, AppHomeBanner},
+    methods: {
+      previewAction(trigger:boolean){
+        this.$emit('previewAction', trigger)
       }
     },
-    unmounted() {
-      this.previewState = false;
-      this.$emit('updatePreviewState', this.previewState)
+    async mounted() {
+      this.$emit("loaderAction", true);
+      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf'];
+      this.$emit("readyData", true);
+      if(Object.keys(this.pageData).length){
+        setTimeout(()=> this.$emit("loaderAction", false),1000)
+      }
     }
   });
 </script>

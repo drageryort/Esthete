@@ -93,7 +93,9 @@
 
   export default defineComponent({
     name: "AppHomeReviews",
-    props: ['pageData'],
+    props: {
+      pageData: Object
+    },
     components: {
       Swiper,
       SwiperSlide,

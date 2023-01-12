@@ -31,7 +31,9 @@
 
   export default defineComponent({
     name: "AppHomeDevConcepts",
-    props: ['pageData']
+    props: {
+      pageData: Object
+    }
   })
 </script>
 
@@ -51,6 +53,7 @@
       margin: 80px 0 0;
       .difference-el{
         width: calc((100% - 60px)/2);
+        min-width: calc((100% - 60px)/2);
         .difference-el-video{
           display: flex;
           justify-content: center;
@@ -61,7 +64,7 @@
           background: linear-gradient(106.76deg, rgba(34, 9, 112, 0.43) 1.15%, rgba(34, 9, 112, 0) 50.57%, rgba(34, 9, 112, 0.29) 100%);
           .video{
             height: 100%;
-            width: auto;
+            width: 100%;
             z-index: -1;
           }
           .video-title{
@@ -103,6 +106,7 @@
         margin: 80px 0 0;
         .difference-el{
           width: 325px;
+          min-width: 325px;
           .difference-el-video{
             height: 180px;
             .video{}
@@ -137,6 +141,7 @@
         margin: 40px 0 0;
         .difference-el{
           width: 100%;
+          min-width: 100%;
           .difference-el-video{
             height: 170px;
             .video{}

@@ -18,7 +18,9 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppHomeLetsTalk",
-  props: ['pageData']
+  props: {
+    pageData: Object
+  }
 })
 </script>
 

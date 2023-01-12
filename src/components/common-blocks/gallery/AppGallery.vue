@@ -33,7 +33,9 @@ import AppGalleryModal from "@/components/common-blocks/galleryModal/AppGalleryM
 import AppGalleryEl from "@/components/common-blocks/gallery/AppGalleryEl.vue";
 export default defineComponent({
   name: "AppGallery",
-  props: ['pageData'],
+  props: {
+    pageData: Object
+  },
   components: {AppGalleryEl, AppGalleryModal},
   data() {
     return{

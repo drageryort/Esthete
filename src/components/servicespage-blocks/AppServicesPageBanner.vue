@@ -27,7 +27,7 @@
     name: "AppServicesPageBanner",
     props: {
       pageData: Object
-    },
+    }
   })
 </script>
 

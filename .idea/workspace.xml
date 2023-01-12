@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70792fa-905b-49cf-9c84-b2f08fe684b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppLoader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppLoader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppMobileMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppMobileMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/AppSendRequest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/AppSendRequest.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/gallery/AppGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/gallery/AppGallery.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/gallery/AppGalleryEl.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/gallery/AppGalleryEl.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalPicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalPicture.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeDevConcepts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeDevConcepts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeLetsTalk.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeLetsTalk.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeReviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeReviews.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/servicespage-blocks/AppServicesPageBanner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/servicespage-blocks/AppServicesPageBanner.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/ErrorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/PortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" afterDir="false" />
     </list>
@@ -26,6 +43,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="NamedScopeManager">
     <scope name="assets" pattern="file[Esthete-Web]:src/assets/styles/*||file[Esthete-Web]:src/assets/styles/common/*||file[Esthete-Web]:src/assets/styles/common/global/*" />
@@ -111,7 +136,7 @@
       <workItem from="1671806945334" duration="147000" />
       <workItem from="1672239081449" duration="615000" />
       <workItem from="1672244450534" duration="34000" />
-      <workItem from="1673369225911" duration="6163000" />
+      <workItem from="1673369225911" duration="23191000" />
     </task>
     <task id="LOCAL-00001" summary="project modal + portfolio">
       <created>1671741659512</created>

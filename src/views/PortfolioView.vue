@@ -1,9 +1,11 @@
 <template>
-  <AppLoader v-if="loader"/>
-  <div class="portfolioView" v-else>
-    <AppPortfolioPageGallery :pageData="pageData"/>
-    <AppSendRequest :pageData="pageData"/>
-  </div>
+  <Transition>
+    <AppLoader v-if="loader"/>
+    <div class="portfolioView" v-else>
+      <AppPortfolioPageGallery :pageData="pageData"/>
+      <AppSendRequest :pageData="pageData"/>
+    </div>
+  </Transition>
 </template>
 
 <script lang="ts">
@@ -14,17 +16,26 @@
 
   export default defineComponent({
     name: "PortfolioView",
+    props: {
+      loader:Boolean
+    },
+    emits:{
+      loaderAction:(trigger: boolean) => trigger,
+      readyData:(trigger: boolean) => trigger
+    },
     components: {AppLoader, AppPortfolioPageGallery, AppSendRequest},
     data(){
       return {
         pageData: {},
-        loader: true,
       }
     },
     async mounted() {
+      this.$emit("loaderAction", true);
       this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/249')).json())['acf'];
-      this.$emit("readyData");
-      this.loader = false;
+      this.$emit("readyData", true);
+      if(Object.keys(this.pageData).length){
+        setTimeout(()=> this.$emit("loaderAction", false),1000)
+      }
     }
   })
 </script>

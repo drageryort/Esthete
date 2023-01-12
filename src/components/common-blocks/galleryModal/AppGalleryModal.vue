@@ -41,7 +41,13 @@ import WOW from "wow.js"
 export default defineComponent({
   name: "AppGalleryModal",
   components: { AppSendRequest, AppGalleryModalVideo, AppGalleryModalPicture},
-  props: ['modalData','pageData'],
+  props: {
+    modalData: Object,
+    pageData: Object
+  },
+  emits:{
+    galleryModal:(trigger:boolean, cardIndex:number) => ({trigger,cardIndex})
+  },
   mounted() {
     new WOW({
       boxClass: 'wow-modal',

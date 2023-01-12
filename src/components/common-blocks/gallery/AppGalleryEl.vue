@@ -13,7 +13,10 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppGalleryEl",
-  props: ['elementData','page']
+  props: {
+    elementData: Object,
+    page: String
+  }
 })
 </script>
 

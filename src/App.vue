@@ -1,6 +1,7 @@
 <template>
   <AppHeader
-      :playPreview="playPreview"
+      v-if="!loader"
+      :playPreview="preview"
       :commonData="commonData"
       @mobileMenu="mobileMenu"
   />
@@ -9,21 +10,26 @@
       @mobileMenu="mobileMenu"
       :mobileMenuActive="mobileMenuActive"
   />
-
-  <router-view v-slot="{ Component }"  @readyData="animation">
+  <router-view v-slot="{ Component }">
     <transition
         name="scale"
         mode="out-in"
     >
       <component
           :is="Component"
-          :waitPreview="waitPreview"
-          @updatePreviewState="updateWaitPreview"
+
+          @readyData="animation"
+
+          :preview="preview"
+          @previewAction="previewState"
+          :loader="loader"
+          @loaderAction="showLoader"
 
       />
     </transition>
   </router-view>
   <appFooter
+      v-if="!loader"
       :commonData="commonData"
   />
 </template>
@@ -44,8 +50,9 @@
       return {
         commonData: {},
         mobileMenuActive: false,
-        waitPreview: true,
-        playPreview: false
+        headerPreview: false,
+        preview: true,
+        loader: true
       }
     },
     methods: {
@@ -53,15 +60,20 @@
         this.mobileMenuActive = trigger
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       },
-      animation() {
-        new WOW({
-          boxClass: 'wow-total',
-          animateClass:'animated-total',
-        }).init();
+      animation(trigger:boolean) {
+        if(trigger){
+          new WOW({
+            boxClass: 'wow-total',
+            animateClass:'animated-total',
+          }).init();
+        }
       },
-      updateWaitPreview(previewState:boolean){
-        this.waitPreview = previewState;
-        this.playPreview = previewState;
+      showLoader(trigger:boolean){
+        this.loader = trigger;
+      },
+      previewState(trigger:boolean){
+        this.preview = trigger;
+        this.headerPreview = trigger;
       }
     },
     async beforeCreate() {

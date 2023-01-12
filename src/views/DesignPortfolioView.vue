@@ -1,14 +1,14 @@
 <template>
-  <AppLoader
-      v-if="loader"
-  />
-  <div class="designView" v-else>
-    <AppPagesBanner :pageData="pageData"/>
-    <AppGallery :pageData="pageData"/>
-    <AppPagesWhatWeDo :pageData="pageData"/>
-    <AppPagesHowWeDo :pageData="pageData"/>
-    <AppSendRequest :pageData="pageData"/>
-  </div>
+  <Transition>
+    <AppLoader v-if="loader"/>
+    <div class="designView" v-else>
+      <AppPagesBanner :pageData="pageData"/>
+      <AppGallery :pageData="pageData"/>
+      <AppPagesWhatWeDo :pageData="pageData"/>
+      <AppPagesHowWeDo :pageData="pageData"/>
+      <AppSendRequest :pageData="pageData"/>
+    </div>
+  </Transition>
 </template>
 
 <script lang="ts">
@@ -22,17 +22,26 @@
 
   export default defineComponent({
     name: 'DesignPortfolioView',
+    props: {
+      loader:Boolean
+    },
+    emits:{
+      loaderAction:(trigger: boolean) => trigger,
+      readyData:(trigger: boolean) => trigger
+    },
     components: {AppLoader, AppPagesHowWeDo, AppPagesWhatWeDo, AppPagesBanner, AppSendRequest, AppGallery},
     data(){
       return {
         pageData: {},
-        loader: true,
       }
     },
     async mounted() {
+      this.$emit("loaderAction", true);
       this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/123')).json())['acf'];
-      this.$emit("readyData");
-      this.loader = false;
+      this.$emit("readyData", true);
+      if(Object.keys(this.pageData).length){
+        setTimeout(()=> this.$emit("loaderAction", false),1000)
+      }
     }
   })
 </script>

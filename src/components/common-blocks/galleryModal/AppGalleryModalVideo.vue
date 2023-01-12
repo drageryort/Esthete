@@ -5,7 +5,7 @@
            controls
            playsinline
     >
-      <source :src="media['galleryListProductModalGalleryDesktopVideo']">
+      <source :src="mediaData['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <video class="video-el-poster"
            ref="videoPoster"
@@ -13,7 +13,7 @@
            autoplay
            playsinline
     >
-      <source :src="media['galleryListProductModalGalleryDesktopVideo']">
+      <source :src="mediaData['galleryListProductModalGalleryDesktopVideo']">
     </video>
     <button class="btn play-button" @click="start" ref="playButton">
       <img class="image" src="@/assets/images/svg/play-button-icon.svg" alt="play-icon">
@@ -26,7 +26,9 @@
 
   export default defineComponent({
     name: "AppGalleryModalVideo",
-    props:['media'],
+    props: {
+      mediaData: Object
+    },
     methods: {
       start(){
         (this.$refs.videoMain as HTMLVideoElement).play();

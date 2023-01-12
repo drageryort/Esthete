@@ -7,7 +7,7 @@
           <img src="@/assets/images/jpg/mock-video.jpg" alt="banner">
         </picture>
         <video class="video"
-               v-if="play"
+               v-if="preview"
                autoplay
                muted
                playsinline
@@ -15,7 +15,7 @@
           <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
           <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
         </video>
-        <div class="content" :class="{animation:play}">
+        <div class="content" :class="{animation:preview}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{ pageData['topBannerSubTitle'] }}</p>
           <a target="_blank" :href="pageData['topBannerLink']"
@@ -27,20 +27,36 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+  import {defineComponent} from "vue";
 
-export default defineComponent({
-  name: "AppHomeBanner",
-  props: {
-    pageData: Object,
-    play: Boolean
-  },
-  data() {
-    return {
-      isMobile: window.matchMedia('(max-width: 660px)').matches
+  export default defineComponent({
+    name: "AppHomeBanner",
+    props: {
+      pageData: Object,
+      preview: Boolean
+    },
+    emits:{
+      previewActionHomeBanner:(trigger: boolean) => trigger
+    },
+    data() {
+      return {
+        isMobile: window.matchMedia('(max-width: 660px)').matches
+      }
+    },
+    mounted(){
+      if(this.preview && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
+        document.body.style.overflowY = "hidden";
+        this.$emit('previewActionHomeBanner', true)
+        setTimeout(() => {
+          document.body.style.overflowY = "auto"
+          this.$emit('previewActionHomeBanner', false,)
+        }, 9500)
+      }
+    },
+    unmounted() {
+      this.$emit('previewActionHomeBanner', false)
     }
-  }
-})
+  })
 </script>
 
 <style lang="scss">

@@ -1,25 +1,41 @@
 <template>
-  <div class="errorView">
-    <div class="el-video wow-total animate__fadeInUp">
-      <b class="text">4</b>
-      <video src="@/assets/video/MVP.mp4"
-             class="video"
-             loop
-             muted
-             autoplay
-             playsinline
-      />
-      <b class="text">4</b>
+  <Transition>
+    <AppLoader v-if="loader"/>
+    <div class="errorView" v-else>
+      <div class="el-video wow-total animate__fadeInUp">
+        <b class="text">4</b>
+        <video src="@/assets/video/MVP.mp4"
+               class="video"
+               loop
+               muted
+               autoplay
+               playsinline
+        />
+        <b class="text">4</b>
+      </div>
+      <h2 class="sub-text wow-total animate__fadeInUp">Ooops page not found</h2>
+      <router-link to="/" class="btn btn-blue wow-total animate__fadeInUp">Go to main page</router-link>
     </div>
-    <h2 class="sub-text wow-total animate__fadeInUp">Ooops page not found</h2>
-    <router-link to="/" class="btn btn-blue wow-total animate__fadeInUp">Go to main page</router-link>
-  </div>
+  </Transition>
 </template>
 
-<script>
-export default {
-  name: "ErrorView"
-}
+<script lang="ts">
+  import AppLoader from "@/components/AppLoader.vue";
+  import {defineComponent} from "vue";
+  export default defineComponent({
+    name: "ErrorView",
+    components: { AppLoader},
+    emits:{
+      loaderAction:(trigger: boolean) => trigger,
+    },
+    props: {
+      loader:Boolean
+    },
+    mounted() {
+      this.$emit("loaderAction", true);
+      setTimeout(()=> this.$emit("loaderAction", false),1000)
+    },
+})
 </script>
 
 <style lang="scss" scoped>

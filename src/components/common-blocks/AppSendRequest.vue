@@ -23,7 +23,10 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppSendRequest",
-  props:['variant','pageData'],
+  props: {
+    pageData:Object,
+    variant:String,
+  },
 })
 </script>
 

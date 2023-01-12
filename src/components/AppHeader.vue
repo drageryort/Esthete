@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{animation:playPreview}">
+  <header class="header" :class="{animation:playPreview}" ref="header">
     <div class="left-col">
       <router-link to="/" class="logo">
         <picture class="picture">
@@ -35,6 +35,9 @@
     props: {
       commonData: Object,
       playPreview: Boolean
+    },
+    emits:{
+      mobileMenu:(trigger: boolean) => trigger
     },
     data() {
       return {

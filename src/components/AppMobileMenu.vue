@@ -51,7 +51,13 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppMobileMenu",
-  props:['mobileMenuActive', 'commonData'],
+  props:{
+    mobileMenuActive: Boolean,
+    commonData: Object
+  },
+  emits:{
+    mobileMenu:(trigger: boolean) => trigger
+  },
   data() {
     return {
       isDesktop: window.matchMedia('(min-width: 1110px)').matches

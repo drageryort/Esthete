@@ -1,8 +1,8 @@
 <template>
   <picture class="image">
-    <source :srcset="media['galleryListProductModalGalleryMobileImage'] ? media['galleryListProductModalGalleryMobileImage'] : ''" media="(max-width:660px)">
-    <source :srcset="media['galleryListProductModalGalleryTabletImage'] ? media['galleryListProductModalGalleryTabletImage'] : ''" media="(max-width:1025px)">
-    <img :src="media['galleryListProductModalGalleryDesktopImage']" alt="banner">
+    <source :srcset="mediaData['galleryListProductModalGalleryMobileImage'] ? mediaData['galleryListProductModalGalleryMobileImage'] : ''" media="(max-width:660px)">
+    <source :srcset="mediaData['galleryListProductModalGalleryTabletImage'] ? mediaData['galleryListProductModalGalleryTabletImage'] : ''" media="(max-width:1025px)">
+    <img :src="mediaData['galleryListProductModalGalleryDesktopImage']" alt="banner">
   </picture>
 </template>
 
@@ -11,7 +11,9 @@
 
   export default defineComponent({
     name: "AppGalleryModalPicture",
-    props:['media'],
+    props: {
+      mediaData: Object
+    }
   })
 </script>
 

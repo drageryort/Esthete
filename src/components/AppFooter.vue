@@ -44,7 +44,9 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "AppFooter",
-  props: ['commonData']
+  props: {
+    commonData: Object
+  }
 })
 </script>
 
