@@ -3,11 +3,6 @@
     <div class="gallery-modal-wrapper" @click="$emit('galleryModal', false, 0)"></div>
     <div class="gallery-modal-block" id="modalBlock">
       <div class="gallery-modal-content">
-        <button class="btn close-modal" @click="$emit('galleryModal', false, 0)">
-        <span class="circle">
-          <img src="@/assets/images/svg/close-icon.svg" alt="close icon">
-        </span>
-        </button>
         <h2 class="pre-title">{{modalData['galleryListProductType']}}</h2>
         <h1 class="title">{{modalData['galleryListProductName']}}</h1>
         <picture class="main-banner">
@@ -15,15 +10,21 @@
         </picture>
         <h3 class="text-title">{{modalData['galleryListProductDescriptionTitle']}}</h3>
         <p class="text" v-html="modalData['galleryListProductDescription']"></p>
-        <div class="media wow-modal animate__fadeInUp" v-for="media in modalData['galleryListProductModalGallery']" :key="media.imageDesktop || media.videoDesktop">
-          <AppGalleryModalVideo  v-if="media['galleryListProductModalGalleryDesktopVideo']" :media="media"/>
-          <AppGalleryModalPicture v-else :media="media"/>
+
+        <div class="media wow-modal animate__fadeInUp" v-for="media in modalData['galleryListProductModalGallery']" :key="media['imageDesktop'] || media['videoDesktop']">
+          <AppGalleryModalVideo  v-if="media['galleryListProductModalGalleryDesktopVideo']" :mediaData="media"/>
+          <AppGalleryModalPicture v-else :mediaData="media"/>
         </div>
       </div>
       <AppSendRequest
           :variant="'modal'"
           :pageData="pageData"
       />
+      <button class="btn close-modal" @click="$emit('galleryModal', false, 0)">
+          <span class="circle">
+            <img src="@/assets/images/svg/close-icon.svg" alt="close icon">
+          </span>
+      </button>
     </div>
   </div>
 </template>
@@ -121,25 +122,25 @@ export default defineComponent({
       right: 0;
       z-index: 10;
       overflow-y: auto;
+      .close-modal{
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        .circle{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          padding: 11px;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 60px;
+          overflow: hidden;
+        }
+      }
       .gallery-modal-content{
         padding: 40px 67px 60px;
-        .close-modal{
-          position: absolute;
-          top: 40px;
-          right: 40px;
-          z-index: 5;
-          .circle{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 48px;
-            height: 48px;
-            padding: 11px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 60px;
-            overflow: hidden;
-          }
-        }
+
         .pre-title{
           font-weight: 500;
           font-size: 16px;

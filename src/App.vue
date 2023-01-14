@@ -1,7 +1,7 @@
 <template>
   <AppHeader
       v-if="!loader"
-      :playPreview="preview"
+      :playPreview="headerPreview"
       :commonData="commonData"
       @mobileMenu="mobileMenu"
   />
@@ -17,14 +17,10 @@
     >
       <component
           :is="Component"
-
-          @readyData="animation"
-
           :preview="preview"
           @previewAction="previewState"
           :loader="loader"
           @loaderAction="showLoader"
-
       />
     </transition>
   </router-view>
@@ -60,16 +56,15 @@
         this.mobileMenuActive = trigger
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       },
-      animation(trigger:boolean) {
-        if(trigger){
-          new WOW({
-            boxClass: 'wow-total',
-            animateClass:'animated-total',
-          }).init();
-        }
-      },
       showLoader(trigger:boolean){
         this.loader = trigger;
+        if(!trigger){
+          const wow = new WOW({
+            boxClass: 'wow-total',
+            animateClass:'animated-total',
+          })
+          wow.init()
+        }
       },
       previewState(trigger:boolean){
         this.preview = trigger;
@@ -77,7 +72,11 @@
       }
     },
     async beforeCreate() {
-      this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
+      try {
+        this.commonData = (await (await fetch('https://admin.esthete.studio//wp-json/acf/v2/options/')).json())['acf'];
+      } catch (e){
+        console.error(e)
+      }
     }
   })
 </script>

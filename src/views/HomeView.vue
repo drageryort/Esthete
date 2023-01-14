@@ -1,15 +1,20 @@
 <template>
-  <Transition>
-    <AppLoader v-if="loader"/>
-    <div class="homeView" v-else>
-      <AppHomeBanner :pageData="pageData" :preview="preview" @previewActionHomeBanner="previewAction"/>
+  <div class="home-view-wrapper">
+    <AppLoader v-show="loader"/>
+    <div class="homeView" v-show="!loader">
+      <AppHomeBanner
+          :pageData="pageData"
+          :preview="preview"
+          @previewActionHomeBanner="previewAction"
+          @videoBannerAction="videoAction"
+      />
       <AppGallery :pageData="pageData"/>
       <AppHomeLetsTalk :pageData="pageData"/>
       <AppHomeReviews :pageData="pageData"/>
       <AppDevConcepts :pageData="pageData"/>
       <AppSendRequest :pageData="pageData"/>
     </div>
-  </Transition>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,26 +35,31 @@
     },
     emits:{
       loaderAction:(trigger: boolean) => trigger,
-      readyData:(trigger: boolean) => trigger,
       previewAction:(trigger: boolean) => trigger
     },
     data(){
       return{
-        pageData: {},
-        previewState: true,
+        pageData: {}
       }
     },
-    components: {AppLoader, AppHomeReviews, AppDevConcepts, AppSendRequest, AppHomeLetsTalk, AppGallery, AppHomeBanner},
+    components: {
+      AppLoader, AppHomeReviews, AppDevConcepts, AppSendRequest, AppHomeLetsTalk, AppGallery, AppHomeBanner},
     methods: {
       previewAction(trigger:boolean){
         this.$emit('previewAction', trigger)
+      },
+      videoAction(trigger:boolean){
+        this.$emit("loaderAction", trigger)
       }
     },
     async mounted() {
       this.$emit("loaderAction", true);
-      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf'];
-      this.$emit("readyData", true);
-      if(Object.keys(this.pageData).length){
+      try {
+        this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/11')).json())['acf'];
+      } catch (e){
+       console.error(e)
+      }
+      if(Object.keys(this.pageData).length && !this.preview){
         setTimeout(()=> this.$emit("loaderAction", false),1000)
       }
     }

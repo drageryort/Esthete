@@ -2,15 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="879e58ae-7411-4e2b-bc74-c5f1203e3e9d" name="mine" url="http://109.94.209.66">
-        <fileTransfer rootFolder="/www/esthete.webfuture.top" host="109.94.209.66" port="21">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-        </fileTransfer>
-      </webServer>
-      <webServer id="226ed1a2-b686-4535-b5e0-f5f776d4be37" name="Esthete">
-        <fileTransfer rootFolder="/var/www/esthete.studio" accessType="SFTP" host="146.190.121.42" port="22" sshConfigId="b3f6810b-5297-4996-95b6-fc06facecff6" sshConfig="root@146.190.121.42:22 password">
+      <webServer id="9283ae6e-4580-41e7-a26e-ac164ea184a1" name="Esthete">
+        <fileTransfer rootFolder="/var/www/esthete.studio" accessType="SFTP" host="146.190.121.42" port="22" sshConfigId="712b123d-ace2-4dc9-9569-b5c434e09880" sshConfig="root@146.190.121.42:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

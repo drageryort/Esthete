@@ -68,13 +68,9 @@
           </picture>
           <div class="rate-description">
             <span class="rate-text">Our rate is {{rateEl['reviewRatesRate']}} of 5</span>
-            <div class="rate-stars">
-              <img class="rate-star"
-                   v-for="el in Number(rateEl['reviewRatesRate'])"
-                   :key="el + rateEl['reviewRatesLogo']"
-                   src="@/assets/images/svg/star-icon.svg" alt="star in rate"
-              >
-            </div>
+            <div class="rate-stars"
+                 :style="`--rating: ${rateEl['reviewRatesRate']};`"
+            />
           </div>
         </div>
       </div>
@@ -218,6 +214,7 @@
         .rate-description{
           display: flex;
           flex-direction: column;
+          row-gap: 3px;
           justify-content: center;
           padding: 0 0 0 13px;
           height: 100%;
@@ -226,12 +223,19 @@
             font-size: 14px;
             line-height: 17px;
           }
-          .rate-stars{
-            display: flex;
-
-            .rate-star{
-              width: 24px;
-              height: 24px;
+          .rate-stars {
+            --percent: calc(var(--rating) / 5 * 100%);
+            --star-color: #fff;
+            --star-background: #fc0;
+            display: inline-block;
+            font-size: 20px;
+            line-height: 1;
+            &::before {
+              content: '★★★★★';
+              letter-spacing: 3px;
+              background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
           }
         }

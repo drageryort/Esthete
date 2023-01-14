@@ -22,18 +22,21 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--color-black);
     z-index: 5;
     .loader {
       position: relative;
-      width: 350px;
-      height: 350px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       background: linear-gradient(#142DA9, #AD0303);
       animation: animate 1.2s linear infinite;
@@ -86,9 +89,19 @@ export default defineComponent({
   }
 
   @media (max-width: 1025px){
-    .loader-wrapper{}
+    .loader-wrapper{
+      .loader{
+        width: 240px;
+        height: 240px;
+      }
+    }
   }
   @media (max-width: 660px){
-    .loader-wrapper{}
+    .loader-wrapper{
+      .loader{
+        width: 134px;
+        height: 134px;
+      }
+    }
   }
 </style>

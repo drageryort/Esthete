@@ -11,11 +11,12 @@
                autoplay
                muted
                playsinline
+               @canplaythrough="checkVideo"
         >
           <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
           <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
         </video>
-        <div class="content" :class="{animation:preview}">
+        <div class="content" :class="{animation:play}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{ pageData['topBannerSubTitle'] }}</p>
           <a target="_blank" :href="pageData['topBannerLink']"
@@ -36,25 +37,36 @@
       preview: Boolean
     },
     emits:{
-      previewActionHomeBanner:(trigger: boolean) => trigger
+      previewActionHomeBanner:(trigger: boolean) => trigger,
+      videoBannerAction:(trigger: boolean) => trigger,
     },
     data() {
       return {
-        isMobile: window.matchMedia('(max-width: 660px)').matches
+        isMobile: window.matchMedia('(max-width: 660px)').matches,
+        play: false
       }
     },
-    mounted(){
-      if(this.preview && !window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches){
-        document.body.style.overflowY = "hidden";
-        this.$emit('previewActionHomeBanner', true)
+    methods:{
+      checkVideo(){
+        if(!window.matchMedia('(min-width: 660px) and (max-width: 1025px)').matches) {
+          document.body.style.overflowY = "hidden";
+        }
+        this.$emit('previewActionHomeBanner', true);
+        this.play = true;
+        this.$emit('videoBannerAction', false);
         setTimeout(() => {
           document.body.style.overflowY = "auto"
-          this.$emit('previewActionHomeBanner', false,)
+          this.$emit('previewActionHomeBanner', false)
+          this.play = false;
         }, 9500)
       }
     },
     unmounted() {
-      this.$emit('previewActionHomeBanner', false)
+      setTimeout(() => {
+        document.body.style.overflowY = "auto"
+        this.$emit('previewActionHomeBanner', false)
+        this.play = false;
+      }, 100)
     }
   })
 </script>

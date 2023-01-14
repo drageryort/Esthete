@@ -54,28 +54,32 @@
       .difference-el{
         width: calc((100% - 60px)/2);
         min-width: calc((100% - 60px)/2);
-        .difference-el-video{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 290px;
-          border-radius: 20px;
-          overflow: hidden;
-          background: linear-gradient(106.76deg, rgba(34, 9, 112, 0.43) 1.15%, rgba(34, 9, 112, 0) 50.57%, rgba(34, 9, 112, 0.29) 100%);
-          .video{
-            height: 100%;
+        .difference-el-video-wrapper{
+          width: 100%;
+          .difference-el-video{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            z-index: -1;
-          }
-          .video-title{
-            font-weight: 700;
-            font-size: 48px;
-            line-height: 58px;
-            letter-spacing: 0.02em;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            height: 290px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(106.76deg, rgba(34, 9, 112, 0.43) 1.15%, rgba(34, 9, 112, 0) 50.57%, rgba(34, 9, 112, 0.29) 100%);
+            .video{
+              height: 100%;
+              width: 100%;
+              z-index: -1;
+            }
+            .video-title{
+              font-weight: 700;
+              font-size: 48px;
+              line-height: 58px;
+              letter-spacing: 0.02em;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
           }
         }
         .difference-el-title{

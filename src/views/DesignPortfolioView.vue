@@ -26,8 +26,7 @@
       loader:Boolean
     },
     emits:{
-      loaderAction:(trigger: boolean) => trigger,
-      readyData:(trigger: boolean) => trigger
+      loaderAction:(trigger: boolean) => trigger
     },
     components: {AppLoader, AppPagesHowWeDo, AppPagesWhatWeDo, AppPagesBanner, AppSendRequest, AppGallery},
     data(){
@@ -37,8 +36,11 @@
     },
     async mounted() {
       this.$emit("loaderAction", true);
-      this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/123')).json())['acf'];
-      this.$emit("readyData", true);
+      try{
+        this.pageData = (await (await fetch('https://admin.esthete.studio/wp-json/wp/v2/pages/123')).json())['acf'];
+      } catch (e){
+        console.error(e)
+      }
       if(Object.keys(this.pageData).length){
         setTimeout(()=> this.$emit("loaderAction", false),1000)
       }
