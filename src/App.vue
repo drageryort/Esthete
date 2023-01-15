@@ -11,10 +11,6 @@
       :mobileMenuActive="mobileMenuActive"
   />
   <router-view v-slot="{ Component }">
-    <transition
-        name="scale"
-        mode="out-in"
-    >
       <component
           :is="Component"
           :preview="preview"
@@ -22,7 +18,6 @@
           :loader="loader"
           @loaderAction="showLoader"
       />
-    </transition>
   </router-view>
   <appFooter
       v-if="!loader"
@@ -85,14 +80,14 @@
   @import "./assets/styles/common/fonts/font.min.css";
   @import "./assets/styles/common/global/global.min.css";
 
-  .scale-enter-active,
-  .scale-leave-active {
-    transition: all 0.5s ease;
-  }
-  .scale-enter-from,
-  .scale-leave-to {
-    opacity: 0;
-    transform: scale(0.9);
-  }
+  //.scale-enter-active,
+  //.scale-leave-active {
+  //  transition: all 0.5s ease;
+  //}
+  //.scale-enter-from,
+  //.scale-leave-to {
+  //  opacity: 0;
+  //  transform: scale(0.9);
+  //}
 
 </style>

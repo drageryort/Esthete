@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65dceabc-6fa5-485b-913e-e6af9ae33f2a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppLoader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppLoader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeDevConcepts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeDevConcepts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeReviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeReviews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/portfoliopage-blocks/AppPortfolioPageGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/portfoliopage-blocks/AppPortfolioPageGallery.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ErrorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/PortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" afterDir="false" />
@@ -94,7 +87,12 @@
       <option name="presentableId" value="Default" />
       <updated>1673554488880</updated>
       <workItem from="1673554492654" duration="15418000" />
-      <workItem from="1673642158314" duration="12834000" />
+      <workItem from="1673642158314" duration="14441000" />
+      <workItem from="1673723920691" duration="5736000" />
+      <workItem from="1673731727872" duration="2420000" />
+      <workItem from="1673735053208" duration="2673000" />
+      <workItem from="1673802484649" duration="4193000" />
+      <workItem from="1673817237568" duration="37000" />
     </task>
     <servers />
   </component>

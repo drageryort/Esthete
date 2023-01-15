@@ -1,14 +1,19 @@
 <template>
-  <Transition>
-    <AppLoader v-if="loader"/>
-    <div class="designView" v-else>
-      <AppPagesBanner :pageData="pageData"/>
-      <AppGallery :pageData="pageData"/>
-      <AppPagesWhatWeDo :pageData="pageData"/>
-      <AppPagesHowWeDo :pageData="pageData"/>
-      <AppSendRequest :pageData="pageData"/>
-    </div>
-  </Transition>
+  <div style="min-height: 100vh">
+    <Transition
+        name="bubble"
+        mode="out-in"
+    >
+      <AppLoader v-if="loader"/>
+      <div class="designView" v-else>
+        <AppPagesBanner :pageData="pageData"/>
+        <AppGallery :pageData="pageData"/>
+        <AppPagesWhatWeDo :pageData="pageData"/>
+        <AppPagesHowWeDo :pageData="pageData"/>
+        <AppSendRequest :pageData="pageData"/>
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <script lang="ts">

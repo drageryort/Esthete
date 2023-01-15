@@ -32,7 +32,7 @@ export default defineComponent({
     right: 0;
     bottom: 0;
     background: var(--color-black);
-    z-index: 5;
+    z-index: 999;
     .loader {
       position: relative;
       width: 300px;

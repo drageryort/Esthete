@@ -62,11 +62,9 @@
       }
     },
     unmounted() {
-      setTimeout(() => {
-        document.body.style.overflowY = "auto"
-        this.$emit('previewActionHomeBanner', false)
-        this.play = false;
-      }, 100)
+      document.body.style.overflowY = "auto"
+      this.$emit('previewActionHomeBanner', false)
+      this.play = false;
     }
   })
 </script>

@@ -1,11 +1,16 @@
 <template>
-  <Transition>
-    <AppLoader v-if="loader"/>
-    <div class="portfolioView" v-else>
-      <AppPortfolioPageGallery :pageData="pageData"/>
-      <AppSendRequest :pageData="pageData"/>
-    </div>
-  </Transition>
+  <div style="min-height: 100vh">
+    <Transition
+        name="bubble"
+        mode="out-in"
+    >
+      <AppLoader v-if="loader"/>
+      <div class="portfolioView" v-else>
+        <AppPortfolioPageGallery :pageData="pageData"/>
+        <AppSendRequest :pageData="pageData"/>
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <script lang="ts">
@@ -42,6 +47,4 @@
   })
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss"></style>

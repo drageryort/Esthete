@@ -1,14 +1,19 @@
 <template>
-  <Transition>
-    <AppLoader v-if="loader"/>
-    <div class="webView" v-else>
-      <AppPagesBanner :pageData="pageData"/>
-      <AppGallery :pageData="pageData"/>
-      <AppPagesWhatWeDo :pageData="pageData"/>
-      <AppPagesHowWeDo :pageData="pageData"/>
-      <AppSendRequest :pageData="pageData"/>
+  <div style="min-height: 100vh">
+    <Transition
+        name="bubble"
+        mode="out-in"
+    >
+      <AppLoader v-if="loader"/>
+      <div class="webView" v-else>
+        <AppPagesBanner :pageData="pageData"/>
+        <AppGallery :pageData="pageData"/>
+        <AppPagesWhatWeDo :pageData="pageData"/>
+        <AppPagesHowWeDo :pageData="pageData"/>
+        <AppSendRequest :pageData="pageData"/>
+    </div>
+    </Transition>
   </div>
-  </Transition>
 </template>
 
 
@@ -44,10 +49,38 @@
         console.error(e)
       }
       if(Object.keys(this.pageData).length){
-        setTimeout(()=> this.$emit("loaderAction", false),1000)
+        setTimeout(()=> this.$emit("loaderAction", false),1400)
       }
     },
   })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .bubble-enter-active{
+    transition: all 0.25s linear;
+    &.loader-wrapper{
+      transition: all 0.5s linear;
+    }
+  }
+  .bubble-leave-active {
+    &.loader-wrapper{
+      opacity: 1;
+      transition: all 0.5s linear;
+    }
+  }
+  .bubble-enter-from{
+    opacity: 0;
+    transition: all 0.25s linear;
+    &.loader-wrapper{
+      opacity: 0;
+      transition: all 0.5s linear;
+    }
+  }
+  .bubble-leave-to {
+    opacity: 0;
+    &.loader-wrapper{
+      transition: all 0.5s linear;
+      opacity: 0;
+    }
+  }
+</style>

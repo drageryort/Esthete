@@ -1,19 +1,29 @@
 <template>
   <div class="home-view-wrapper">
-    <AppLoader v-show="loader"/>
-    <div class="homeView" v-show="!loader">
-      <AppHomeBanner
-          :pageData="pageData"
-          :preview="preview"
-          @previewActionHomeBanner="previewAction"
-          @videoBannerAction="videoAction"
-      />
-      <AppGallery :pageData="pageData"/>
-      <AppHomeLetsTalk :pageData="pageData"/>
-      <AppHomeReviews :pageData="pageData"/>
-      <AppDevConcepts :pageData="pageData"/>
-      <AppSendRequest :pageData="pageData"/>
-    </div>
+    <Transition
+        name="bubble"
+        mode="out-in"
+    >
+      <AppLoader v-show="loader"/>
+    </Transition>
+    <Transition
+        name="bubble"
+        mode="out-in"
+    >
+      <div class="homeView" v-show="!loader">
+        <AppHomeBanner
+            :pageData="pageData"
+            :preview="preview"
+            @previewActionHomeBanner="previewAction"
+            @videoBannerAction="videoAction"
+        />
+        <AppGallery :pageData="pageData"/>
+        <AppHomeLetsTalk :pageData="pageData"/>
+        <AppHomeReviews :pageData="pageData"/>
+        <AppDevConcepts :pageData="pageData"/>
+        <AppSendRequest :pageData="pageData"/>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -66,4 +76,13 @@
   });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  //.homeView{
+  //  transition: opacity 5s;
+  //  opacity: 1;
+  //  &.hidden{
+  //    transition: opacity 5s;
+  //    opacity: 0;
+  //  }
+  //}
+</style>

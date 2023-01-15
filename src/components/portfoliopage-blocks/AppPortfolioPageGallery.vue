@@ -10,7 +10,12 @@
                       @click="galleryModal(true, index)"
         />
       </div>
-      <button class="btn btn-blue" v-if="pageData['galleryList'].length > shownLimit" @click="this.shownLimit+=10">{{pageData['galleryButtonText']}}</button>
+
+      <button class="btn btn-blue"
+              v-if="iteratedListLength > shownLimit"
+              @click="this.shownLimit+=10">
+        {{pageData['galleryButtonText']}}
+      </button>
       <h3 v-else class="text-info">And much <b>more</b>...</h3>
     </div>
   </div>
@@ -45,6 +50,9 @@ export default defineComponent({
   computed: {
     iteratedList(){
       return this.pageData?.['galleryList'] ? this.pageData['galleryList'].slice(0,this.shownLimit) : this.pageData?.['galleryList']
+    },
+    iteratedListLength(){
+      return  this.pageData?.['galleryList'] ? this.pageData['galleryList'].length : 10
     }
   },
   methods: {
@@ -53,9 +61,6 @@ export default defineComponent({
       this.currentIndex = cardIndex;
       trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
     }
-  },
-  mounted() {
-    console.log(this.pageData)
   }
 })
 </script>

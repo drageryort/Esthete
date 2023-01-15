@@ -1,5 +1,5 @@
 <template>
-  <div class="video">
+  <div class="video-el">
     <video class="video-el-main"
            ref="videoMain"
            controls
@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .video{
+  .video-el{
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
