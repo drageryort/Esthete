@@ -196,7 +196,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      column-gap: 60px;
+      gap: 60px;
       margin: 60px 0 0;
       .rate-el{
         display: flex;
@@ -305,7 +305,7 @@
         }
       }
       .rate-list{
-        column-gap: 30px;
+        gap: 30px;
         margin: 40px 0 0;
         .rate-el{
           height: 36px;
@@ -368,7 +368,7 @@
       }
       .rate-list{
         flex-direction: column;
-        row-gap: 15px;
+        gap: 15px;
         margin: 40px 0 0;
         .rate-el{
           .rate-logo{

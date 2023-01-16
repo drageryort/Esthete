@@ -126,6 +126,7 @@ export default defineComponent({
         position: fixed;
         top: 40px;
         right: 40px;
+        z-index: 1;
         .circle{
           display: flex;
           justify-content: center;
