@@ -55,32 +55,4 @@
   })
 </script>
 
-<style lang="scss">
-  .bubble-enter-active{
-    transition: all 0.25s linear;
-    &.loader-wrapper{
-      transition: all 0.5s linear;
-    }
-  }
-  .bubble-leave-active {
-    &.loader-wrapper{
-      opacity: 1;
-      transition: all 0.5s linear;
-    }
-  }
-  .bubble-enter-from{
-    opacity: 0;
-    transition: all 0.25s linear;
-    &.loader-wrapper{
-      opacity: 0;
-      transition: all 0.5s linear;
-    }
-  }
-  .bubble-leave-to {
-    opacity: 0;
-    &.loader-wrapper{
-      transition: all 0.5s linear;
-      opacity: 0;
-    }
-  }
-</style>
+<style lang="scss"></style>

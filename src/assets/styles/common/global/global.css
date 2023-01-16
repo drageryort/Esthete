@@ -1,3 +1,32 @@
+.bubble-enter-active {
+  transition: all 0.25s linear;
+}
+.bubble-enter-active.loader-wrapper {
+  transition: all 0.5s linear;
+}
+
+.bubble-leave-active.loader-wrapper {
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+
+.bubble-enter-from {
+  opacity: 0;
+  transition: all 0.25s linear;
+}
+.bubble-enter-from.loader-wrapper {
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.bubble-leave-to {
+  opacity: 0;
+}
+.bubble-leave-to.loader-wrapper {
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+
 .animated-total, .animated-modal {
   animation-duration: 2000ms;
   animation-delay: 0ms;

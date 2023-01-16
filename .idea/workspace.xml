@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="65dceabc-6fa5-485b-913e-e6af9ae33f2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppLoader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppLoader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common-blocks/galleryModal/AppGalleryModalVideo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage-blocks/AppHomeBanner.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/portfoliopage-blocks/AppPortfolioPageGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/portfoliopage-blocks/AppPortfolioPageGallery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AppsPortfolioView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DesignPortfolioView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ErrorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/PortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PortfolioView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/_animation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/_animation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/WebPortfolioView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="NamedScopeManager">
+    <scope name="new" pattern="file[Esthete-Web]:src/assets/styles/common/global/*" />
+  </component>
   <component name="ProjectId" id="2KEzNNmFLheLgNNSUGU5R3Box2S" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,7 +43,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="ts.external.directory.path" value="D:\Freelance\Michael\Esthete-Web\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -92,7 +89,7 @@
       <workItem from="1673731727872" duration="2420000" />
       <workItem from="1673735053208" duration="2673000" />
       <workItem from="1673802484649" duration="4193000" />
-      <workItem from="1673817237568" duration="37000" />
+      <workItem from="1673817237568" duration="1321000" />
     </task>
     <servers />
   </component>
