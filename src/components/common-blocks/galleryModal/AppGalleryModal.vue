@@ -73,21 +73,21 @@ export default defineComponent({
 
     //Transition
     &.slide-enter-active {
-      transition: all .4s linear;
+      transition: all .3s linear;
       .gallery-modal-wrapper{
-        transition: opacity .4s linear;
+        transition: opacity .3s linear;
       }
       .gallery-modal-block{
-        transition: right .4s linear;
+        transition: right .3s linear;
       }
     }
     &.slide-leave-active {
-      transition: all .4s linear;
+      transition: all .3s linear;
       .gallery-modal-wrapper{
-        transition: opacity .4s linear;
+        transition: opacity .3s linear;
       }
       .gallery-modal-block{
-        transition: right .4s linear;
+        transition: right .3s linear;
       }
     }
     &.slide-enter-from, &.slide-leave-to {
@@ -133,7 +133,7 @@ export default defineComponent({
           width: 48px;
           height: 48px;
           padding: 11px;
-          background: rgba(255, 255, 255, 0.8);
+          background: rgba(255, 255, 255, 0.5);
           border-radius: 60px;
           overflow: hidden;
         }
@@ -184,13 +184,14 @@ export default defineComponent({
       .gallery-modal-wrapper{}
       .gallery-modal-block{
         width: 680px;
+        .close-modal{
+          top: 30px;
+          right: 30px;
+          .circle{}
+        }
         .gallery-modal-content{
           padding: 40px 35px 60px;
-          .close-modal{
-            top: 30px;
-            right: 30px;
-            .circle{}
-          }
+
           .pre-title{}
           .title{}
           .main-banner{}
@@ -212,6 +213,11 @@ export default defineComponent({
       .gallery-modal-block{
         width: 100%;
         right: 0;
+        .close-modal{
+          top: 10px;
+          right: 10px;
+          .circle{}
+        }
         .gallery-modal-content{
           padding: 24px 25px 40px;
           @media (max-width: 400px){
@@ -222,11 +228,6 @@ export default defineComponent({
           }
           @media (max-width: 330px){
             padding: 24px 10px 40px;
-          }
-          .close-modal{
-            top: 10px;
-            right: 10px;
-            .circle{}
           }
           .pre-title{
             font-size: 14px;

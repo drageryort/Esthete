@@ -2,20 +2,21 @@
   <div class="banner-block-wrapper">
     <div class="container">
       <div class="banner-block">
-        <picture class="video image">
+        <picture class="image-wrapper image">
           <source srcset="@/assets/images/jpg/mock-video-mobile.jpg" media="(max-width:660px)">
           <img src="@/assets/images/jpg/mock-video.jpg" alt="banner">
         </picture>
-        <video class="video"
-               v-if="preview"
-               autoplay
-               muted
-               playsinline
-               @canplaythrough="checkVideo"
-        >
-          <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
-          <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
-        </video>
+        <div class="video-wrapper" v-if="preview">
+          <video class="video"
+                 autoplay
+                 muted
+                 playsinline
+                 @canplaythrough="checkVideo"
+          >
+            <source v-if="isMobile" src="@/assets/video/mobile_banner_video.mp4" type="video/mp4">
+            <source v-else src="@/assets/video/desktop_banner_video.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="content" :class="{animation:play}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
           <p class="text">{{ pageData['topBannerSubTitle'] }}</p>
@@ -163,13 +164,29 @@
         }
       }
     }
-    .video {
+    .video-wrapper, .image-wrapper{
       height: 100vh;
       width: max-content;
       position: absolute;
       top: 0;
       left: 200px;
       z-index: 0;
+      &:after{
+        content: '';
+        width: 18vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      }
+      .video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .image-wrapper{
       object-fit: cover;
     }
   }
@@ -214,7 +231,7 @@
           }
         }
       }
-      .video {
+      .video-wrapper, .image-wrapper {
         left: 240px;
         height: 35vh;
       }
@@ -317,13 +334,15 @@
           }
         }
       }
-      .video {
+      .video-wrapper, .image-wrapper {
         width: 100vw;
         height: unset;
         right: unset;
         left: unset;
         top: 0;
-        transform: unset;
+        &:after{
+          display: none;
+        }
       }
     }
   }

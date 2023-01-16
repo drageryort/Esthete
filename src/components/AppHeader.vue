@@ -134,6 +134,7 @@
       &.animation{
         opacity: 1;
         animation-name: none;
+        pointer-events: auto;
       }
       .left-col {
         .logo {
@@ -160,7 +161,7 @@
         opacity: 0;
         animation-name: header;
         animation-duration: 9500ms;
-
+        pointer-events: none;
         @keyframes header {
           0% {
             opacity: 0;
