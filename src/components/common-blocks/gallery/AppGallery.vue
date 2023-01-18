@@ -69,7 +69,7 @@ export default defineComponent({
       this.galleryModalActive = trigger;
       this.currentIndex = cardIndex;
       trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
-      if(trigger && !window.location.hash){
+      if(trigger && !window.location.hash && this.routeName !== "home"){
         location.hash = hashName
       } else if(!trigger){
         history.replaceState(undefined,'',this.routePath)
