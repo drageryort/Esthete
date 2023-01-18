@@ -79,7 +79,8 @@ export default defineComponent({
       if(
           typeof galleryData === "object"  &&
           galleryData.length &&
-          !this.modalChecked && this.routeName != "home" &&
+          !this.modalChecked &&
+          this.routeName != "home" &&
           this.routeHash
       ){
         let index = galleryData.findIndex((elem:object | any) => {

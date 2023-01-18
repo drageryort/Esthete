@@ -137,7 +137,7 @@ export default defineComponent({
             font-size: 60px;
             line-height: 73px;
             text-decoration-line: underline;
-            text-decoration-thickness: 3px;
+            text-decoration-thickness: 2px;
             font-feature-settings: 'liga' off;
             color: var(--color-black);
           }
