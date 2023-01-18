@@ -48,7 +48,7 @@
     },
     methods: {
       mobileMenu(trigger:boolean) {
-        this.mobileMenuActive = trigger
+        this.mobileMenuActive = trigger;
         trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
       },
       showLoader(trigger:boolean){

@@ -125,7 +125,7 @@ export default defineComponent({
       .close-modal{
         position: fixed;
         top: 40px;
-        right: 40px;
+        right: 72px;
         z-index: 1;
         .circle{
           display: flex;
@@ -187,7 +187,7 @@ export default defineComponent({
         width: 680px;
         .close-modal{
           top: 30px;
-          right: 30px;
+          right: 40px;
           .circle{}
         }
         .gallery-modal-content{
@@ -216,7 +216,16 @@ export default defineComponent({
         right: 0;
         .close-modal{
           top: 10px;
-          right: 10px;
+          right: 30px;
+          @media (max-width: 400px){
+            right: 25px;
+          }
+          @media (max-width: 360px){
+            right: 20px;
+          }
+          @media (max-width: 330px) {
+            right: 15px;
+          }
           .circle{}
         }
         .gallery-modal-content{

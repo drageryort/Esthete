@@ -43,8 +43,10 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior() {
-    setTimeout(() => window.scrollTo(0,0),500)
+  scrollBehavior(to, from, savedPosition) {
+    if(!to.hash){
+      setTimeout(() => window.scrollTo(0,0),500)
+    }
   }
 })
 

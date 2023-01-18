@@ -136,7 +136,8 @@ export default defineComponent({
             font-weight: 400;
             font-size: 60px;
             line-height: 73px;
-            text-decoration: underline from-font;
+            text-decoration-line: underline;
+            text-decoration-thickness: 3px;
             font-feature-settings: 'liga' off;
             color: var(--color-black);
           }
@@ -147,7 +148,7 @@ export default defineComponent({
         font-weight: 700;
         font-size: 60px;
         line-height: 73px;
-        text-decoration: underline from-font;
+        text-decoration-line: underline;
         font-feature-settings: 'liga' off;
         color: var(--color-black);
         left: 80px;

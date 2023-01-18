@@ -6,7 +6,7 @@
         <AppGalleryEl v-for="(el, index) in pageData['galleryList']"
                       :key="el['galleryListProductName']"
                       :elementData="el"
-                      @click="galleryModal(true, index)"
+                      @click="galleryModal(true, index, el['galleryListProductHash'])"
         />
       </div>
       <div class="show-more-cases-wrapper wow-total animate__fadeInUp">
@@ -31,6 +31,7 @@
 import {defineComponent} from "vue";
 import AppGalleryModal from "@/components/common-blocks/galleryModal/AppGalleryModal.vue";
 import AppGalleryEl from "@/components/common-blocks/gallery/AppGalleryEl.vue";
+
 export default defineComponent({
   name: "AppGallery",
   props: {
@@ -41,13 +42,62 @@ export default defineComponent({
     return{
       galleryModalActive: false,
       currentIndex: 0,
+      modalChecked: false
+    }
+  },
+  computed: {
+    routeHash() {
+      return this.$route['hash'];
+    },
+    routePath() {
+      return this.$route['path'];
+    },
+    routeName() {
+      return this.$route['name'];
+    },
+    galleryList(){
+      if(typeof this.pageData === "object"){
+        return this.pageData['galleryList']
+      }
+      else{
+        return []
+      }
     }
   },
   methods: {
-    galleryModal(trigger:boolean, cardIndex:number) {
+    galleryModal(trigger:boolean, cardIndex:number, hashName:string) {
       this.galleryModalActive = trigger;
       this.currentIndex = cardIndex;
       trigger ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto"
+      if(trigger && !window.location.hash){
+        location.hash = hashName
+      } else if(!trigger){
+        history.replaceState(undefined,'',this.routePath)
+      }
+    },
+    galleryModalHash(galleryData:number[]){
+      if(
+          typeof galleryData === "object"  &&
+          galleryData.length &&
+          !this.modalChecked && this.routeName != "home" &&
+          this.routeHash
+      ){
+        let index = galleryData.findIndex((elem:object | any) => {
+          return elem['galleryListProductHash'] ===  this.routeHash
+        })
+        if(index>=0){
+          this.galleryModal(true, index, '')
+          this.modalChecked = true
+        }
+      }
+    }
+  },
+  mounted() {
+    this.galleryModalHash(this.galleryList)
+  },
+  watch:{
+    galleryList(newData, oldData){
+      this.galleryModalHash(newData)
     }
   }
 })
