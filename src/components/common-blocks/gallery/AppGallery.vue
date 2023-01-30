@@ -83,7 +83,6 @@ export default defineComponent({
         let index = galleryData.findIndex((elem: object | any) => {
           return elem['acf']['galleryListProductHash'] === this.routeHash
         })
-        console.log(index);
         if (index >= 0) {
           this.galleryModal(true, index, '')
           this.modalChecked = true

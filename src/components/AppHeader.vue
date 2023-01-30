@@ -3,7 +3,7 @@
     <div class="left-col">
       <router-link to="/" class="logo">
         <picture class="picture">
-          <img src="@/assets/images/svg/logo_white.svg" alt="logo">
+          <AppLogo/>
         </picture>
       </router-link>
       <menu class="desktop-menu" v-if="isDesktop">
@@ -29,9 +29,11 @@
 
 <script lang="ts">
   import {defineComponent} from "vue";
+  import AppLogo from "@/components/AppLogo.vue";
 
   export default defineComponent({
     name: "AppHeader",
+    components: {AppLogo},
     props: {
       commonData: Object,
       playPreview: Boolean
@@ -92,13 +94,8 @@
 
       .logo {
         .picture {
-          width: 150px;
+          width: 133px;
           height: 36px;
-
-          img {
-            object-fit: contain;
-            object-position: center;
-          }
         }
       }
 
@@ -138,11 +135,7 @@
       }
       .left-col {
         .logo {
-          .picture {
-            width: 126px;
-            height: 30px;
-            img {}
-          }
+          .picture {}
         }
       }
       .right-col {
@@ -177,8 +170,6 @@
       .left-col {
         .logo {
           .picture {
-            width: 100px;
-            height: 24px;
             img {}
           }
         }
