@@ -19,7 +19,7 @@
         </div>
         <div class="content" :class="{animation:play}">
           <h1 class="title" v-html="pageData['topBannerTitle']"></h1>
-          <p class="text">{{ pageData['topBannerSubTitle'] }}</p>
+          <h2 class="text">{{ pageData['topBannerSubTitle'] }}</h2>
           <a target="_blank" :href="pageData['topBannerLink']"
              class="btn btn-blue">{{ pageData['topBannerButton'] }}</a>
         </div>
