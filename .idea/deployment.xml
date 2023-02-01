@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Esthete" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Esthete">
+      <paths name="esthete">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/dist/" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/dist" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="mine">
         <serverdata>
           <mappings>
-            <mapping deploy="/www/esthete.webfuture.top" local="$PROJECT_DIR$/dist/" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

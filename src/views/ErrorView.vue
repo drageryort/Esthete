@@ -1,27 +1,25 @@
 <template>
-  <div>
-    <Transition
-        name="bubble"
-        mode="out-in"
-    >
-      <AppLoader v-if="loader"/>
-      <div class="errorView" v-else>
-        <div class="el-video wow-total animate__fadeInUp">
-          <b class="text">4</b>
-          <video src="@/assets/video/MVP.mp4"
-                 class="video"
-                 loop
-                 muted
-                 autoplay
-                 playsinline
-          />
-          <b class="text">4</b>
-        </div>
-        <h2 class="sub-text wow-total animate__fadeInUp">Ooops page not found</h2>
-        <router-link to="/" class="btn btn-blue wow-total animate__fadeInUp">Go to main page</router-link>
+  <Transition
+      name="bubble"
+      mode="out-in"
+  >
+    <AppLoader v-if="loader"/>
+    <div class="errorView" v-else>
+      <div class="el-video wow-total animate__fadeInUp">
+        <b class="text">4</b>
+        <video src="@/assets/video/MVP.mp4"
+               class="video"
+               loop
+               muted
+               autoplay
+               playsinline
+        />
+        <b class="text">4</b>
       </div>
-    </Transition>
-  </div>
+      <h2 class="sub-text wow-total animate__fadeInUp">Ooops page not found</h2>
+      <router-link to="/" class="btn btn-blue wow-total animate__fadeInUp">Go to main page</router-link>
+    </div>
+  </Transition>
 </template>
 
 <script lang="ts">

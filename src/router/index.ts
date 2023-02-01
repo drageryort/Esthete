@@ -4,6 +4,7 @@ import WebPortfolioView from '../views/WebPortfolioView.vue'
 import AppsPortfolioView from '../views/AppsPortfolioView.vue'
 import DesignPortfolioView from '../views/DesignPortfolioView.vue'
 import PortfolioView from "@/views/PortfolioView.vue";
+import ConfirmedMeetingView from "@/views/ConfirmedMeetingView.vue"
 import ErrorView from "@/views/ErrorView.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/portfolio',
     name: 'portfolio',
     component: PortfolioView
+  },
+  {
+    path: '/confirmed-meeting',
+    name: 'confirmed meeting',
+    component: ConfirmedMeetingView
   },
   {
     path: '/:pathMatch(.*)*',

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="9283ae6e-4580-41e7-a26e-ac164ea184a1" name="Esthete">
-        <fileTransfer rootFolder="/var/www/esthete.studio" accessType="SFTP" host="146.190.121.42" port="22" sshConfigId="712b123d-ace2-4dc9-9569-b5c434e09880" sshConfig="root@146.190.121.42:22 password">
+      <webServer id="ba4df78d-68d2-435d-aee3-f8cedadd523f" name="esthete">
+        <fileTransfer rootFolder="/var/www/esthete.studio" accessType="SFTP" host="146.190.121.42" port="22" sshConfigId="a7831b54-9ac7-4351-8b2f-3b4e7faa3ac5" sshConfig="root@146.190.121.42:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
