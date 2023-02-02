@@ -9,7 +9,6 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
-  RewriteCond %{HTTP_HOST} !^www.esthete.studio$
-  RewriteRule ^(.*)$ http://www.esthete.studio/$1 [R=301,L]
-
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>

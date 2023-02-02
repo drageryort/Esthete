@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5652ba-70c0-4036-85fe-462c7df282a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/svg/calendly-confirmed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/AppCommonLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/AppEmptyLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/ConfirmedMeetingView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/meta/meta-image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/_reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/common/global/global.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/common/global/global.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ErrorView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +27,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dist" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/meta" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -47,7 +40,12 @@
     <property name="ts.external.directory.path" value="D:\Freelance\Michael\Esthete-Web\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Freelance\Michael\Esthete-Web\public\meta" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -92,7 +90,9 @@
       <option name="presentableId" value="Default" />
       <updated>1675194547105</updated>
       <workItem from="1675194550599" duration="7713000" />
-      <workItem from="1675247278884" duration="8526000" />
+      <workItem from="1675247278884" duration="10647000" />
+      <workItem from="1675290585248" duration="1060000" />
+      <workItem from="1675361122547" duration="1364000" />
     </task>
     <servers />
   </component>
