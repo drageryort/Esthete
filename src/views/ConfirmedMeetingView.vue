@@ -72,7 +72,7 @@ export default defineComponent({
         };
         const filteredDate = new Intl.DateTimeFormat('en-US', options).formatToParts(gettingDate).filter(el => el.type !== 'literal');
         const {hour, minute, dayPeriod, day, weekday, month, year} = Object.fromEntries(filteredDate.map(item => [item.type, item.value]));
-        return `${hour}:${minute}${dayPeriod.toLowerCase()}, ${weekday}, ${month} ${day}, ${year},`
+        return `${hour}:${minute}${dayPeriod.toLowerCase()}, ${weekday}, ${month} ${day}, ${year}`
       },
       timeZone(){
         const gettingDate = new Date(this.dataInfo['event_end_time'] as string);
@@ -161,6 +161,8 @@ export default defineComponent({
         font-weight: 700;
         font-size: 24px;
         line-height: 140%;
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
       }
     }
     .contact-info{
