@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c5652ba-70c0-4036-85fe-462c7df282a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ConfirmedMeetingView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ConfirmedMeetingView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/meta" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -74,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +95,8 @@
       <workItem from="1675422924543" duration="648000" />
       <workItem from="1675454840254" duration="2522000" />
       <workItem from="1675536341923" duration="20000" />
-      <workItem from="1675537357766" duration="189000" />
+      <workItem from="1675537357766" duration="1009000" />
+      <workItem from="1675555615600" duration="301000" />
     </task>
     <servers />
   </component>
