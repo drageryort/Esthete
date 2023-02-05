@@ -98,10 +98,6 @@ export default defineComponent({
         right: -100%;
       }
     }
-
-    *{
-      color: var(--color-black);
-    }
     .gallery-modal-wrapper{
       width: 100%;
       height: 100%;
@@ -141,7 +137,7 @@ export default defineComponent({
       }
       .gallery-modal-content{
         padding: 40px 67px 60px;
-
+        color: var(--color-black);
         .pre-title{
           font-weight: 500;
           font-size: 16px;
